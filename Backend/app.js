@@ -17,7 +17,6 @@ app.use(express.static(staticPath));
 app.use('/public', express.static('public'))
 
 app.use('/api/auth', routes.auth)
-app.use('/api/predict', routes.predict)
 
 
 module.exports = app

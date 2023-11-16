@@ -1,5 +1,4 @@
 const auth = require('./auth.route')
-const predict =require('./predict.route')
 // const feedback = require('./feedback.route')
 // const cart = require('./cart.route')
 // const product = require('./product.route')
@@ -10,7 +9,6 @@ const predict =require('./predict.route')
 
 module.exports = {
     auth: auth,
-    predict : predict,
     // feedback: feedback,
     // cart: cart,
     // product : product,
