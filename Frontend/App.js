@@ -1,12 +1,13 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-import Login from "./views/pages/login";
+import AllRouter from "./views/routes/";
+import Login from "./views/pages/login"
 
 export default function App() {
     return (
         <View style={styles.container}>
-            <Login />
+            {/* <Login /> */}
+            <AllRouter/>
         </View>
     );
 }

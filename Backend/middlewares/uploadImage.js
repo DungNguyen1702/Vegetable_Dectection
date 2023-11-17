@@ -1,5 +1,4 @@
 const multer = require('multer')
-const mutler = require('multer')
 
 function uploadImageToCloudinary(){
 

@@ -70,6 +70,7 @@ yarn sequelize-cli seed:generate --name demo-user
 -> using npm
 
 npx sequelize-cli db:seed:all
+npx sequelize-cli db:seed --seed 20211116123456-demo-seeder.js
 
 -> using yarn
 

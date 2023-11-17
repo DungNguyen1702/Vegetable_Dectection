@@ -17,6 +17,6 @@ app.use(express.static(staticPath));
 app.use('/public', express.static('public'))
 
 app.use('/api/auth', routes.auth)
-
+app.use('/api/fruit', routes.fruit)
 
 module.exports = app

@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     Fruit.init(
         {
             name: DataTypes.STRING,
-            englistName : DataTypes.STRING,
+            englishName : DataTypes.STRING,
             origin : DataTypes.STRING,
             taste : DataTypes.STRING,
             nutrition: DataTypes.STRING,
@@ -21,6 +21,15 @@ module.exports = (sequelize, DataTypes) => {
             season : DataTypes.STRING,
             medical : DataTypes.STRING,
             star: DataTypes.FLOAT,
+            updatedAt: {
+                type: DataTypes.DATE,
+                get: function () {
+                    if (this.getDataValue('createdAt')) {
+                        return toLocaleString(this.getDataValue('createdAt'))
+                    }
+                    return null
+                },
+            },
             createdAt: {
                 type: DataTypes.DATE,
                 get: function () {
