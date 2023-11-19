@@ -16,10 +16,10 @@ module.exports = {
             name: {
                 type: Sequelize.STRING,
             },
-            description: {
+            ingredient: {
                 type: Sequelize.STRING,
             },
-            taste: {
+            nutrition: {
                 type: Sequelize.STRING,
             },
             createdAt: {

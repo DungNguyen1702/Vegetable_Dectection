@@ -1,5 +1,13 @@
 {
     "development": {
+        "host" : "buy1avyggzjqg4ppvhch-mysql.services.clever-cloud.com",
+        "username": "utlv6rliq3xpzess",
+        "password": "TGqeXDVW3Lve2yUQkWT1",
+        "port" : 3306,
+        "database": "buy1avyggzjqg4ppvhch",
+        "dialect": "mysql"
+    },
+    "test": {
         "host": "localhost",
         "username": "root",
         "password": "",
@@ -7,14 +15,6 @@
         "database": "pbl4",
         "dialect": "mysql",
         "timezone": "+07:00"
-    },
-    "test": {
-        "host" : "buy1avyggzjqg4ppvhch-mysql.services.clever-cloud.com",
-        "username": "utlv6rliq3xpzess",
-        "password": "TGqeXDVW3Lve2yUQkWT1",
-        "port" : 3306,
-        "database": "buy1avyggzjqg4ppvhch",
-        "dialect": "mysql"
     },
     "production": {
         "host": "37.59.55.185",

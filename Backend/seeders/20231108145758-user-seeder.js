@@ -16,7 +16,7 @@ module.exports = {
             "Users",
             [
                 {
-                    name: "Nguyen Van Dung",
+                    name: "Nguyễn Văn Dũng",
                     gender: "Male",
                     birthday: "2003-02-17",
                     telephone: "0905116391",

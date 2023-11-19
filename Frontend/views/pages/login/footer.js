@@ -1,7 +1,42 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity, View, Text, Button } from "react-native";
+import auth from '../../../api/authAPI'
+import { useState } from "react";
 
-export default function Footer ()
+
+export default function Footer ({account, password, setErrAccount, setErrPassword})
 {
+    const navigation = useNavigation();
+
+
+    const Login = ()=> {
+        const callAPI = async () => {
+            try {
+                const values = {
+                    account : account,
+                    password : password,
+                }
+
+                const response = await auth.login(values);
+
+                if(response.status === 200){
+                    navigation.navigate("HomePage")
+                } 
+            }
+            catch (e) {
+                console.log(e)
+
+                if (e.response.status === 404) {
+                    setErrAccount(true);
+                }
+                else if (e.response.status === 401){
+                    setErrPassword(true);
+                }
+            }
+        }
+        callAPI()
+    }
+
     const Register = ()=> alert('Đăng kí')
 
     return (
@@ -10,7 +45,7 @@ export default function Footer ()
                 <Text style = {styles.text}>Đăng kí</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity onPress={Register} style = {styles.buttonLogin}>
+            <TouchableOpacity onPress={Login} style = {styles.buttonLogin}>
                 <Text style = {styles.textLogin}>Đăng nhập</Text>
             </TouchableOpacity>
 

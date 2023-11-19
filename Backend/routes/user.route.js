@@ -1,11 +1,8 @@
 const express = require('express');
-const FruitApiControllers = require('../controllers/api/fruit.controller')
+const UserApiControllers = require('../controllers/api/user.controller')
 const router = express.Router();
 
-router.get('/', FruitApiControllers.getFruits)
-
-router.get('/:id', FruitApiControllers.getFruitById)
-
+router.get('/', UserApiControllers.getUsers)
 
 // router.post('/',ProductApiControllers.createNewProduct)
 

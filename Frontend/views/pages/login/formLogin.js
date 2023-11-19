@@ -6,9 +6,9 @@ import {
     TouchableOpacity,
 } from "react-native";
 import { useState } from "react";
-import Icon from "react-native-vector-icons/AntDesign";
+import Icon from "react-native-vector-icons/Entypo";
 
-export default function FormLogin() {
+export default function FormLogin({setAccount, setPassword, errAccount, errPassword}) {
     const [showIcon, setShowIcon] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
 
@@ -20,8 +20,9 @@ export default function FormLogin() {
                 <TextInput
                     style={styles.inputStyle}
                     placeholder="Tài khoản"
-                    mode="outlined"
+                    onChangeText={(value)=>{setAccount(value)}}
                 ></TextInput>
+                {errAccount && <Text style = {styles.error}>Không tìm thấy tài khoản</Text>}
             </View>
             <View style={styles.formInputStyle}>
                 <Text style={styles.label}> Mật khẩu </Text>
@@ -32,12 +33,12 @@ export default function FormLogin() {
                         placeholder="Mật khẩu"
                         onFocus={() => {
                             setShowIcon(true);
-                            console.log(showPassword)
                         }}
                         onBlur={() => {
                             setShowIcon(false);
                             setShowPassword(false);
                         }}
+                        onChangeText={(value)=> setPassword(value)}
                     ></TextInput>
                     {showIcon && (
                         <TouchableOpacity
@@ -46,15 +47,23 @@ export default function FormLogin() {
                             }}
                             style={styles.icon}
                         >
-                            <Icon
-                                name="eye"
-                                size={30}
-                                color={"black"}
-                                
-                            ></Icon>
+                            {showPassword ? (
+                                <Icon
+                                    name="eye-with-line"
+                                    size={30}
+                                    color={"black"}
+                                ></Icon>
+                            ) : (
+                                <Icon
+                                    name="eye"
+                                    size={30}
+                                    color={"black"}
+                                ></Icon>
+                            )}
                         </TouchableOpacity>
                     )}
                 </View>
+                {errPassword && <Text style = {styles.error}>Sai mật khẩu</Text>}
             </View>
         </View>
     );
@@ -97,4 +106,10 @@ const styles = StyleSheet.create({
         position: "absolute",
         right: 30,
     },
+    error : {
+        color : 'red',
+        textAlign :'center',
+        marginTop : 10,
+        marginBottom : -9,
+    }
 });

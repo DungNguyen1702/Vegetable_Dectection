@@ -3,31 +3,33 @@ import React from "react"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import { View, Text, Button } from "react-native"
 import LoginPage from "../pages/login"
+import HomePage from "./home.router"
 
-const Login = ()=>{
 
-    const navigation = useNavigation();
-    return (
-        <View style = {{flex : 1, alignContent : 'center', justifyContent : 'center', backgroundColor : 'red'}}>
-            <Text style = {{textAlign : 'center'}}>Login</Text>
-            <Button title="Click" onPress={()=>navigation.navigate('Home',{name : "Dung", obj : {id : 1, name: 'AS', price : 900}})}></Button>
-        </View>
-    )
-}
+// const Login = ()=>{
 
-const Home = ()=>{
+//     const navigation = useNavigation();
+//     return (
+//         <View style = {{flex : 1, alignContent : 'center', justifyContent : 'center', backgroundColor : 'red'}}>
+//             <Text style = {{textAlign : 'center'}}>Login</Text>
+//             <Button title="Click" onPress={()=>navigation.navigate('Home',{name : "Dung", obj : {id : 1, name: 'AS', price : 900}})}></Button>
+//         </View>
+//     )
+// }
 
-    const route = useRoute();
-    const {name, obj} = route.params; 
+// const Home = ()=>{
 
-    return (
-        <View style = {{flex : 1, alignContent : 'center', justifyContent : 'center'}}>
-            <Text>home</Text>
-            <Text>{name}</Text>
-            <Text>{obj.id}</Text>
-        </View>
-    )
-}
+//     const route = useRoute();
+//     const {name, obj} = route.params; 
+
+//     return (
+//         <View style = {{flex : 1, alignContent : 'center', justifyContent : 'center'}}>
+//             <Text>home</Text>
+//             <Text>{name}</Text>
+//             <Text>{obj.id}</Text>
+//         </View>
+//     )
+// }
 
 const Stack = createNativeStackNavigator();
 
@@ -36,8 +38,8 @@ export default function AllRouter(){
         <View style = {{width:'100%', height : '100%'}}>
             <NavigationContainer>
                 <Stack.Navigator>
-                    <Stack.Screen name="Login" component={LoginPage} options={{headerShown : false}} ></Stack.Screen>
-                    <Stack.Screen name="Home" component={Home} options={{headerShown : false}} ></Stack.Screen>
+                    {/* <Stack.Screen name="Login" component={LoginPage} options={{headerShown : false}} ></Stack.Screen> */}
+                    <Stack.Screen name="HomePage" component={HomePage} options={{headerShown : false}} ></Stack.Screen>
                 </Stack.Navigator>
             </NavigationContainer> 
         </View>

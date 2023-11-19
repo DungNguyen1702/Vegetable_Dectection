@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
         paddingVertical : 20,
         alignItems : 'center',
         justifyContent : 'center',
+        backgroundColor : '#5AA162',
+        marginVertical : 18,
     },
     logo : {
         height : 70,
