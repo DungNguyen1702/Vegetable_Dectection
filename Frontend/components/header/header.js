@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'center',
         backgroundColor : '#5AA162',
-        marginVertical : 18,
     },
     logo : {
         height : 70,
