@@ -4,14 +4,10 @@ import Stars from "./stars"
 
 export default function Component({data})
 {
-    useEffect(()=>{
-        console.log(data)
-    },[])
-
     return (
     <View style = {styles.container}>
         <View style = {styles.imageField}>
-            <Image source={{uri : "https://be-vegetable-dectection-mobile-9s6n.onrender.com/Public/Test/Apple/4.jpg"}} style = {styles.image} ></Image>
+            <Image source={{uri : data.FruitImages[0].image + ""}} style = {styles.image} ></Image>
             <Stars starNum={data.star}></Stars>
         </View>
         <View style = {styles.infoContainer}>
@@ -50,7 +46,6 @@ const styles = StyleSheet.create({
         paddingVertical : 25,
         borderRadius : 20,
         marginVertical : 10,
-        // height : ""
     },
     image : {
         height : 100,
@@ -70,7 +65,7 @@ const styles = StyleSheet.create({
     title : {
         fontSize : 25,
         fontWeight : "bold",
-        color : "#508D69",
+        color : "#8B008B",
         textAlign : "center",
         marginBottom : 10,
     },
@@ -95,5 +90,4 @@ const styles = StyleSheet.create({
         overflow : "scroll",
         fontSize : 12,
     }
-
 })
