@@ -1,5 +1,4 @@
 import axiosClient from './axiosClient'
-import axios from 'axios'
 
 const auth = {
     login: async (credentials) => {

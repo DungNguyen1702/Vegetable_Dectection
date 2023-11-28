@@ -1,6 +1,7 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const { getAllFruit, getById } = require('../CRUD/fruit');
+const { predictImage } = require("../../UI/api/predictAPI");
+const { getAllFruit, getById } = require("../CRUD/fruit");
 
 async function index(request, response) {
     try {
@@ -11,7 +12,7 @@ async function index(request, response) {
 
         const queryResult = await getAllFruit(startIndex, limit);
 
-        queryResult.count = queryResult.rows.length
+        queryResult.count = queryResult.rows.length;
         return response.status(200).json(queryResult);
     } catch (error) {
         return response.status(500).json({
@@ -21,14 +22,12 @@ async function index(request, response) {
     }
 }
 
-async function getFruitById(request, response)
-{
+async function getFruitById(request, response) {
     try {
-        
-        const id = Number.parseInt(request.params.id)
+        const id = Number.parseInt(request.params.id);
 
         const queryResult = await getById(id);
-        
+
         return response.status(200).json(queryResult);
     } catch (error) {
         return response.status(500).json({
@@ -36,9 +35,29 @@ async function getFruitById(request, response)
             error: error,
         });
     }
+}
+
+async function predictFruit(request, response) {
+    
+    if (!request.file) {
+        return response.status(400).send("No file uploaded.");
+    }
+    
+    const imageBuffer = request.file.buffer;
+
+    const idPredict = await predictImage(imageBuffer)
+
+    const queryResult = await getById(idPredict);
+
+    return response.status(200).send({
+        message: "upload Image success full",
+        result : queryResult,
+    })
+    
 }
 
 module.exports = {
-    getFruits : index,
-    getFruitById : getFruitById,
-}
+    getFruits: index,
+    getFruitById: getFruitById,
+    predictFruit: predictFruit,
+};

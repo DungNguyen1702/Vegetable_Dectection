@@ -10,31 +10,31 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
 
 
     const Login = ()=> {
-        const callAPI = async () => {
-            try {
-                const values = {
-                    account : account,
-                    password : password,
-                }
+        // const callAPI = async () => {
+        //     try {
+        //         const values = {
+        //             account : account,
+        //             password : password,
+        //         }
 
-                const response = await auth.login(values);
+        //         const response = await auth.login(values);
 
-                if(response.status === 200){
-                    navigation.navigate("HomePage")
-                } 
-            }
-            catch (e) {
-                console.log(e)
+        //         if(response.status === 200){
+        //             navigation.navigate("HomePage")
+        //         } 
+        //     }
+        //     catch (e) {
+        //         console.log(e)
 
-                if (e.response.status === 404) {
-                    setErrAccount(true);
-                }
-                else if (e.response.status === 401){
-                    setErrPassword(true);
-                }
-            }
-        }
-        callAPI()
+        //         if (e.response.status === 404) {
+        //             setErrAccount(true);
+        //         }
+        //         else if (e.response.status === 401){
+        //             setErrPassword(true);
+        //         }
+        //     }
+        // }
+        // callAPI()
     }
 
     const Register = ()=> alert('Đăng kí')

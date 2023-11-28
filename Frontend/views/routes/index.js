@@ -6,32 +6,6 @@ import LoginPage from "../pages/Login"
 import HomePage from "./home.router"
 import Camera from "../pages/Camera"
 
-
-// const Login = ()=>{
-
-//     const navigation = useNavigation();
-//     return (
-//         <View style = {{flex : 1, alignContent : 'center', justifyContent : 'center', backgroundColor : 'red'}}>
-//             <Text style = {{textAlign : 'center'}}>Login</Text>
-//             <Button title="Click" onPress={()=>navigation.navigate('Home',{name : "Dung", obj : {id : 1, name: 'AS', price : 900}})}></Button>
-//         </View>
-//     )
-// }
-
-// const Home = ()=>{
-
-//     const route = useRoute();
-//     const {name, obj} = route.params; 
-
-//     return (
-//         <View style = {{flex : 1, alignContent : 'center', justifyContent : 'center'}}>
-//             <Text>home</Text>
-//             <Text>{name}</Text>
-//             <Text>{obj.id}</Text>
-//         </View>
-//     )
-// }
-
 const Stack = createNativeStackNavigator();
 
 export default function AllRouter(){
