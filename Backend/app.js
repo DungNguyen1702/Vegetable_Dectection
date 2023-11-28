@@ -23,5 +23,6 @@ app.use('/public', express.static('public'))
 app.use('/api/auth', routes.auth)
 app.use('/api/fruit', routes.fruit)
 app.use('/api/user', routes.user)
+app.use('/ui', routes.ui)
 
 module.exports = app
