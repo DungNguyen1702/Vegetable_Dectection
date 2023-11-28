@@ -5,6 +5,7 @@ import { View, Text, Button } from "react-native"
 import LoginPage from "../pages/Login"
 import HomePage from "./home.router"
 import Camera from "../pages/Camera"
+import DetailFruit from "../pages/DetailFruit"
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function AllRouter(){
                     {/* <Stack.Screen name="Login" component={LoginPage} options={{headerShown : false}} ></Stack.Screen> */}
                     <Stack.Screen name="HomePage" component={HomePage} options={{headerShown : false}} ></Stack.Screen>
                     <Stack.Screen name="CameraScreen" component={Camera} options={{headerShown : false}} ></Stack.Screen>
+                    <Stack.Screen name="DetailFruit" component={DetailFruit} options={{headerShown : false}} ></Stack.Screen>
                 </Stack.Navigator>
             </NavigationContainer> 
         </View>

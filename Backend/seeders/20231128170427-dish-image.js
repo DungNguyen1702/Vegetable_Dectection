@@ -1,11 +1,10 @@
 "use strict";
-require('dotenv').config()
+require("dotenv").config();
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-
-        const FruitImageArray = [];
+        const DishImageArray = [];
 
         const englishFruits = [
             "Apple",
@@ -47,28 +46,27 @@ module.exports = {
             "Sweet_Potato",
             "Tomato",
             "Watermelon",
-            "White_Mushroom"
+            "White_Mushroom",
         ];
-
-        for(let i = 0; i < englishFruits.length ; i ++ )
-        {
-            for(let j = 1; j <=4; j ++)
-            {
-                FruitImageArray.push({
-                    fruit_id : i+1,
-                    image : process.env.DEPLOY_URL + "/Public/Test/" + englishFruits[i] + `/${j}.jpg`
-                })
+        var count = 1;
+        for (let i = 0; i < englishFruits.length; i++) {
+            for (let j = 1; j <= 3; j++) {
+                DishImageArray.push({
+                    dish_id: count++,
+                    image:
+                        process.env.DEPLOY_URL +
+                        "/Public/DishImages/" +
+                        englishFruits[i] +
+                        `\\Dish${j}` +
+                        '\\1.jpg',
+                });
             }
         }
 
-        await queryInterface.bulkInsert(
-            "FruitImages",
-            FruitImageArray,
-            {}
-        );
+        await queryInterface.bulkInsert("DishImages", DishImageArray, {});
     },
 
     async down(queryInterface, Sequelize) {
-        await queryInterface.bulkDelete("FruitImages", null, {});
+        await queryInterface.bulkDelete("DishImages", null, {});
     },
 };

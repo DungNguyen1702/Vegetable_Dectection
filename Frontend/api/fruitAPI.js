@@ -1,14 +1,9 @@
 import axiosClient from "./axiosClient";
 
 const fruitAPI = {
-
-    getAllAdminProduct(params){
-        const url = '/api/product';
-        return axiosClient.get(url, params)
-    },
-    updateAdminProduct(productID){
-        const url = `/api/product/${productID}`;
-        return axiosClient.patch(url);
+    allFruit: async() => {
+        const url = "/api/fruit/";
+        return await axiosClient.get(url)
     },
 };
 export default fruitAPI;

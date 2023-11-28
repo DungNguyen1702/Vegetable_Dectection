@@ -6,14 +6,6 @@ import AntDesignicons from 'react-native-vector-icons/AntDesign';
 
 import HomePage from "../pages/HomePage";
 
-function HomeScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Home!</Text>
-        </View>
-    );
-}
-
 function SettingsScreen() {
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -55,24 +47,19 @@ export default function HomePageRouter() {
             />
             <Tab.Screen
                 name="CameraIcon"
-                options={{ headerShown: false }}
+                options={{ headerShown: false, tabBarStyle : styles.NormalTab }}
                 component={SettingsScreen}
                 listeners={({ navigation }) => ({
                     tabPress: (e) => {
-                        // Ngăn chặn chuyển đến tab khi được nhấp (nếu bạn muốn)
                         e.preventDefault();
-                        
-                        // Chuyển đến tab khi được nhấp và thực hiện các hành động khác nếu cần
                         navigation.navigate("CameraScreen");
-            
-                        // Hoặc thực hiện các hành động khác mà bạn muốn ở đây
                     },
                 })}
             />
             <Tab.Screen
                 name="Person"
                 component={SettingsScreen}
-                options={{ headerShown: false }}
+                options={{ headerShown: false , tabBarStyle : styles.NormalTab }}
             />
         </Tab.Navigator>
     );
@@ -80,6 +67,6 @@ export default function HomePageRouter() {
 
 const styles = StyleSheet.create({
     NormalTab: {
-        backgroundColor: 'red',
-    }
+        height : 55,
+    },
 });

@@ -18,6 +18,12 @@ const include2 = [
     {
         model : models.Dish,
         require : false,
+        include : [
+            {
+                model : models.DishImage,
+                attributes : ["image"],
+            }
+        ]
     },
     {
         model : models.FeedBack,

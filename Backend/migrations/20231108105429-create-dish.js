@@ -16,7 +16,7 @@ module.exports = {
             name: {
                 type: Sequelize.STRING,
             },
-            ingredient: {
+            ingredients: {
                 type: Sequelize.STRING,
             },
             nutrition: {

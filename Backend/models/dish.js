@@ -12,9 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     Dish.init(
         {
             name: DataTypes.STRING,
-            description : DataTypes.STRING,
+            ingredients : DataTypes.STRING,
+            nutrition : DataTypes.STRING,
             fruit_id : DataTypes.INTEGER,
-            taste: DataTypes.STRING,
             createdAt: {
                 type: DataTypes.DATE,
                 get: function () {
