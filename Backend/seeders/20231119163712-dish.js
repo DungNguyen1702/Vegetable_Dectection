@@ -70,7 +70,7 @@ module.exports = {
             fruit_id: 2
           },
           {
-            name: "Salad Táo với Hạt Giống Bí Ngô và Dầu Giấm Táo",
+            name: "Bánh Chuối Chiên Giòn",
             ingredients: 
             `
               - Chuối chín
@@ -85,16 +85,16 @@ module.exports = {
             fruit_id: 2
           },
           {
-            name: "Chuối Xào Tôm",
+            name: "Chuối Xào Dừa",
             ingredients: 
             `
               - Chuối chín
-              - Tôm tươi
-              - Rau sống (lá xà lách, cà rốt)
+              - Bột năng
+              - Nước cốt dừa
             `,
             nutrition: 
             `
-              - Tôm là nguồn protein và khoáng chất
+              - Cốt dừa chứa axit béo lành mạnh
               - Chuối cung cấp vitamin và khoáng chất
             `,
             fruit_id: 2
@@ -177,17 +177,17 @@ module.exports = {
             fruit_id: 4
           },
           {
-            name: "Mướp Đắng Nướng với Tỏi và Ớt",
+            name: "Mướp Đắng xào trứng",
             ingredients: 
             `
               - Mướp đắng
-              - Tỏi, ớt
+              - Trứng
               - Dầu olive
             `,
             nutrition: 
             `
               - Mướp đắng có tính chất chống oxi hóa
-              - Tỏi và ớt giúp cải thiện hệ miễn dịch
+              - Trứng đem lại lượng protein dồi dàu
             `,
             fruit_id: 4
           },
@@ -225,18 +225,16 @@ module.exports = {
             fruit_id: 5
           },
           {
-            name: "Xôi Bầu",
+            name: "Bầu nấu trứng vịt lộn",
             ingredients: 
             `
               -Bầu xanh nấu chín
-              -Gạo nếp
-              -Dầu dừa
-              -Đậu xanh luộc
+              -Trứng vịt lộn đã luộc
             `,
             nutrition: 
             `
               -Bầu chứa nước nhiều và giúp cung cấp khoáng chất
-              -Gạo nếp là nguồn tốt của carbohydrate và năng lượng
+              -Trứng vịt lộn đem lại đầy đủ dinh dưỡng 
             `,
             fruit_id: 5
           },
@@ -320,18 +318,34 @@ module.exports = {
             `,
             fruit_id: 7
           },
+          {
+            name: "Xào Súp Lơ với thịt bò",
+            ingredients: 
+            `
+              -Súp lơ cắt nhỏ
+              -Thịt bò nạm
+            `,
+            nutrition: 
+            `
+              -Súp lơ là nguồn chất xơ và vitamin C
+              -Thịt bò bổ sung chất đạm, protein
+            `,
+            fruit_id: 7
+          },
           // 22-24 Cabbage
           {
-            name: "Bắp Cải Luộc với Nước Mắm Pha và Ớt",
+            name: "Bắp Cải Luộc với Nước Mắm Trứng Pha và Ớt",
             ingredients: 
             `
               -Bắp cải luộc mềm
               -Nước mắm pha và ớt
+              -Trứng luộc
             `,
             nutrition: 
             `
               -Bắp cải là nguồn chất xơ và vitamin K
               -Nước mắm pha và ớt là gia vị tạo hương vị đặc trưng
+              -Trứng đem lại nguồn protein dồi dàu
             `,
             fruit_id: 8
           },
@@ -400,35 +414,34 @@ module.exports = {
             fruit_id: 9
           },
           {
-            name: "Ớt Chuông Xào Dưa Leo và Nấm",
+            name: "Ớt Chuông Xào Bò và dứa",
             ingredients: 
             `
               -Ớt chuông màu xanh đỏ
-              -Dưa leo cắt sợi
-              -Nấm tươi
-              -Gia vị: Muối, tiêu, dầu ăn
+              -Thịt bò nạm
             `,
             nutrition: 
             `
               -Ớt chuông là nguồn chất xơ và vitamin A
-              -Dưa leo và nấm cung cấp nhiều khoáng chất và vitamin
+              -Thịt bò cung cấp protein
+              -Dứa đem lại vitamin B6, C
             `,
             fruit_id: 9
           },
           //28-30 Carrot
           {
-            name: "Cà Rốt Xào Tỏi và Ớt",
+            name: "Cà Rốt Xào Trứng",
             ingredients: 
             `
               -Cà rốt cắt sợi
               -Tỏi xào thơm
-              -Ớt đỏ cắt lát
-              -Gia vị: Muối, tiêu, dầu ăn
+              -Trứng xào
             `,
             nutrition: 
             `
               -Cà rốt chứa nhiều beta-carotene, giúp duy trì tình trạng sức khỏe của mắt
               -Tỏi có tác dụng chống vi khuẩn và giảm cholesterol
+              -Trứng đem lại nguồn protein dồi dàu
             `,
             fruit_id: 10
           },
@@ -482,7 +495,7 @@ module.exports = {
             fruit_id: 11
           },
           {
-            name: "Bông Cải Nước Canh Dầu Hà",
+            name: "Bông Cải Nước Canh Dầu Hào",
             ingredients: 
             `
               -Bông cải cắt bông nhỏ
@@ -579,34 +592,33 @@ module.exports = {
             fruit_id: 13
           },
           {
-            name: "Bánh Dừa Nước Cốt Dừa",
+            name: "Bánh Đúc lá dứa Nước Cốt Dừa",
             ingredients: 
             `
               -Dừa nước bào nhuyễn
               -Bột nở
-              -Đường, muối
-              -Gia vị: Nước tương, dầu ăn
+              -Đường
+              -Bánh đúc lá dứa
             `,
             nutrition: 
             `
               -Dừa nước chứa axit lauric có tác dụng kháng khuẩn
-              -Bánh dừa cung cấp năng lượng từ carbohydrate
+              -Bánh đúc cung cấp năng lượng từ carbohydrate
             `,
             fruit_id: 13
           },
           {
-            name: "Súp Lươn Dừa và Rau Mầm",
+            name: "Mứt dứa",
             ingredients: 
             `
-              -Lươn tươi
-              -Nước dừa
-              -Rau mầm như giá đỗ, cần tây
-              -Gia vị: Muối, tiêu, hành tỏi
+              -Cơm dừa
+              -Vani
+              -Sữa tươi không đường
             `,
             nutrition: 
             `
               -Nước dừa có thể thay thế nước lươn trong súp, cung cấp hương vị đặc trưng
-              -Lươn là nguồn protein chất lượng và omega-3
+              -Cơm dừa và vani đem lại chất đạm, chất béo và chiếm 60% lượng mangan hàng ngày
             `,
             fruit_id: 13
           },
@@ -677,18 +689,17 @@ module.exports = {
             fruit_id: 15
           },
           {
-            name: "Salad Mãng Cầu với Dầu Giấm Balsamic",
+            name: "Mứt mãng cầu",
             ingredients: 
             `
-              -Mãng cầu bóc hạt
-              -Rau sống như rau xanh, cà chua
-              -Dầu giấm balsamic
-              -Hạt giống lanh
+              -1 quả mãng cầu xiêm chín
+              -Giấy bóng gói mứt
+              -Đường
             `,
             nutrition: 
             `
               -Mãng cầu cung cấp nhiều chất xơ và vitamin
-              -Dầu giấm balsamic có tác dụng chống oxy hóa
+              -Bổ sung vitamin B, C
             `,
             fruit_id: 15
           },
@@ -763,14 +774,12 @@ module.exports = {
             ingredients: 
             `
               -Thanh long cắt lát
-              -Tôm tươi
-              -Rau sống như rau xanh, cà chua
-              -Nước mắm pha
+              -300 gam cồi sò điệp
             `,
             nutrition: 
             `
               -Thanh long là nguồn vitamin C và chất xơ
-              -Tôm cung cấp protein và các khoáng chất
+              -Sò điệp cung cấp protein và các khoáng chất
             `,
             fruit_id: 17
           },
@@ -839,18 +848,17 @@ module.exports = {
             fruit_id: 18
           },
           {
-            name: "Canh Trứng Dưa Hấu",
+            name: "Canh Trứng cà chua",
             ingredients: 
             `
               -Trứng gà luộc
-              -Dưa hấu cắt lát
+              -cà chua cắt lát
               -Hành lá, rau mầm
-              -Gia vị: Muối, tiêu, nước mắm
             `,
             nutrition: 
             `
               -Trứng là nguồn protein chất lượng và nhiều vitamin
-              -Dưa hấu cung cấp nước và vitamin C
+              -Cà chua cung cấp nước và vitamin C
             `,
             fruit_id: 18
           },
@@ -921,13 +929,12 @@ module.exports = {
             fruit_id: 20
           },
           {
-            name: "Mì Xào Nho và Gà",
+            name: "Rượu nho",
             ingredients: 
             `
-              -Nho cắt đôi
-              -Gà luộc, cắt sợi
-              -Mì Ý nấu chín
-              -Gia vị: Muối, tiêu, dầu ăn
+              -Nho tím hoặc đỏ hoặc nho xanh
+              -Đường cát
+              -Túi vải để lược
             `,
             nutrition: 
             `
@@ -948,7 +955,8 @@ module.exports = {
             nutrition: 
             `
               -Nho cung cấp nhiều chất chống ô nhiễm và chất xơ
-              -Bánh ngọt và kem là nguồn năng lượng từ carbohydrate
+              -Chống oxi hóa và tăng cường hệ miễn dịch
+              -Giảm đột quỵ
             `,
             fruit_id: 20
           },
@@ -970,18 +978,17 @@ module.exports = {
             fruit_id: 21
           },
           {
-            name: "Salad Rau sống với Chanh Xanh và Gừng",
+            name: "Muối ớt chanh xanh",
             ingredients: 
             `
-              -Rau sống như cà rốt, dưa leo
               -Chanh xanh cắt lát
-              -Gừng tươi băm nhuyễn
-              -Nước mắm pha
+              -Sữa đặc
+              -Muối, ớt
             `,
             nutrition: 
             `
               -Chanh xanh là nguồn vitamin C và chất xơ
-              -Gừng có tác dụng kích thích tiêu hóa và chống vi khuẩn
+              -Đem lại nguồn dinh dưỡng gồm chất béo, vitamin A và C
             `,
             fruit_id: 21
           },
@@ -1150,7 +1157,7 @@ module.exports = {
           },
           //73-75 Okra
           {
-            name: "Canh Đậu Bắp Nấu Tôm",
+            name: "Đậu Bắp Xào Tôm",
             ingredients: 
             `
               -Đậu bắp xanh
@@ -1184,18 +1191,18 @@ module.exports = {
             fruit_id: 25
           },
           {
-            name: "Salad Đậu Bắp và Cà Rốt",
+            name: "Salad Đậu Bắp",
             ingredients: 
             `
               -Đậu bắp xanh luộc chín
-              -Cà rốt xanh cắt sợi
-              -Hành tây băm nhuyễn
-              -Nước mắm pha
+              -Ớt chuônt
+              -Trứng luộc
             `,
             nutrition: 
             `
               -Đậu bắp cung cấp chất xơ và vitamin C
-              -Cà rốt là nguồn beta-carotene và vitamin A              
+              -Ớt chuông là nguồn beta-carotene và vitamin A  
+              -Trứng cung cấp protein dồi dàu            
             `,
             fruit_id: 25
           },
@@ -1368,16 +1375,17 @@ module.exports = {
             fruit_id: 29
           },
           {
-            name: "Súp Lạc với Rau Củ",
+            name: "Đậu phộng rim tỏi ớt",
             ingredients: 
             `
-              -Lạc nấu nhừ
-              -Cà rốt, bắp cải, củ cải
+              -Nước mắm
+              -Đậu rang
+              -Tỏi ớt
+              -Đường
             `,
             nutrition: 
             `
               -Lạc cung cấp protein và chất béo
-              -Rau củ chứa nhiều vitamin và khoáng chất
             `,
             fruit_id: 29
           },
@@ -1571,18 +1579,17 @@ module.exports = {
             fruit_id: 33
           },
           {
-            name: "Bí Ngô Xào Tảo Spirulina",
+            name: "Gà hầm bí đỏ",
             ingredients: 
             `
               -Bí ngô
-              -Tảo Spirulina
-              -Cà chua cắt lát
-              -Hành, tỏi, ớt
+              -Thịt gà
+              -Hành, tiêu
             `,
             nutrition: 
             `
               -Bí ngô giàu chất chống oxi hóa
-              -Tảo Spirulina cung cấp nhiều protein và vitamin
+              -Thịt gà đem lại nhiều protein nhưng ít chất béo
             `,
             fruit_id: 33
           },
@@ -1608,7 +1615,6 @@ module.exports = {
             ingredients: 
             `
               -Củ cải trắng
-              -Thịt gà
               -Nước dừa
               -Hành tây băm
             `,
@@ -1651,32 +1657,33 @@ module.exports = {
             fruit_id: 35
           },
           {
-            name: "Salad Khế với Cá Ngừ",
+            name: "Gỏi khế bao tử ngọt",
             ingredients: 
             `
-              -Khế
-              -Cá ngừ tươi
+              -Bao tử heo
               -Rau sống (xà lách, cà rốt)
+              -Rượu trắng, gừng, giấm
+              -Khế
             `,
             nutrition: 
             `
               -Khế giúp hỗ trợ hệ tiêu hóa
-              -Cá ngừ là nguồn protein và axit béo omega-3
+              -Chống oxy hóa, cung cấp protein và cung cấp năng lượng cho cơ thể
             `,
             fruit_id: 35
           },
           {
-            name: "Khế Xào Tôm",
+            name: "Khế Xào thịt trâu",
             ingredients: 
             `
               -Khế
-              -Tôm tươi
+              -Thịt trâu
               -Hành, tỏi, ớt
             `,
             nutrition: 
             `
               -Khế giúp làm giảm cảm giác đau và viêm nhiễm
-              -Tôm là nguồn protein và canxi
+              -Thịt trâu là nguồn protein và canxi
             `,
             fruit_id: 35
           },
@@ -1760,7 +1767,7 @@ module.exports = {
             fruit_id: 37
           },
           {
-            name: "Xôi Khoai Lang Nước và Gừng",
+            name: "Khoai Lang tẩm gừng",
             ingredients: 
             `
               -Khoai lang nước nấu chín
@@ -1861,15 +1868,15 @@ module.exports = {
             name: "Chè Dưa Hấu và Sâm Bổ Lượng",
             ingredients: 
             `
-              -Dưa hấu cắt sợi
-              -Sâm bổ lượng đun nước
+              -Trân châu trắng nhỏ
+              -Dưa hấu cắt lát
               -Đường cát trắng
               -Hạt é
             `,
             nutrition: 
             `
               -Dưa hấu cung cấp nước và vitamin A, C
-              -Sâm bổ lượng là thảo dược truyền thống có tác dụng giải nhiệt
+              -Bao gồm nhiều khoáng chất thiết yếu cho cơ thể để duy trì nhu cầu hoạt động của cơ thể
             `,
             fruit_id: 39
           },
