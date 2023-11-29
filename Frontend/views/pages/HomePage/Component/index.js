@@ -12,8 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Component(props) {
     const navigation = useNavigation();
-    const { name, FruitImages, star, season, color, origin, taste, id } =
-        props.data;
+    const { name, FruitImages, star, season, color, origin, taste, id } = props.data;
     return (
         <TouchableOpacity
             style={styles.container}
@@ -23,6 +22,8 @@ export default function Component(props) {
                 <Image
                     source={{ uri: FruitImages[0].image + "" }}
                     style={styles.image}
+                    key={props.keyProp}
+                    resizeMode="cover"
                 ></Image>
                 <Stars starNum={star}></Stars>
             </View>
