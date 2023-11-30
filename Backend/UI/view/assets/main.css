@@ -1,0 +1,62 @@
+:root{
+    --primary-color: #61cfa2;
+}
+*{
+    box-sizing: inherit;
+    margin :0
+}
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    background-color: rgb(150, 248, 163);
+}
+.header{
+    display: flex;
+    justify-content: center;
+
+}
+.header__title{
+    margin : 8px 0 8px;
+    font-size: 16px;
+    color: #4999db;
+}
+.app__container{
+
+    
+}
+.take-snap{
+    justify-content: center;
+    text-align: center;
+}
+.take-snap__camera{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    background-color: antiquewhite;
+}
+.take-snap__btn{
+    border: none;
+    margin-top: 10px;
+    /* max-width: 100px; */
+    min-width: 100px;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+}
+.vegetable__content{
+}
+.vegetable__info{
+    padding: 10px 14px;
+    margin: 12px 70px;
+    list-style: none;
+    background-color: #bef8e0;
+    border-radius: 8px;
+    font-size: 12px;
+
+}
+.vegetable__info li{
+    margin: 4px 0;
+}

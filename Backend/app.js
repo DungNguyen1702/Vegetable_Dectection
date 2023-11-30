@@ -27,7 +27,6 @@ const uiPath = path.join(__dirname, 'UI/view');
 app.use(express.static(uiPath));
 app.use('/ui', express.static('public'))
 
-
 app.use('/api/auth', routes.auth)
 app.use('/api/fruit', routes.fruit)
 app.use('/api/user', routes.user)
