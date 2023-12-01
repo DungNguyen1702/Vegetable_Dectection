@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesignicons from 'react-native-vector-icons/AntDesign';
 
 import HomePage from "../pages/HomePage";
+import AccountInfo from "../pages/AccountInfo";
 
 function SettingsScreen() {
     return (
@@ -58,7 +59,7 @@ export default function HomePageRouter() {
             />
             <Tab.Screen
                 name="Person"
-                component={SettingsScreen}
+                component={AccountInfo}
                 options={{ headerShown: false , tabBarStyle : styles.NormalTab }}
             />
         </Tab.Navigator>

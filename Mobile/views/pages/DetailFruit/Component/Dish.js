@@ -6,10 +6,8 @@ export default function Dish(props) {
     const ingredients = Support.StringProccessSplit(info.ingredients);
     const nutrition = Support.StringProccessSplit(info.nutrition);
 
-    console.log(props.dishKey)
-
     return (
-        <View style={styles.container}>
+        <View style={styles.container} key={props.dishKey}>
             <Image
                 source={{ uri: info.DishImages[0].image }}
                 style={styles.image}

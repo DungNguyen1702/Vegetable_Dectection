@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./view/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <header class = "header">
+            <h1 class ="header__title">Vegetable Dectect</h1>
+        </header>
+        <div class="app__container">
+            <div class="take-snap">
+                <video id = "video" class ="take-snap__camera" width="320" height="240" autoplay></video>
+                <button id = "snap" class = "btn take-snap__btn">Snap</button>
+            </div>
+        </div>
+        <canvas id="canvas" style="width: 224px ; height: 224px"></canvas>
+        
+    </div>
+</body>
+<script src="./view/main.js"></script>
+</html>

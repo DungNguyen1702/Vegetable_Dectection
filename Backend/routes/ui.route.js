@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 const path = require("path");
 
-const filePath = path.join(__dirname, "../UI/view/test.html");
+const filePath = path.join(__dirname, "../UI/view/main.html");
 
 const htmlContent = fs.readFileSync(filePath, "utf-8");
 

@@ -1,10 +1,11 @@
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import {
     Image,
     ScrollView,
     StatusBar,
     StyleSheet,
     Text,
+    TouchableOpacity,
     View,
 } from "react-native";
 import ImageSlider from "./Component/ImageSlider";
@@ -16,6 +17,8 @@ import DishView from "./Component/DishView";
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import Support from "./Component/Support"
+import Icon from "react-native-vector-icons/AntDesign"
+
 
 export default function DetailFruit() {
     const route = useRoute();
@@ -102,6 +105,7 @@ export default function DetailFruit() {
     //     ],
     //     FeedBacks: [],
     // };
+    const navigation = useNavigation();
 
     const [props, setProps] = useState([]);
 
@@ -149,8 +153,17 @@ export default function DetailFruit() {
         <View style={styles.container}>
             <StatusBar backgroundColor="#5AA162" />
             <Header />
-            <ScrollView>
+            <View style = {styles.title}>
+                <TouchableOpacity
+                    onPress={()=>{
+                        navigation.goBack()
+                    }}
+                >
+                    <Icon name="back" size={35} color="black" style = {styles.iconBack} />
+                </TouchableOpacity>
                 <Text style = {styles.fruit_name}>{props.name}</Text>
+            </View>
+            <ScrollView>
                 <ImageSlider images={imageArray} />
                 <InfoView data = {props}/>
                 <DishView data = {props.Dishes}/>
@@ -174,9 +187,15 @@ const styles = StyleSheet.create({
         marginHorizontal : 50,
         marginVertical : 10,
         borderRadius : 30,
-        paddingVertical : 4
+        paddingVertical : 4,
     },
     spinnerText :{
         color : "white"
+    },
+    title : {},
+    iconBack : {
+        position :"absolute",
+        left : 5,
+        top : 17,
     }
 });
