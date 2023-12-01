@@ -8,7 +8,7 @@ const filePath = path.join(__dirname, "../UI/view/test.html");
 const htmlContent = fs.readFileSync(filePath, "utf-8");
 
 router.get("/main", (req, res) => {
-    res.send(htmlContent);
+    res.sendFile(filePath);
 });
 
 module.exports = router;

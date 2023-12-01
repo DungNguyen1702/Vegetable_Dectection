@@ -6,6 +6,8 @@ export default function DishView(props)
 {
     const dishes = props.data
 
+    console.log(dishes.length);
+
     return (
         <View style = {styles.container}>
             <Text style ={styles.title}>Món ăn</Text>
@@ -13,11 +15,14 @@ export default function DishView(props)
                 showsButtons={false}
                 style = {styles.wrapper}
             >
-            {dishes.map((item, index) => (
-                <View key={`dish_${index}`} >
-                    <Dish data = {item} key = {index}/>
-                </View>
-            ))}
+            {
+            dishes.map((item, index) => {
+                return (
+                    <View key={item.id || `dish_${index}`} >
+                        <Dish data = {item} dishKey={`dish_${index}`} />
+                    </View>
+                )
+            })}
         </Swiper>
         </View>
     )

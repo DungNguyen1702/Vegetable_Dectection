@@ -175,5 +175,8 @@ const styles = StyleSheet.create({
         marginVertical : 10,
         borderRadius : 30,
         paddingVertical : 4
-    }   
+    },
+    spinnerText :{
+        color : "white"
+    }
 });

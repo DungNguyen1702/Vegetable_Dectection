@@ -1,26 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/main.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="app">
-        <header class = "header">
-            <h1 class ="header__title">Vegetable Dectect</h1>
-        </header>
-        <div class="app__container">
-            <div class="take-snap">
-                <video id = "video" class ="take-snap__camera" width="320" height="240" autoplay></video>
-                <button id="snap" class = "btn take-snap__btn">Snap</button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                --primary-color: #61cfa2;
+            }
+            * {
+                box-sizing: inherit;
+                margin: 0;
+            }
+            html {
+                font-size: 62.5%;
+                line-height: 1.6rem;
+                font-family: "Roboto", sans-serif;
+                box-sizing: border-box;
+                background-color: rgb(150, 248, 163);
+            }
+            .header {
+                display: flex;
+                justify-content: center;
+            }
+            .header__title {
+                margin: 8px 0 8px;
+                font-size: 16px;
+                color: #4999db;
+            }
+            .app__container {
+            }
+            .take-snap {
+                justify-content: center;
+                text-align: center;
+            }
+            .take-snap__camera {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                border-radius: 6px;
+                background-color: antiquewhite;
+            }
+            .take-snap__btn {
+                border: none;
+                margin-top: 10px;
+                /* max-width: 100px; */
+                min-width: 100px;
+                padding: 4px;
+                border-radius: 5px;
+                background-color: var(--primary-color);
+            }
+            .vegetable__content {
+            }
+            .vegetable__info {
+                padding: 10px 14px;
+                margin: 12px 70px;
+                list-style: none;
+                background-color: #bef8e0;
+                border-radius: 8px;
+                font-size: 12px;
+            }
+            .vegetable__info li {
+                margin: 4px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <header class="header">
+                <h1 class="header__title">Vegetable Dectect</h1>
+            </header>
+            <div class="app__container">
+                <div class="take-snap">
+                    <video
+                        id="video"
+                        class="take-snap__camera"
+                        width="320"
+                        height="240"
+                        autoplay
+                    ></video>
+                    <button id="snap" class="btn take-snap__btn">Snap</button>
+                </div>
             </div>
-            
+            <!-- <canvas id="canvas" style="width: 224px ; height: 224px"></canvas> -->
         </div>
-        <!-- <canvas id="canvas" style="width: 224px ; height: 224px"></canvas> -->
-        
-    </div>
-</body>
-<script src="main.js"></script>
+        <script>
+            // require("dotenv").config();
+            // const { uploadImage } = require("../api/fruitAPI");
+            var video = document.getElementById("video");
+            // Lấy phương tiện truyền thông từ camera
+            const vegetable_content = document.createElement("div");
+    
+            navigator.mediaDevices
+                .getUserMedia({ video: true })
+                .then(function (stream) {
+                    // Đặt nguồn video của phần tử video thành stream từ camera
+                    video.srcObject = stream;
+                })
+                .catch(function (err) {
+                    console.log("Something went wrong!", err);
+                });
+    
+            // Khi nhấn nút snap, chụp ảnh từ video và vẽ lên canvas
+            document
+                .getElementById("snap")
+                .addEventListener("click", async function () {
+                    var canvas = document.createElement("canvas");
+                    var app_content =
+                        document.getElementsByClassName("app__container");
+                    var context = canvas.getContext("2d");
+                    canvas.width = 320;
+                    canvas.height = 240;
+                    context.drawImage(video, 0, 0, 320, 240);
+                    var imgData = canvas.toDataURL("image/jpeg");
+                    var link = document.createElement("a");
+                    link.href = imgData;
+                    link.download = "image.png";
+                    link.click();
+        //             var data = await uploadImage(imgData);
+        //             vegetable_content.innerHTML = `
+        //     <ul class = "vegetable__info">
+        //         <li>Name: ${data.name}</li>
+        //         <li>English Name: ${data.englishName}</li>
+        //         <li>Origin: ${data.origin} </li>
+        //         <li>Taste: ${data.taste}</li>
+        //         <li>Nutrition: ${data.nutrition}</li>
+        //         <li>Color: ${data.color}</li>
+        //         <li>Season: ${data.season}</li>
+        //         <li>Medical:; ${data.medical}</li>
+        //         <li>Star: ${data.star}</li>
+        //     </ul>
+        // `;
+        //             app_content[0].appendChild(vegetable_content);
+        //             console.log(imgData);
+                    // document.body.appendChild(vegetable_content)
+                });
+        </script>
+    </body>
+    
 </html>

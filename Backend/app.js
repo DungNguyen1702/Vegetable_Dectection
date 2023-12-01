@@ -22,10 +22,10 @@ const staticPath = path.join(__dirname, 'public');
 app.use(express.static(staticPath));
 app.use('/public', express.static('public'))
 
-// public UI
+// public View
 const uiPath = path.join(__dirname, 'UI/view');
 app.use(express.static(uiPath));
-app.use('/ui', express.static('public'))
+app.use('/ui', express.static('ui'))
 
 app.use('/api/auth', routes.auth)
 app.use('/api/fruit', routes.fruit)
