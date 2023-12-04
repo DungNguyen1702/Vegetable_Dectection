@@ -64,35 +64,35 @@ const uploadImage = async (file) => {
         vegetable_content.innerHTML =
             `
             <div class="vegetable__item vegetable__item-1">
-                <ul class = "vegetable__info">
-                    <li>Name: ${vegetableInfo.name}</li>
-                    <li>English Name: ${vegetableInfo.englishName}</li>
-                    <li>Origin: ${vegetableInfo.origin} </li>
-                    <li>Taste: ${vegetableInfo.taste}</li>
-                    <li>Nutrition: ${vegetableInfo.nutrition}</li>
-                    <li>Color: ${vegetableInfo.color}</li>
-                    <li>Season: ${vegetableInfo.season}</li>
-                    <li>Medical: ${vegetableInfo.medical}</li>
-                    <li>Star: ${vegetableInfo.star}</li>
+                <ul class = "vegetable__info vegetable">
+                    <li>Name:<p>${vegetableInfo.name}</p></li>
+                    <li>English Name: <p>${vegetableInfo.englishName}</p></li>
+                    <li>Origin: <p>${vegetableInfo.origin}</p></li>
+                    <li>Taste: <p>${vegetableInfo.taste}</p></li>
+                    <li>Nutrition: <p>${vegetableInfo.nutrition}</p></li>
+                    <li>Color: <p>${vegetableInfo.color}</p></li>
+                    <li>Season: <p>${vegetableInfo.season}</p></li>
+                    <li>Medical: <p>${vegetableInfo.medical}</p></li>
+                    <li>Star: <p>${vegetableInfo.star}</p></li>
                 </ul>
             </div>
             <div class="vegetable__item vegetable__item-2">
                 <ul class = "vegetable__info">
-                    <li>Name: ${vegetableDishes[0].name}</li>
+                    <li>Name: <p class = "disInline">${vegetableDishes[0].name}</p></li>
                     <li>Ingredients:</li>
                     <li>Nutrition:</li>
                 </ul>
             </div>
             <div class="vegetable__item vegetable__item-3">
                 <ul class = "vegetable__info">
-                    <li>Name: ${vegetableDishes[1].name}</li>
+                    <li>Name: <p class = "disInline">${vegetableDishes[1].name}</p></li>
                     <li>Ingredients:</li>
                     <li>Nutrition:</li>
                 </ul>
             </div>
             <div class="vegetable__item vegetable__item-4">
                 <ul class = "vegetable__info">
-                    <li>Name: ${vegetableDishes[2].name}</li>
+                    <li>Name: <p class = "disInline">${vegetableDishes[2].name}</p></li>
                     <li>Ingredients:</li>
                     <li>Nutrition:</li>
                 </ul>
@@ -109,7 +109,7 @@ const uploadImage = async (file) => {
             for (let y = 0; y <ingredientsList.length; y++){
                 var info = document.createElement('p')
                 info.textContent= ingredientsList[y]
-                info.style.margin = '10px 10px'  
+                info.style.margin = '10px 10px' 
                 ingredients.appendChild(info)
             }
             var nutrition = document.querySelector(`.vegetable__item-${i + 2} .vegetable__info li:nth-child(3)`);
