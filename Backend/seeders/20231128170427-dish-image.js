@@ -57,8 +57,8 @@ module.exports = {
                         process.env.DEPLOY_URL +
                         "/Public/DishImages/" +
                         englishFruits[i] +
-                        `\\Dish${j}` +
-                        '\\1.jpg',
+                        `/Dish${j}` +
+                        '/1.jpg',
                 });
             }
         }

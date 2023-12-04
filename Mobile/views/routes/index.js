@@ -6,6 +6,7 @@ import LoginPage from "../pages/Login"
 import HomePage from "./home.router"
 import Camera from "../pages/Camera"
 import DetailFruit from "../pages/DetailFruit"
+import ShowImage from "../pages/Camera/Component/showImage"
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ export default function AllRouter(){
                     <Stack.Screen name="HomePage" component={HomePage} options={{headerShown : false}} ></Stack.Screen>
                     <Stack.Screen name="CameraScreen" component={Camera} options={{headerShown : false}} ></Stack.Screen>
                     <Stack.Screen name="DetailFruit" component={DetailFruit} options={{headerShown : false}} ></Stack.Screen>
+                    {/* <Stack.Screen name="ShowImage" component={ShowImage} options={{headerShown : false}} ></Stack.Screen> */}
                 </Stack.Navigator>
             </NavigationContainer> 
         </View>

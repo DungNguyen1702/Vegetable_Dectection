@@ -22,7 +22,7 @@ import Icon from "react-native-vector-icons/AntDesign"
 
 export default function DetailFruit() {
     const route = useRoute();
-    const { id } = route.params;
+    const { id, data } = route.params;
     const [loading, setLoading] = useState(true);
     // const id = 7;
 
@@ -109,19 +109,28 @@ export default function DetailFruit() {
 
     const [props, setProps] = useState([]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                var fruitById = await fruitAPI.getFruitById(id);
-                setProps(fruitById.data);
-            } catch (e) {
-                console.log(e);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchData();
-    }, []);
+    console.log(id, data)
+
+    if( id !== null )
+    {
+        useEffect(() => {
+            const fetchData = async () => {
+                try {
+                    var fruitById = await fruitAPI.getFruitById(id);
+                    setProps(fruitById.data);
+                } catch (e) {
+                    console.log(e);
+                } finally {
+                    setLoading(false);
+                }
+            };
+            fetchData();
+        }, []);
+    }else
+    {
+        setProps(data);
+        setLoading(false);
+    }
 
     if(loading)
     {
@@ -145,7 +154,6 @@ export default function DetailFruit() {
     }
 
     // Chờ dữ liệu được lấy về trước khi render giao diện
-    
 
     // console.log(props.Dishes)
 
@@ -161,7 +169,9 @@ export default function DetailFruit() {
                 >
                     <Icon name="back" size={35} color="black" style = {styles.iconBack} />
                 </TouchableOpacity>
-                <Text style = {styles.fruit_name}>{props.name}</Text>
+                <View style = {styles.fruit_name}>
+                    <Text style = {styles.fruit_name_text}>{props.name}</Text>
+                </View>
             </View>
             <ScrollView>
                 <ImageSlider images={imageArray} />
@@ -180,14 +190,17 @@ const styles = StyleSheet.create({
     },
     fruit_name : {
         backgroundColor : "#00FFD1",
-        color : "#8B008B",
-        fontSize : 30,
-        textAlign : "center",
+        
         fontWeight : "bold",
         marginHorizontal : 50,
         marginVertical : 10,
         borderRadius : 30,
         paddingVertical : 4,
+    },
+    fruit_name_text :{
+        color : "#8B008B",
+        fontSize : 30,
+        textAlign : "center",
     },
     spinnerText :{
         color : "white"

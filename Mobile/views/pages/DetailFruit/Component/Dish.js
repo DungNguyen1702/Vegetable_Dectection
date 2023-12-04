@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         paddingHorizontal: 20,
         flexDirection: "column",
+        overflow : "scroll",
     },
     infoContainer: {
         width: 350,
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: "center",
         height : 170,
-        overflow : "scroll",
     },
     nutrition: {
         width: "45%",
@@ -94,5 +94,6 @@ const styles = StyleSheet.create({
     },
     item : {
         paddingBottom : 5,
+        fontSize : 10,
     }
 });
