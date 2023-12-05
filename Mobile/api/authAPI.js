@@ -3,7 +3,7 @@ import axiosClient from './axiosClient'
 const auth = {
     login: async (credentials) => {
         const url = '/api/auth/login'
-        return await axiosClient.post(url,credentials)
+        return await axiosClient.application.post(url,credentials)
     },
 }
 

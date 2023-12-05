@@ -58,14 +58,14 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "#A5EE9F",
         flexDirection: "column",
-        marginHorizontal: 18,
+        marginHorizontal: 20,
         marginVertical: 5,
         borderRadius: 20,
     },
     title: {
         fontWeight: "bold",
         textAlign: "center",
-        fontSize: 23,
+        fontSize: 20,
         paddingVertical: 10,
     },
     infoContainer: { 

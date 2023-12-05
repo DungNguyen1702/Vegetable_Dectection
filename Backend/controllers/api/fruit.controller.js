@@ -58,27 +58,8 @@ async function predictFruit(request, response) {
     
 }
 
-async function test(request, response) {
-
-    if (!request.file) {
-        return response.status(400).send("No file uploaded.");
-    }
-
-    console.log(1)
-    
-    const imageBuffer = request.file.buffer;
-
-    console.log(imageBuffer);
-
-    return response.status(200).send({
-        message: "upload Image success full",
-    })
-    
-}
-
 module.exports = {
     getFruits: index,
     getFruitById: getFruitById,
     predictFruit: predictFruit,
-    test : test
 };

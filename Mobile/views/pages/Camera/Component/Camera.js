@@ -4,29 +4,15 @@ import {
     TouchableOpacity,
     Text,
     StyleSheet,
-    Modal,
     ActivityIndicator,
+    Image,
 } from "react-native";
 import { Camera, CameraType } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
-import FeatherIcon from "react-native-vector-icons/Feather";
-import AntIcon from "react-native-vector-icons/AntDesign";
 import { useNavigation } from "@react-navigation/native";
 import fruitAPI from "../../../../api/fruitAPI";
 
-const LoadingModal = (loading, setLoading) => (
-    <Modal
-        transparent={true}
-        animationType="slide"
-        visible={loading}
-        onRequestClose={() => setLoading(false)}
-    >
-        <View style={styles.loadingModal}>
-            <ActivityIndicator size="large" color="#fff" />
-            <Text style={styles.loadingText}>Đang tải...</Text>
-        </View>
-    </Modal>
-);
+import Icons from "../../../../constants/Icons"
 
 export default function CamreraComponent() {
     const cameraRef = useRef(null);
@@ -34,8 +20,7 @@ export default function CamreraComponent() {
     const [hasPermission, setHasPermission] = useState(null);
     const [capturedImage, setCapturedImage] = useState(null);
     const [cameraType, setCameraType] = useState(CameraType.back);
-    const [data, setData] = useState();
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -43,31 +28,32 @@ export default function CamreraComponent() {
             setHasPermission(status === "granted");
         })();
     }, []);
+
     useEffect(() => {
+        var resultAPI;
         if (capturedImage !== null) {
             const fetchData = async () => {
                 try {
                     setLoading(true);
-                    var data = await fruitAPI.predictFruit(capturedImage);
-                    console.log(data)
-                    setData(data);
+                    resultAPI = await fruitAPI.predictFruit(capturedImage);
                 } catch (e) {
                     console.log(e);
                 } finally {
                     setLoading(false);
-                    // navigation.navigate("DetailFruit", { data });
+                    navigation.navigate("DetailFruit", {
+                        data: resultAPI.data.result,
+                    });
                 }
             };
             fetchData();
         }
     }, [capturedImage]);
 
-    console.log(capturedImage)
-
     const takePicture = async () => {
         if (cameraRef.current) {
             const { uri } = await cameraRef.current.takePictureAsync();
             setCapturedImage(uri);
+            setLoading(true);
         }
     };
 
@@ -75,6 +61,7 @@ export default function CamreraComponent() {
         const result = await ImagePicker.launchImageLibraryAsync();
         if (!result.canceled) {
             setCapturedImage(result.assets[0]?.uri);
+            setLoading(true);
         }
     };
 
@@ -102,43 +89,57 @@ export default function CamreraComponent() {
     return (
         <View style={styles.container}>
             <View style={styles.cameraView}>
+                {capturedImage ?
+                <Image
+                    source={{uri : capturedImage}}
+                    style ={styles.image}
+                ></Image>
+                : 
                 <Camera ref={cameraRef} style={styles.camera} type={cameraType}>
                     <Text></Text>
-                </Camera>
+                </Camera>}
             </View>
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                     style={styles.buttonHolder}
                     onPress={chooseImage}
+                    disabled = {loading}
                 >
-                    <AntIcon
-                        name="appstore-o"
-                        style={styles.icon}
-                        size={45}
-                    ></AntIcon>
+                    <Image
+                        source={Icons.imageLibraryIcon}
+                        style ={styles.icon}
+                        size = {45}
+                    ></Image>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonHolder}
                     onPress={takePicture}
+                    disabled = {loading}
                 >
-                    <FeatherIcon
-                        name="camera"
-                        style={styles.icon}
-                        size={45}
-                    ></FeatherIcon>
+                    <Image
+                        source={Icons.cameraIcon}
+                        style ={styles.icon}
+                        size = {45}
+                    ></Image>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={styles.buttonHolder}
                     onPress={changeCameraType}
+                    disabled = {loading}
                 >
-                    <FeatherIcon
-                        name="refresh-ccw"
-                        style={styles.icon}
-                        size={45}
-                    ></FeatherIcon>
+                    <Image
+                        source={Icons.refreshIcon}
+                        style ={styles.icon}
+                        size = {45}
+                    ></Image>
                 </TouchableOpacity>
             </View>
-            {loading && <LoadingModal loading = {loading} setLoading = {setLoading} />}
+            {loading && (
+                <View style={styles.loadingModal}>
+                    <ActivityIndicator size="large" color="#fff" />
+                    <Text style={styles.loadingText}>Đang nhận diện...</Text>
+                </View>
+            )}
         </View>
     );
 }
@@ -193,7 +194,10 @@ const styles = StyleSheet.create({
         borderRadius: 50,
     },
     loadingModal: {
-        flex: 1,
+        width: 200,
+        height: 120,
+        borderRadius: 20,
+        marginTop : -140,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -201,5 +205,9 @@ const styles = StyleSheet.create({
     loadingText: {
         color: "#fff",
         marginTop: 10,
+    },
+    image : {
+        height : "100%",
+        width : "100%",
     },
 });

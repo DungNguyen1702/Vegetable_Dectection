@@ -1,17 +1,10 @@
 "use strict";
-const fs = require("fs");
-const path = require("path");
 const hashHelper = require(process.cwd() + "/helpers/password-encrypter");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        const filePath = path.join(
-            __dirname,
-            "../public/Pictures/default-avatar.png"
-        );
-        const defaultAvatarBuffer = fs.readFileSync(filePath);
-
+        
         await queryInterface.bulkInsert(
             "Users",
             [
@@ -21,7 +14,7 @@ module.exports = {
                     birthday: "2003-02-17",
                     telephone: "0905116391",
                     address: "Number 1 in your heart",
-                    avatar: defaultAvatarBuffer, // Chuyển đổi hình ảnh thành Buffer
+                    avatar: "http://res.cloudinary.com/deei5izfg/image/upload/v1701792778/PBL4/dobwx0jvixqbqolexib3.jpg",
                     account: "dung1702",
                     password: hashHelper.hash("dung123"),
                 },
@@ -31,7 +24,7 @@ module.exports = {
                     birthday: "2003-02-17",
                     telephone: "0905116391",
                     address: "Number 1 in your heart",
-                    avatar: defaultAvatarBuffer, // Chuyển đổi hình ảnh thành Buffer
+                    avatar: "http://res.cloudinary.com/deei5izfg/image/upload/v1701792778/PBL4/dobwx0jvixqbqolexib3.jpg",
                     account: "phamduytin",
                     password: hashHelper.hash("tin123"),
                 },
@@ -41,7 +34,7 @@ module.exports = {
                     birthday: "2003-02-17",
                     telephone: "0905116391",
                     address: "Number 1 in your heart",
-                    avatar: defaultAvatarBuffer, // Chuyển đổi hình ảnh thành Buffer
+                    avatar: "http://res.cloudinary.com/deei5izfg/image/upload/v1701792778/PBL4/dobwx0jvixqbqolexib3.jpg",
                     account: "letuannguyenkhoi",
                     password: hashHelper.hash("khoi123"),
                 },

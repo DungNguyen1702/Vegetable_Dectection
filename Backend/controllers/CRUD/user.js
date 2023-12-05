@@ -7,6 +7,13 @@ async function showUserByAccount(account) {
     });
 }
 
+async function updateAvatar(id, avatar) {
+    return models.User.update(
+        avatar, {
+        where: { id: id },
+    });
+}
+
 async function index(startIndex, limit) {
     return models.User.findAndCountAll(
         objectCleaner.clean({
@@ -19,6 +26,7 @@ async function index(startIndex, limit) {
 }
 
 module.exports = {
-    getUserByAccount : showUserByAccount,
+    getUserByAccount: showUserByAccount,
     getAll: index,
+    updateAvatar : updateAvatar,
 };

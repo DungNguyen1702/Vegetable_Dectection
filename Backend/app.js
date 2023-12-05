@@ -30,6 +30,7 @@ app.use('/ui', express.static('ui'))
 app.use('/api/auth', routes.auth)
 app.use('/api/fruit', routes.fruit)
 app.use('/api/user', routes.user)
+app.use('/api/history', routes.history)
 app.use('/ui', routes.ui)
 
 module.exports = app

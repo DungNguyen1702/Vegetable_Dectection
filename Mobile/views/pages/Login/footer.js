@@ -4,12 +4,12 @@ import auth from '../../../api/authAPI'
 import { useState } from "react";
 
 
-export default function Footer ({account, password, setErrAccount, setErrPassword})
+export default function Footer ({account, password, setErrAccount, setErrPassword, setLoading, loading})
 {
     const navigation = useNavigation();
 
-
     const Login = ()=> {
+        setLoading(true)
         const callAPI = async () => {
             try {
                 const values = {
@@ -33,6 +33,9 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
                     setErrPassword(true);
                 }
             }
+            finally{
+                setLoading(false);
+            }
         }
         callAPI()
     }
@@ -41,15 +44,26 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
 
     return (
         <View style = {styles.container}>
-            <TouchableOpacity onPress={Register} >
+            <TouchableOpacity 
+                onPress={Register} 
+                disabled={loading}
+            >
                 <Text style = {styles.text}>Đăng kí</Text>
             </TouchableOpacity>
             
-            <TouchableOpacity onPress={Login} style = {styles.buttonLogin}>
+            <TouchableOpacity 
+                onPress={Login} 
+                style = {styles.buttonLogin}
+                disabled={loading}
+            >
                 <Text style = {styles.textLogin}>Đăng nhập</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={Register} style = {{alignItems : 'center'}}>
+            <TouchableOpacity 
+                onPress={Register} 
+                style = {{alignItems : 'center'}}
+                disabled={loading}
+            >
                 <Text style = {styles.text}>Tạo tài</Text>
                 <Text style = {styles.text}>khoản mới</Text>
             </TouchableOpacity>

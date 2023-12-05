@@ -68,6 +68,6 @@ export default function HomePageRouter() {
 
 const styles = StyleSheet.create({
     NormalTab: {
-        height : 80,
+        height : 90,
     },
 });

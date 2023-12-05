@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
 
 import Header from "../../../components/header/header";
 import FormLogin from "./formLogin";
@@ -13,8 +13,11 @@ export default function Login() {
     const [errAccount, setErrAccount] = useState(false)
     const [errPassword, setErrPassword] = useState(false)
 
+    const [loading, setLoading] = useState(false);
+
     return (
         <View style={styles.container}>
+            <StatusBar backgroundColor="#5AA162"></StatusBar>
             <Header/>
             <FormLogin 
                 setAccount = {setAccount}
@@ -27,8 +30,15 @@ export default function Login() {
                 password = {password}
                 setErrAccount={setErrAccount}
                 setErrPassword={setErrPassword}
+                setLoading={setLoading}
+                loading={loading}
             />
-            <StatusBar backgroundColor="#5AA162"></StatusBar>
+            {loading && (
+                <View style={styles.loadingModal}>
+                    <ActivityIndicator size="large" color="#fff" />
+                    <Text style={styles.loadingText}>Đang kiểm tra...</Text>
+                </View>
+            )}
         </View>
     );
 }
@@ -41,5 +51,19 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems : 'center',
         paddingHorizontal : 10,
+    },
+    loadingModal: {
+        position : "absolute",
+        width: 200,
+        height: 120,
+        borderRadius: 20,
+        marginTop : -300,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+    },
+    loadingText: {
+        color: "#fff",
+        marginTop: 10,
     },
 });

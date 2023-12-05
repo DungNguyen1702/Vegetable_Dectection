@@ -13,6 +13,8 @@ async function login(req, res) {
             return res.status(404).json({ message: "Không tìm thấy tài khoản" });
         }
 
+        console.log(user.dataValues)
+
         const isPasswordValid = await hashHelper.compare(
             password,
             user.password.trim()
@@ -22,15 +24,6 @@ async function login(req, res) {
                 message: "Sai mật khẩu",
             });
         }
-
-        // Tạo token sử dụng jsonwebtoken
-        // const token = jwt.sign(
-        //     { id: user.id, email: user.email, isAdmin: user.isAdmin },
-        //     process.env.JWT_SECRET_KEY,
-        //     {
-        //         expiresIn: "5h",
-        //     }
-        // );
 
         res.status(200).json({
             message: "login success!!",

@@ -1225,7 +1225,7 @@ const styles = StyleSheet.create({
     flatList: {
         width: "100%",
         marginTop: 10,
-        marginBottom: 134,
+        marginBottom: 160,
     },
     flatListContainer: {
         alignItems: "center",

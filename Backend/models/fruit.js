@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             Fruit.hasMany(models.FeedBack, {foreignKey : 'fruit_id'})
             Fruit.hasMany(models.Dish, {foreignKey : 'fruit_id'})
             Fruit.hasMany(models.LikeFruit, {foreignKey : 'fruit_id'})
+            Fruit.hasMany(models.History, {foreignKey : "fruit_id"} )
         }
     }
     Fruit.init(

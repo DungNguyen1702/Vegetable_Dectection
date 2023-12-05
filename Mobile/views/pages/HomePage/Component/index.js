@@ -12,7 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Component(props) {
     const navigation = useNavigation();
-    const { name, FruitImages, star, season, color, origin, taste, id } = props.data;
+    const { name, FruitImages, star, season, color, origin, taste, id } =
+        props.data;
     return (
         <TouchableOpacity
             style={styles.container}
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     title: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: "bold",
         color: "#8B008B",
         textAlign: "center",

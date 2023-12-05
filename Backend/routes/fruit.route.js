@@ -13,6 +13,4 @@ const upload = multer({ storage: storage });
 
 router.post('/predict_fruit', upload.single('image'), FruitApiControllers.predictFruit)
 
-router.post('/test', upload.single('image'), FruitApiControllers.test)
-
 module.exports = router
