@@ -17,13 +17,12 @@ import DishView from "./Component/DishView";
 import Spinner from 'react-native-loading-spinner-overlay';
 
 import Support from "./Component/Support"
-import Icon from "react-native-vector-icons/AntDesign"
+import Icons from "../../../constants/Icons";
 
 
 export default function DetailFruit() {
     const route = useRoute();
     const { id, data } = route.params;
-    console.log(route.params)
     const [loading, setLoading] = useState(true);
     const navigation = useNavigation();
 
@@ -80,7 +79,8 @@ export default function DetailFruit() {
                         navigation.goBack()
                     }}
                 >
-                    <Icon name="back" size={35} color="black" style = {styles.iconBack} />
+                    <Image source={Icons.back}
+                        style = {styles.iconBack} />
                 </TouchableOpacity>
                 <View style = {styles.fruit_name}>
                     <Text style = {styles.fruit_name_text}>{props.name}</Text>
@@ -123,5 +123,7 @@ const styles = StyleSheet.create({
         position :"absolute",
         left : 5,
         top : 15,
+        width : 35,
+        height : 35
     }
 });

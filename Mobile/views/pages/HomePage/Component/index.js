@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
     Alert,
     Image,
@@ -9,16 +9,31 @@ import {
 } from "react-native";
 import Stars from "../../../../components/star/stars";
 import { useNavigation } from "@react-navigation/native";
+import AntIcons from "react-native-vector-icons/AntDesign"
 
 export default function Component(props) {
     const navigation = useNavigation();
-    const { name, FruitImages, star, season, color, origin, taste, id } =
+    const { name, FruitImages, star, season, color, origin, taste, id, status } =
         props.data;
+
+    const [like, setLike] = useState(true);
+    
     return (
         <TouchableOpacity
             style={styles.container}
             onPress={() => navigation.navigate("DetailFruit", { id })}
         >
+            <TouchableOpacity
+                style={styles.heart}
+                onPress={()=>setLike(!like)}
+            >
+                <AntIcons
+                    name = {like ? "heart" : "hearto"}
+                    size = {30}
+                    color= {like ? "red" : "#FF90BC"}
+                >
+                </AntIcons>
+            </TouchableOpacity>
             <View style={styles.imageField}>
                 <Image
                     source={{ uri: FruitImages[0].image + "" }}
@@ -54,6 +69,12 @@ export default function Component(props) {
 }
 
 const styles = StyleSheet.create({
+    heart : {
+        position : "absolute",
+        zIndex : 1000,
+        top : 20,
+        right : 30,
+    },
     container: {
         width: "90%",
         flexDirection: "row",
