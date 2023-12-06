@@ -1,14 +1,17 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icons from "../../../../constants/Icons";
-import navigate from "@react-navigation/native"
+import { useNavigation } from "@react-navigation/native";
 
-const proccesButton = {
-    logout : ()=>{
-
-    }
-}
 
 export default function ButtonComponent() {
+    const navigation = useNavigation();
+
+    const proccesButton = {
+        logout : ()=>{
+            navigation.navigate("Login")       
+        }
+    }
+
     return (
         <ScrollView style={styles.container}>
             <TouchableOpacity style={styles.buttonHolder}>
@@ -31,7 +34,10 @@ export default function ButtonComponent() {
                 <Image source={Icons.historyIcon} style={styles.icon}></Image>
                 <Text>Lịch sử tìm kiếm</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={[styles.buttonHolder, {marginBottom : 20}]}>
+            <TouchableOpacity 
+                style={[styles.buttonHolder, {marginBottom : 20}]}
+                onPress={proccesButton.logout}
+            >
                 <Image source={Icons.logoutIcon} style={styles.icon}></Image>
                 <Text>Đăng xuất</Text>
             </TouchableOpacity>
