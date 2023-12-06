@@ -1,5 +1,12 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icons from "../../../../constants/Icons";
+import navigate from "@react-navigation/native"
+
+const proccesButton = {
+    logout : ()=>{
+
+    }
+}
 
 export default function ButtonComponent() {
     return (
