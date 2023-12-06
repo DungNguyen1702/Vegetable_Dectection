@@ -10,7 +10,7 @@ module.exports = {
             [
                 {
                     name: "Nguyễn Văn Dũng",
-                    gender: "Male",
+                    gender: "Nam",
                     birthday: "2003-02-17",
                     telephone: "0905116391",
                     address: "Number 1 in your heart",
@@ -20,7 +20,7 @@ module.exports = {
                 },
                 {
                     name: "Phạm Duy Tin",
-                    gender: "Male",
+                    gender: "Nam",
                     birthday: "2003-02-17",
                     telephone: "0905116391",
                     address: "Number 1 in your heart",
@@ -30,7 +30,7 @@ module.exports = {
                 },
                 {
                     name: "Lê Tuấn Nguyên Khôi",
-                    gender: "Male",
+                    gender: "Nam",
                     birthday: "2003-02-17",
                     telephone: "0905116391",
                     address: "Number 1 in your heart",

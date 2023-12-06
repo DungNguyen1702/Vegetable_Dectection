@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icons from "../../../../constants/Icons";
 const background = require("../../../../assets/account_background.jpeg");
 
-export default function ImageComponent() {
+export default function ImageComponent({user}) {
     return (
         <View style={styles.image}>
             <Image
@@ -12,7 +12,7 @@ export default function ImageComponent() {
             ></Image>
             <Image
                 source={{
-                    uri: "https://i.pinimg.com/736x/44/b1/aa/44b1aa2a5a9f579097e529e83c0bb2bd.jpg",
+                    uri: user.avatar,
                 }}
                 style={styles.avatar}
                 resizeMode="cover"
@@ -25,7 +25,7 @@ export default function ImageComponent() {
                     style = {styles.icon}        
                 />
             </TouchableOpacity>
-            <Text style={styles.accountName}>Tên account</Text>
+            <Text style={styles.accountName}>{user.name}</Text>
         </View>
     );
 }

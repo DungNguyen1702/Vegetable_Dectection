@@ -20,8 +20,9 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
                 const response = await auth.login(values);
 
                 if(response.status === 200){
-                    navigation.navigate("HomePage")
-                } 
+                    const user = response.data.user;
+                    navigation.navigate("HomePage", { user : user })
+                }
             }
             catch (e) {
                 console.log(e)

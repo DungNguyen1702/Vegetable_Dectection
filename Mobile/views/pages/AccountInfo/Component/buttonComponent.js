@@ -3,37 +3,55 @@ import Icons from "../../../../constants/Icons";
 import { useNavigation } from "@react-navigation/native";
 
 
-export default function ButtonComponent() {
+export default function ButtonComponent({user}) {
     const navigation = useNavigation();
 
     const proccesButton = {
         logout : ()=>{
             navigation.navigate("Login")       
+        },
+        updateInfo : ()=>{
+            navigation.navigate("UpdateInfo", {user : user})
         }
     }
 
     return (
         <ScrollView style={styles.container}>
-            <TouchableOpacity style={styles.buttonHolder}>
+            
+            {/* Change info */}
+            <TouchableOpacity 
+                style={styles.buttonHolder}
+                onPress={proccesButton.updateInfo}
+            >
                 <Image source={Icons.userIcon} style={styles.icon}></Image>
                 <Text>Thông tin cá nhân</Text>
             </TouchableOpacity>
+            
+            {/* Change password */}
             <TouchableOpacity style={styles.buttonHolder}>
                 <Image source={Icons.passwordIcon} style={styles.icon}></Image>
                 <Text>Thay đổi mật khẩu</Text>
             </TouchableOpacity>
+            
+            {/* LikeDish */}
             <TouchableOpacity style={styles.buttonHolder}>
                 <Image source={Icons.dishIcon} style={styles.icon}></Image>
                 <Text>Những món ăn đã thích</Text>
             </TouchableOpacity>
+            
+            {/* LikeFruit */}
             <TouchableOpacity style={styles.buttonHolder}>
                 <Image source={Icons.fruitIcon} style={styles.icon}></Image>
                 <Text>Những trái cây đã thích</Text>
             </TouchableOpacity>
+            
+            {/* History */}
             <TouchableOpacity style={styles.buttonHolder}>
                 <Image source={Icons.historyIcon} style={styles.icon}></Image>
                 <Text>Lịch sử tìm kiếm</Text>
             </TouchableOpacity>
+            
+            {/* Logout */}
             <TouchableOpacity 
                 style={[styles.buttonHolder, {marginBottom : 20}]}
                 onPress={proccesButton.logout}

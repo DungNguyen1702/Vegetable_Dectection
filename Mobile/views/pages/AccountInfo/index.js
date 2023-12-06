@@ -1,15 +1,19 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import ButtonComponent from "./Component/buttonComponent";
 import ImageComponent from "./Component/imageComponent";
+import { useRoute } from "@react-navigation/native";
 
 
 
 export default function AccountInfo()
 {
+    const route = useRoute();
+    const {user} = route.params;
+
     return (
         <View style ={styles.container}>
-            <ImageComponent/>
-            <ButtonComponent/>
+            <ImageComponent user = {user}/>
+            <ButtonComponent user = {user}/>
         </View>
     )
 }

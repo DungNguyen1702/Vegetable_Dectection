@@ -6,6 +6,7 @@ import AntDesignicons from 'react-native-vector-icons/AntDesign';
 
 import HomePage from "../pages/HomePage";
 import AccountInfo from "../pages/AccountInfo";
+import { useRoute } from "@react-navigation/native";
 
 function SettingsScreen() {
     return (
@@ -16,6 +17,10 @@ function SettingsScreen() {
 }
 
 export default function HomePageRouter() {
+    const route = useRoute();
+
+    const {user} = route.params;
+
     const Tab = createBottomTabNavigator();
     return (
         <Tab.Navigator
@@ -44,22 +49,25 @@ export default function HomePageRouter() {
             <Tab.Screen
                 name="Home Page"
                 component={HomePage}
+                initialParams={{ user }}
                 options={{ headerShown: false, tabBarStyle: styles.NormalTab }}
             />
             <Tab.Screen
                 name="CameraIcon"
                 options={{ headerShown: false, tabBarStyle : styles.NormalTab }}
                 component={SettingsScreen}
+                initialParams={{ user }}
                 listeners={({ navigation }) => ({
                     tabPress: (e) => {
                         e.preventDefault();
-                        navigation.navigate("CameraScreen");
+                        navigation.navigate("CameraScreen", {user});
                     },
                 })}
             />
             <Tab.Screen
                 name="Person"
                 component={AccountInfo}
+                initialParams={{ user }}
                 options={{ headerShown: false , tabBarStyle : styles.NormalTab }}
             />
         </Tab.Navigator>

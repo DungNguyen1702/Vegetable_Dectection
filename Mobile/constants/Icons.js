@@ -9,4 +9,5 @@ export default Icons = {
     historyIcon : require("../assets/Icons/history.png"),
     logoutIcon : require("../assets/Icons/exit.png"),
     changeAvaIcon : require("../assets/Icons/pencil.png"),
+    back : require("../assets/Icons/back.png"),
 }
