@@ -8,6 +8,10 @@ const upload = multer({ storage: storage });
 
 router.get('/', UserApiControllers.getUsers)
 
-router.put('/change_avatar/', upload.single('image'), UserApiControllers.changeAvatar)
+router.put('/update_avatar/', upload.single('image'), UserApiControllers.updateAvatar)
+
+router.put('/update_info/', UserApiControllers.updateInfo)
+
+router.put('/update_password/', UserApiControllers.updatePassword)
 
 module.exports = router
