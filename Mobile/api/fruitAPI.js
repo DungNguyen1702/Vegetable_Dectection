@@ -2,9 +2,9 @@ import axiosClient from "./axiosClient";
 import axios from "axios";
 
 const fruitAPI = {
-    allFruit: async () => {
+    allFruit: async (search) => {
         const url = "/api/fruit/";
-        return await axiosClient.application.get(url);
+        return await axiosClient.application.get(url, {txt_search  : search !== '' ? search : null});
     },
 
     getFruitById: async (id) => {

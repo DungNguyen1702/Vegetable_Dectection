@@ -5,14 +5,14 @@ const { getAllFruit, getById } = require("../CRUD/fruit");
 
 async function index(request, response) {
     try {
-        const page = Number.parseInt(request.query.page);
-        const limit = Number.parseInt(request.query.limit);
+        const txt_search = request.body.txt_search
 
-        const startIndex = (page - 1) * limit;
+        console.log(txt_search)
 
-        const queryResult = await getAllFruit(startIndex, limit);
+        const queryResult = await getAllFruit(txt_search);
 
-        queryResult.count = queryResult.rows.length;
+        queryResult.count = queryResult.count/4
+
         return response.status(200).json(queryResult);
     } catch (error) {
         return response.status(500).json({

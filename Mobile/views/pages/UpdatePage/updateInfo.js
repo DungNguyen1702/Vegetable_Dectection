@@ -14,7 +14,7 @@ import Icons from "../../../constants/Icons";
 import { RadioButton } from "react-native-paper";
 import { Calendar } from "react-native-calendars";
 import { useEffect, useState } from "react";
-import userAPI from "../../../api/authAPI copy";
+import userAPI from "../../../api/userAPI";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 function proccesDate(rawBirthday)

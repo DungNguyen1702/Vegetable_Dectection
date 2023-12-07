@@ -20,10 +20,13 @@ export default function HomePage() {
     const [dataFruit,setDataFruit] = useState([])
     const [dataFruitCount, setDataFruitCount] = useState(0)
 
+    const [search , setSearch] = useState('');
+
     useEffect(() => {
+        console.log(search)
         const fetchData = async () => {
             try {
-                var allFruit = await fruitAPI.allFruit();
+                var allFruit = await fruitAPI.allFruit(search);
                 setDataFruitCount(allFruit.data.count);
                 setDataFruit(allFruit.data.rows);
             } catch (e) {
@@ -31,7 +34,7 @@ export default function HomePage() {
             }
         };
         fetchData();
-    }, []);
+    }, [search]);
 
     return (
         <View style={styles.container}>
@@ -54,6 +57,7 @@ export default function HomePage() {
                 <TextInput
                     style={styles.searchInput}
                     placeholder="Nhập tên loại trái cây"
+                    onChange={(event)=>setSearch(event.nativeEvent.text)}
                 />
                 {/* List fruits */}
                 {dataFruitCount > 0 ? (

@@ -31,12 +31,19 @@ const include2 = [
     }
 ];
 
-async function index(startIndex, limit) {
+async function index(txt_search) {
+
+    const conditions = txt_search ? {
+        [Op.or]: [
+            { name: { [Op.like]: `%${txt_search}%` } },
+            { englishName: { [Op.like]: `%${txt_search}%` } }
+        ],
+    } : null
+
     return models.Fruit.findAndCountAll(
         objectCleaner.clean({
             include: include,
-            offset: Number.isNaN(startIndex) ? null : startIndex,
-            limit: Number.isNaN(limit) ? null : limit,
+            where: conditions,
             order: [["id", "ASC"]],
         })
     );
