@@ -38,14 +38,6 @@ const uploadImage = async (file) => {
         const vegetableInfo = data.result
         const fruitImages = vegetableInfo.FruitImages
         const vegetableDishes = vegetableInfo.Dishes
-        
-        // console.log(ImageProccess(fruitImages))
-        // console.log(fruitImages[0]['image'])
-        // console.log(StringProccessSplit(vegetableDishes[0].ingredients))
-        // console.log(fruitImages[0]['image'])
-        // console.log((vegetableDishes[0].DishImages)[0]['image'])
-        // console.log((vegetableDishes[1].DishImages)[0]['image'])
-        // console.log((vegetableDishes[2].DishImages)[0]['image'])
 
         var style =
         `
@@ -121,7 +113,6 @@ const uploadImage = async (file) => {
                 nutrition.appendChild(info)
             }
         }
-        // console.log(data);
     } catch (error) {
         console.error("Error uploading image:", error);
     }

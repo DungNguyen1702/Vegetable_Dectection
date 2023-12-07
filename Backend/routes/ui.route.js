@@ -1,12 +1,19 @@
-const express = require("express");
+const express = require('express');
+const UserApiControllers = require('../controllers/api/user.controller')
 const router = express.Router();
-const fs = require("fs");
-const path = require("path");
+const multer = require('multer');
 
-const filePath = path.join(__dirname, "../UI/view/main.html");
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
 
-router.get("/main", (req, res) => {
-    res.sendFile(filePath);
-});
+router.get('/', UserApiControllers.getUsers)
 
-module.exports = router;
+router.get('/user_by_id/:id', UserApiControllers.showById)
+
+router.put('/update_avatar/', upload.single('image'), UserApiControllers.updateAvatar)
+
+router.put('/update_info/', UserApiControllers.updateInfo)
+
+router.put('/update_password/', UserApiControllers.updatePassword)
+
+module.exports = router
