@@ -10,8 +10,6 @@ const mapStateToProps = (state) => ({
 
 const AccountInfo = ({ user })=>
 {
-    console.log(user.name)
-
     return (
         <View style ={styles.container}>
             <ImageComponent user = {user}/>

@@ -13,8 +13,6 @@ async function login(req, res) {
             return res.status(404).json({ message: "Không tìm thấy tài khoản" });
         }
 
-        console.log(user.dataValues)
-
         const isPasswordValid = await hashHelper.compare(
             password,
             user.password.trim()

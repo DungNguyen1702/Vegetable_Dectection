@@ -78,8 +78,6 @@ export default function UpdateInfo() {
                     setLoading(false);
                     
                     if (response.data.result) {
-
-                        console.log("User update_page : " + response.data.result.name)
                         navigation.navigate("HomePage", {
                             user: response.data.result,
                         });
