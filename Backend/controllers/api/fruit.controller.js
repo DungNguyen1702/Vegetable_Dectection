@@ -5,9 +5,7 @@ const { getAllFruit, getById } = require("../CRUD/fruit");
 
 async function index(request, response) {
     try {
-        const txt_search = request.body.txt_search
-
-        console.log(request)
+        const txt_search = request.query.txt_search
 
         const queryResult = await getAllFruit(txt_search);
 
