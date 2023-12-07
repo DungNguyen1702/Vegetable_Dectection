@@ -5,6 +5,7 @@ import {
     Text,
     TextInput,
     FlatList,
+    Image,
 } from "react-native";
 import Header from "../../../components/header/header";
 import FeatherIcon from "react-native-vector-icons/Feather";
@@ -13,31 +14,67 @@ import Component from "./Component";
 import fruitAPI from "../../../api/fruitAPI";
 import { useRoute } from "@react-navigation/native";
 import { connect } from "react-redux";
+import likeAPI from "../../../api/likeAPI";
+import Images from "../../../constants/Image"
 
 const mapStateToProps = (state) => ({
     user: state.user,
 });
 
-const HomePage = ({ user }) => {
+const filterLikeFruit = (dataFruit, likeFruit) => {
+    return dataFruit.map((fruit) => {
+        fruit.statusLike = false;
 
+        likeFruit && likeFruit.forEach((like) => {
+            if (fruit.id === like.fruit_id) { // Assuming the ID property of fruit is 'id'
+                fruit.statusLike = true;
+            }
+        });
+
+        return fruit;
+    });
+};
+
+const HomePage = ({ user }) => {
     const [dataFruit, setDataFruit] = useState([]);
-    const [dataFruitCount, setDataFruitCount] = useState(0);
+    const [likeFruit, setLikeFruit] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const [search, setSearch] = useState("");
+    const [likeDataLoaded, setLikeDataLoaded] = useState(false);
+
+
+    useEffect(()=>{
+        if(!likeDataLoaded)
+        {
+            console.log(1)
+            const api = async()=>{
+                setLikeFruit(await likeAPI.getLikeFruit(user.id))
+                setLikeDataLoaded(true);
+            }
+            api();
+        }
+    },[loading])
 
     useEffect(() => {
-        console.log(search);
+        console.log(2)
+        if (!likeDataLoaded) {
+            return; // Chưa có dữ liệu từ cả hai nguồn
+        }
+    
         const fetchData = async () => {
             try {
                 var allFruit = await fruitAPI.allFruit(search);
-                setDataFruitCount(allFruit.data.count);
-                setDataFruit(allFruit.data.rows);
+                setDataFruit(filterLikeFruit(allFruit.data.rows, likeFruit));
             } catch (e) {
                 console.log(e);
+            } finally {
+                setLoading(false);
             }
         };
+    
         fetchData();
-    }, [search]);
+    }, [likeDataLoaded, search]);
 
     return (
         <View style={styles.container}>
@@ -62,25 +99,31 @@ const HomePage = ({ user }) => {
                     placeholder="Nhập tên loại trái cây"
                     onChange={(event) => setSearch(event.nativeEvent.text)}
                 />
+            </View>
+            <View style = {{width : "100%"}}>
                 {/* List fruits */}
-                {dataFruitCount > 0 ? (
+                {loading ?
+                (
+                    <View style={styles.notFound}>
+                        <Image
+                            source = {Images.loading}
+                            style ={styles.iconNotFound}
+                        />
+                        <Text style={styles.textNotFound}>Đang tải dữ liệu</Text>
+                    </View>
+                ) :
+                (
                     <FlatList
                         style={styles.flatList}
                         contentContainerStyle={styles.flatListContainer}
                         data={dataFruit}
                         renderItem={({ item }) => (
-                            <Component data={item} keyProp={item.id} />
+                            <Component data={item} userId={user.id} keyProp={item.id} />
                         )}
                         keyExtractor={(eachEvent) => eachEvent.id.toString()}
                         scrollEnabled={true}
                     />
-                ) : (
-                    <View style={styles.notFound}>
-                        <Text style={styles.textNotFound}>
-                            Fruit not found !!!
-                        </Text>
-                    </View>
-                )}
+                )} 
             </View>
         </View>
     );
@@ -119,18 +162,20 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     notFound: {
-        flex: 1,
-        marginTop: 150,
+        width : "100%",
+        height : "100%",
         alignItems: "center",
     },
     iconNotFound: {
-        width: 120,
-        height: 120,
+        width: 200,
+        height: 200,
+        position : "absolute",
+        top : 40,
     },
     textNotFound: {
-        marginTop: 10,
+        marginTop: 250,
         color: "#195851",
-        fontSize: 16,
+        fontSize: 20,
     },
 });
 

@@ -10,13 +10,34 @@ import {
 import Stars from "../../../../components/star/stars";
 import { useNavigation } from "@react-navigation/native";
 import AntIcons from "react-native-vector-icons/AntDesign"
+import likeAPI from "../../../../api/likeAPI";
 
 export default function Component(props) {
     const navigation = useNavigation();
-    const { name, FruitImages, star, season, color, origin, taste, id, status } =
+    const { name, FruitImages, star, season, color, origin, taste, id, statusLike } =
         props.data;
 
-    const [like, setLike] = useState(true);
+    const user_id = props.userId
+
+    const [tempLike, setTempLike] = useState(statusLike);
+
+    useEffect(() => {
+        if (tempLike !== statusLike) {
+            // Gửi yêu cầu API chỉ khi tempLike khác với statusLike
+            const api = async () => {
+                try {
+                    if (tempLike) {
+                        await likeAPI.createLikeFruit(id, user_id);
+                    } else {
+                        await likeAPI.deleteLikeFruit(id, user_id);
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            };
+            api();
+        }
+    }, [tempLike, statusLike, id, user_id]);
     
     return (
         <TouchableOpacity
@@ -25,12 +46,12 @@ export default function Component(props) {
         >
             <TouchableOpacity
                 style={styles.heart}
-                onPress={()=>setLike(!like)}
+                onPress={()=>setTempLike(!tempLike)}
             >
                 <AntIcons
-                    name = {like ? "heart" : "hearto"}
+                    name = {tempLike ? "heart" : "hearto"}
                     size = {30}
-                    color= {like ? "red" : "#FF90BC"}
+                    color= {tempLike ? "#F781BC" : "#F857B5"}
                 >
                 </AntIcons>
             </TouchableOpacity>
