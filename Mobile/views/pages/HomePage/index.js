@@ -12,18 +12,21 @@ import { useEffect, useState } from "react";
 import Component from "./Component";
 import fruitAPI from "../../../api/fruitAPI";
 import { useRoute } from "@react-navigation/native";
-export default function HomePage() {
+import { connect } from "react-redux";
 
-    const route = useRoute();
-    const {user} = route.params;
+const mapStateToProps = (state) => ({
+    user: state.user,
+});
 
-    const [dataFruit,setDataFruit] = useState([])
-    const [dataFruitCount, setDataFruitCount] = useState(0)
+const HomePage = ({ user }) => {
 
-    const [search , setSearch] = useState('');
+    const [dataFruit, setDataFruit] = useState([]);
+    const [dataFruitCount, setDataFruitCount] = useState(0);
+
+    const [search, setSearch] = useState("");
 
     useEffect(() => {
-        console.log(search)
+        console.log(search);
         const fetchData = async () => {
             try {
                 var allFruit = await fruitAPI.allFruit(search);
@@ -57,7 +60,7 @@ export default function HomePage() {
                 <TextInput
                     style={styles.searchInput}
                     placeholder="Nhập tên loại trái cây"
-                    onChange={(event)=>setSearch(event.nativeEvent.text)}
+                    onChange={(event) => setSearch(event.nativeEvent.text)}
                 />
                 {/* List fruits */}
                 {dataFruitCount > 0 ? (
@@ -81,7 +84,7 @@ export default function HomePage() {
             </View>
         </View>
     );
-}
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -130,3 +133,5 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
 });
+
+export default connect(mapStateToProps)(HomePage);

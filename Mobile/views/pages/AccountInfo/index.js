@@ -1,16 +1,16 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import ButtonComponent from "./Component/buttonComponent";
 import ImageComponent from "./Component/imageComponent";
-import { useRoute } from "@react-navigation/native";
-import userAPI from "../../../api/userAPI";
-import { useEffect } from "react";
+import { connect } from "react-redux";
 
+const mapStateToProps = (state) => ({
+    user: state.user,
+});
+  
 
-
-export default function AccountInfo()
+const AccountInfo = ({ user })=>
 {
-    const route = useRoute();
-    const {user} = route.params;
+    console.log(user.name)
 
     return (
         <View style ={styles.container}>
@@ -29,3 +29,5 @@ const styles = StyleSheet.create({
     },
     
 })
+
+export default connect(mapStateToProps)(AccountInfo);
