@@ -99,6 +99,8 @@ export default function CamreraComponent() {
                     <Text></Text>
                 </Camera>}
             </View>
+                    
+            {/* Library Image */}
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
                     style={styles.buttonHolder}

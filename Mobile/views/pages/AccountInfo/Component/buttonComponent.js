@@ -2,7 +2,6 @@ import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "rea
 import Icons from "../../../../constants/Icons";
 import { useNavigation } from "@react-navigation/native";
 
-
 export default function ButtonComponent({user}) {
     const navigation = useNavigation();
 
