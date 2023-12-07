@@ -7,7 +7,7 @@ async function index(request, response) {
     try {
         const txt_search = request.body.txt_search
 
-        console.log(txt_search)
+        console.log(request)
 
         const queryResult = await getAllFruit(txt_search);
 
