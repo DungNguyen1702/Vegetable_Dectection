@@ -8,6 +8,8 @@ const upload = multer({ storage: storage });
 
 router.get('/', UserApiControllers.getUsers)
 
+router.get('/user_by_id/:id', UserApiControllers.showById)
+
 router.put('/update_avatar/', upload.single('image'), UserApiControllers.updateAvatar)
 
 router.put('/update_info/', UserApiControllers.updateInfo)

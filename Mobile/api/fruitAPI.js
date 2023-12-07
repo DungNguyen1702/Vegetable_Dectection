@@ -3,7 +3,7 @@ import axios from "axios";
 
 const fruitAPI = {
     allFruit: async (search) => {
-        const url = "/api/fruit/";
+        const url = "/api/fruit/?txt_search=" + search;
         return await axiosClient.application.get(url);
     },
 

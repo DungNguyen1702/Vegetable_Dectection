@@ -43,7 +43,7 @@ export default function UpdateInfo() {
 
     const route = useRoute();
 
-    const {user} = route.params;
+    var {user} = route.params;
 
     const [name, setName] = useState(user.name);
     const [gender, setGender] = useState(user.gender=='Nam' ? true : false);
@@ -56,6 +56,9 @@ export default function UpdateInfo() {
 
     useEffect(() => {
         if (loading) {
+
+            let response; 
+
             const fetchData = async () => {
                 try {
                     const updateUser = {
@@ -67,22 +70,20 @@ export default function UpdateInfo() {
                         id : user.id,
                     }
 
-                    await userAPI.updateInfo(updateUser);
+                    response = await userAPI.updateInfo(updateUser);
 
                 } catch (e) {
                     console.log(e);
                 } finally {
                     setLoading(false);
                     
-                    user.name = name;
-                    user.birthday = reverseDate(birthday);
-                    user.telephone = telephone;
-                    user.gender = gender ? "Nam" : "Nữ";
-                    user.address = address;
+                    if (response.data.result) {
+                        console.log(response.data.result)
+                        navigation.navigate("HomePage", {
+                            user: response.data.result,
+                        });
+                    }
 
-                    navigation.navigate("HomePage", {
-                        user: user,
-                    });
                 }
             };
             fetchData();
@@ -112,6 +113,7 @@ export default function UpdateInfo() {
                 <Image />
                 <Image source={background} style={styles.background} />
                 <Image source={{ uri: user.avatar }} style={styles.avatar} />
+                <Text style={styles.headerTitle}>Thông tin cá nhân</Text>
             </View>
             <ScrollView style={styles.infoContainer}>
 
@@ -263,6 +265,13 @@ const styles = StyleSheet.create({
         top: 60,
         alignItems: "center",
     },
+
+    headerTitle: {
+        color: "#5AA162",
+        fontSize: 30,
+        fontWeight: "bold",
+    },
+
     iconBack: {
         height: 40,
         width: 40,
@@ -339,7 +348,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
     },
     button: {
-        width: 200,
+        width: 150,
         height: 50,
         borderRadius: 30,
         backgroundColor: "#A2C579",

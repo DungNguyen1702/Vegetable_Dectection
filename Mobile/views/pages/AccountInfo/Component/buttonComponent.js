@@ -12,6 +12,9 @@ export default function ButtonComponent({user}) {
         },
         updateInfo : ()=>{
             navigation.navigate("UpdateInfo", {user : user})
+        },
+        updatePassword : ()=>{
+            navigation.navigate("UpdatePassword", {user : user})
         }
     }
 
@@ -28,7 +31,10 @@ export default function ButtonComponent({user}) {
             </TouchableOpacity>
             
             {/* Change password */}
-            <TouchableOpacity style={styles.buttonHolder}>
+            <TouchableOpacity 
+                style={styles.buttonHolder}
+                onPress={proccesButton.updatePassword}
+            >
                 <Image source={Icons.passwordIcon} style={styles.icon}></Image>
                 <Text>Thay đổi mật khẩu</Text>
             </TouchableOpacity>

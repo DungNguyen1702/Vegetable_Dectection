@@ -24,6 +24,22 @@ async function index(request, response) {
     }
 }
 
+async function showById(request,response)
+{
+    try {
+        const id = request.params.id
+
+        const queryResult = await getUserByID(id);
+
+        return response.status(200).json(queryResult);
+    } catch (error) {
+        return response.status(500).json({
+            message: "Something went wrong!",
+            error: error,
+        });
+    }
+}
+
 async function updateAva(request, response) {
     try {
         const {id} = request.body
@@ -130,4 +146,5 @@ module.exports = {
     updateAvatar : updateAva,
     updateInfo : updateInfo,
     updatePassword : updatePassword,
+    showById : showById,
 }
