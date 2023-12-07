@@ -43,7 +43,7 @@ export default function UpdateInfo() {
 
     const route = useRoute();
 
-    var {user} = route.params;
+    const user = route.params.user
 
     const [name, setName] = useState(user.name);
     const [gender, setGender] = useState(user.gender=='Nam' ? true : false);

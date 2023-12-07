@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StyleSheet, Text, View } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -7,6 +7,7 @@ import AntDesignicons from 'react-native-vector-icons/AntDesign';
 import HomePage from "../pages/HomePage";
 import AccountInfo from "../pages/AccountInfo";
 import { useRoute } from "@react-navigation/native";
+import userAPI from "../../api/userAPI";
 
 function SettingsScreen() {
     return (

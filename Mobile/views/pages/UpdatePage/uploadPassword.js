@@ -80,8 +80,6 @@ export default function UpdatePassword() {
                         setCheckOldPassword(false)
                     }
                     
-                    console.log(checkNewPassword1, checkNewPassword2, checkOldPassword)
-
                     if(!checkNewPassword1 && !checkNewPassword2 && !checkOldPassword)
                     {
                         navigation.navigate("HomePage", {
