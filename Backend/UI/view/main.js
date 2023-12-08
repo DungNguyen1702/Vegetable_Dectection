@@ -33,12 +33,17 @@ const uploadImage = async (file) => {
                 body: formData,
             }
         );
-
         const data = await response.json();
         const vegetableInfo = data.result
         const fruitImages = vegetableInfo.FruitImages
         const vegetableDishes = vegetableInfo.Dishes
-
+        // console.log(ImageProccess(fruitImages))
+        // console.log(fruitImages[0]['image'])
+        // console.log(StringProccessSplit(vegetableDishes[0].ingredients))
+        // console.log(fruitImages[0]['image'])
+        // console.log((vegetableDishes[0].DishImages)[0]['image'])
+        // console.log((vegetableDishes[1].DishImages)[0]['image'])
+        // console.log((vegetableDishes[2].DishImages)[0]['image'])
         var style =
         `
             .vegetable__item-1::after{
