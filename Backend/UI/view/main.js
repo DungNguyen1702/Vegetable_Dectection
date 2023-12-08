@@ -118,7 +118,6 @@ const uploadImage = async (file) => {
                 nutrition.appendChild(info)
             }
         }
-        // console.log(data);
     } catch (error) {
         console.error("Error uploading image:", error);
     }

@@ -29,7 +29,6 @@ export default function ImageSlider(props){
 const styles = StyleSheet.create({
     wrapper : {
         justifyContent : "center",
-        alignItems : "left",
         height : 240,
         marginTop : 10,
     },
@@ -39,7 +38,7 @@ const styles = StyleSheet.create({
         marginHorizontal : 10,
     },
     image: {
-        width: 350,
+        width: 365,
         height: 225,
         resizeMode: "cover",
         borderRadius : 20,
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     whiteBackground : {
         position : "absolute",
         height : 225,
-        width : 350,
+        width : 365,
         backgroundColor : 'rgba(255, 255, 255, 0.4)',
         zIndex : 1000,
         borderRadius : 20,

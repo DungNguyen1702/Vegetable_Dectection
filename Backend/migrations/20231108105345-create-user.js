@@ -26,7 +26,7 @@ module.exports = {
                 type: Sequelize.STRING,
             },
             avatar: {
-                type : Sequelize.BLOB('medium'),
+                type : Sequelize.STRING,
             },
             account: {
                 allowNull: false,

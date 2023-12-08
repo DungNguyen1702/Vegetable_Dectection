@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
     Alert,
     Image,
@@ -9,15 +9,52 @@ import {
 } from "react-native";
 import Stars from "../../../../components/star/stars";
 import { useNavigation } from "@react-navigation/native";
+import AntIcons from "react-native-vector-icons/AntDesign"
+import likeAPI from "../../../../api/likeAPI";
 
 export default function Component(props) {
     const navigation = useNavigation();
-    const { name, FruitImages, star, season, color, origin, taste, id } = props.data;
+    const { name, FruitImages, star, season, color, origin, taste, id, statusLike } =
+        props.data;
+
+    const user_id = props.userId
+
+    const [tempLike, setTempLike] = useState(statusLike);
+
+    useEffect(() => {
+        if (tempLike !== statusLike) {
+            // Gửi yêu cầu API chỉ khi tempLike khác với statusLike
+            const api = async () => {
+                try {
+                    if (tempLike) {
+                        await likeAPI.createLikeFruit(id, user_id);
+                    } else {
+                        await likeAPI.deleteLikeFruit(id, user_id);
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            };
+            api();
+        }
+    }, [tempLike, statusLike, id, user_id]);
+    
     return (
         <TouchableOpacity
             style={styles.container}
             onPress={() => navigation.navigate("DetailFruit", { id })}
         >
+            <TouchableOpacity
+                style={styles.heart}
+                onPress={()=>setTempLike(!tempLike)}
+            >
+                <AntIcons
+                    name = {tempLike ? "heart" : "hearto"}
+                    size = {30}
+                    color= {tempLike ? "#F781BC" : "#F857B5"}
+                >
+                </AntIcons>
+            </TouchableOpacity>
             <View style={styles.imageField}>
                 <Image
                     source={{ uri: FruitImages[0].image + "" }}
@@ -53,6 +90,12 @@ export default function Component(props) {
 }
 
 const styles = StyleSheet.create({
+    heart : {
+        position : "absolute",
+        zIndex : 1000,
+        top : 20,
+        right : 30,
+    },
     container: {
         width: "90%",
         flexDirection: "row",
@@ -81,7 +124,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     title: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: "bold",
         color: "#8B008B",
         textAlign: "center",

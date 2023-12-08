@@ -26,10 +26,12 @@ const styles = StyleSheet.create({
     container : {
         flexDirection : 'row',
         width : '100%',
-        paddingVertical : 20,
+        paddingBottom : 20,
         alignItems : 'center',
         justifyContent : 'center',
         backgroundColor : '#5AA162',
+        // backgroundColor : 'red',
+        paddingTop : 50
     },
     logo : {
         height : 70,
@@ -49,10 +51,10 @@ const styles = StyleSheet.create({
         marginHorizontal : 2,
     },
     bigText : {
-        fontSize : 25,
+        fontSize : 20,
     },
     smallText : {
-        fontSize : 20,
+        fontSize : 15,
         marginHorizontal : 9,
     },
     text : {

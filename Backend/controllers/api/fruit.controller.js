@@ -5,14 +5,12 @@ const { getAllFruit, getById } = require("../CRUD/fruit");
 
 async function index(request, response) {
     try {
-        const page = Number.parseInt(request.query.page);
-        const limit = Number.parseInt(request.query.limit);
+        const txt_search = request.query.txt_search
 
-        const startIndex = (page - 1) * limit;
+        const queryResult = await getAllFruit(txt_search);
 
-        const queryResult = await getAllFruit(startIndex, limit);
+        queryResult.count = queryResult.count/4
 
-        queryResult.count = queryResult.rows.length;
         return response.status(200).json(queryResult);
     } catch (error) {
         return response.status(500).json({
@@ -39,6 +37,8 @@ async function getFruitById(request, response) {
 
 async function predictFruit(request, response) {
     
+    console.log(1)
+
     if (!request.file) {
         return response.status(400).send("No file uploaded.");
     }

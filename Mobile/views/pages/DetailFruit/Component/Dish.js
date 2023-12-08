@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
 import Support from "./Support";
 
 export default function Dish(props) {
@@ -7,31 +7,33 @@ export default function Dish(props) {
     const nutrition = Support.StringProccessSplit(info.nutrition);
 
     return (
-        <View style={styles.container} key={props.dishKey}>
-            <Image
-                source={{ uri: info.DishImages[0].image }}
-                style={styles.image}
-            />
-            <View style={styles.blurView}>
-                <Text style={styles.dishName}>{info.name}</Text>
-                <View style={styles.nutritionAndIngredentContainer}>
-                    <View style={styles.nutrition}>
-                        <Text style = {styles.label}>Giá trị dinh dưỡng</Text>
-                        <View>
-                            {nutrition.map((item) => (
-                                <Text style = {styles.item}>{item}</Text>
-                            ))}
+        <View key={props.dishKey}>
+            <View style={styles.container}>
+                <Image
+                    source={{ uri: info.DishImages[0].image }}
+                    style={styles.image}
+                />
+                <ScrollView style={styles.blurView}>
+                    <Text style={styles.dishName}>{info.name}</Text>
+                    <View style={styles.nutritionAndIngredentContainer}>
+                        <View style={styles.nutrition}>
+                            <Text style={styles.label}>Giá trị dinh dưỡng</Text>
+                            <View>
+                                {nutrition.map((item) => (
+                                    <Text style={styles.item}>{item}</Text>
+                                ))}
+                            </View>
+                        </View>
+                        <View style={styles.ingredient}>
+                            <Text style={styles.label}>Thành phần</Text>
+                            <View>
+                                {ingredients.map((item) => (
+                                    <Text style={styles.item}>{item}</Text>
+                                ))}
+                            </View>
                         </View>
                     </View>
-                    <View style={styles.ingredient}>
-                        <Text style = {styles.label}>Thành phần</Text>
-                        <View>
-                            {ingredients.map((item) => (
-                                <Text style = {styles.item}>{item}</Text>
-                            ))}
-                        </View>
-                    </View>
-                </View>
+                </ScrollView>
             </View>
         </View>
     );
@@ -55,27 +57,22 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         paddingHorizontal: 20,
         flexDirection: "column",
-    },
-    infoContainer: {
-        width: 350,
-        height: 225,
-        position: "absolute",
-        zIndex: 1000,
+        overflow: "scroll",
     },
     dishName: {
         textAlign: "center",
-        fontSize: 16,
+        fontSize: 15,
         fontStyle: "italic",
         color: "#860A35",
-        fontWeight : "bold",
-        paddingVertical : 10,
+        fontWeight: "bold",
+        paddingVertical: 10,
+        overflow : "visible",
     },
     nutritionAndIngredentContainer: {
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        height : 170,
-        overflow : "scroll",
+        paddingBottom : 30,
     },
     nutrition: {
         width: "45%",
@@ -85,14 +82,15 @@ const styles = StyleSheet.create({
     ingredient: {
         width: "45%",
     },
-    label : {
-        color : "#AF2655",
-        fontWeight : "bold",
-        paddingBottom : 10,
-        fontSize : 15,
-        textAlign : "center",
+    label: {
+        color: "#AF2655",
+        fontWeight: "bold",
+        paddingBottom: 10,
+        fontSize: 13,
+        textAlign: "center",
     },
-    item : {
-        paddingBottom : 5,
-    }
+    item: {
+        paddingBottom: 5,
+        fontSize: 10,
+    },
 });
