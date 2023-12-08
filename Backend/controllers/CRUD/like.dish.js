@@ -3,11 +3,15 @@ const models = require(process.cwd() + "/models");
 const include = [
     {
         model : models.Dish,
-        attributes : ['id', 'fruit_id'],
+        required : true,
         include : [
             {
                 model : models.Fruit,
-                attributes : ['id','name']        
+                required : true
+            },
+            {
+                model : models.DishImage,
+                attributes : ['image']
             }
         ]
     }

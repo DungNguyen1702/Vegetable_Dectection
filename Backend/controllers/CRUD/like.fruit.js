@@ -1,7 +1,21 @@
 const models = require(process.cwd() + "/models");
 
+const include = [
+    {
+        model : models.Fruit,
+        required : true,
+        include : [
+            {
+                model: models.FruitImage,
+                attributes: ["image"],
+            },
+        ]
+    }
+]
+
 async function getLikeFruit(id) {
     return models.LikeFruit.findAll({
+        include : include,
         where: { user_id: id },
     });
 }

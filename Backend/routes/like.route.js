@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/like_fruit/:id', LikeApiControllers.showLikeFruit)
 
-router.get('/like_fruit_by_user_id/:id', LikeApiControllers.showLikeDishByUserID)
+router.get('/like_dishes_by_user_id/:id', LikeApiControllers.showLikeDishByUserID)
 
 router.get('/like_dish/', LikeApiControllers.showLikeDish)
 
