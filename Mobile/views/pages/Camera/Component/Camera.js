@@ -36,6 +36,7 @@ export default function CamreraComponent() {
                 try {
                     setLoading(true);
                     resultAPI = await fruitAPI.predictFruit(capturedImage);
+                    
                 } catch (e) {
                     console.log(e);
                 } finally {
