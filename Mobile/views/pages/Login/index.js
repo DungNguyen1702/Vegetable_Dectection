@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet, Text, ActivityIndicator } from "react-native";
 
-import Header from "../../../components/header/header";
+import Header from "../../../components/header/header";1
 import FormLogin from "./formLogin";
 import Footer from "./footer";
 import { useState } from "react";

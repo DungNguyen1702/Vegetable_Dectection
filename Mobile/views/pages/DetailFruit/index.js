@@ -22,7 +22,7 @@ import Icons from "../../../constants/Icons";
 
 export default function DetailFruit() {
     const route = useRoute();
-    const { id, data } = route.params;
+    const { id, data, user, change } = route.params;
     const [loading, setLoading] = useState(true);
     const navigation = useNavigation();
 
@@ -76,7 +76,14 @@ export default function DetailFruit() {
             <View style = {styles.title}>
                 <TouchableOpacity
                     onPress={()=>{
-                        navigation.goBack()
+                        if(id)
+                        {
+                            navigation.goBack()
+                        }
+                        else
+                        {
+                            navigation.navigate("CameraScreen", {user : user, change : !change})
+                        }
                     }}
                 >
                     <Image source={Icons.back}

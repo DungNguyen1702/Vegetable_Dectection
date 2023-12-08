@@ -43,7 +43,7 @@ export default function ImageComponent({user}) {
                     uri: capturedImage,
                 }}
                 style={styles.avatar}
-                resizeMode="contain"
+                resizeMode="cover"
             ></Image>
             <TouchableOpacity
                 style = {styles.changeButton}
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         width : 150,
         borderRadius : 80,
         marginTop : 80,
-        backgroundColor : "red",
+        backgroundColor : "#C5E898",
         borderColor : "black",
     },
     image : {

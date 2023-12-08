@@ -6,12 +6,12 @@ import { useRoute } from "@react-navigation/native";
 
 export default function Camera() {
     const route = useRoute();
-    const {user} = route.params;
+    const {user, change} = route.params;
 
     return (
         <View style={styles.container}>
             <Header/>
-            <CamreraComponent/>
+            <CamreraComponent user={user} change={change}/>
         </View>
     );
 }

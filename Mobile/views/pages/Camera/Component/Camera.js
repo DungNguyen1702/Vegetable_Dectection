@@ -13,8 +13,10 @@ import { useNavigation } from "@react-navigation/native";
 import fruitAPI from "../../../../api/fruitAPI";
 
 import Icons from "../../../../constants/Icons"
+import historyAPI from "../../../../api/historyAPI";
 
-export default function CamreraComponent() {
+export default function CamreraComponent(params) {
+    const {user, change} = params
     const cameraRef = useRef(null);
     const navigation = useNavigation();
     const [hasPermission, setHasPermission] = useState(null);
@@ -27,7 +29,12 @@ export default function CamreraComponent() {
             const { status } = await Camera.requestCameraPermissionsAsync();
             setHasPermission(status === "granted");
         })();
+        console.log(capturedImage)
     }, []);
+    
+    useEffect(()=>{
+        setCapturedImage(null)
+    },[change])
 
     useEffect(() => {
         var resultAPI;
@@ -36,13 +43,16 @@ export default function CamreraComponent() {
                 try {
                     setLoading(true);
                     resultAPI = await fruitAPI.predictFruit(capturedImage);
-                    
+                    const fruit_id = resultAPI.data.result.id
+                    historyAPI.createHistory(capturedImage, fruit_id, user.id)
                 } catch (e) {
                     console.log(e);
                 } finally {
                     setLoading(false);
                     navigation.navigate("DetailFruit", {
                         data: resultAPI.data.result,
+                        user: user,
+                        change : change,
                     });
                 }
             };

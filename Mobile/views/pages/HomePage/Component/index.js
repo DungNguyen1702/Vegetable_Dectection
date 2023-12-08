@@ -17,7 +17,8 @@ export default function Component(props) {
     const { name, FruitImages, star, season, color, origin, taste, id, statusLike } =
         props.data;
 
-    const user_id = props.userId
+    const {user} = props
+    const user_id = user.id
 
     const [tempLike, setTempLike] = useState(statusLike);
 
@@ -42,7 +43,7 @@ export default function Component(props) {
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={() => navigation.navigate("DetailFruit", { id })}
+            onPress={() => navigation.navigate("DetailFruit", { id : id, user : user })}
         >
             <TouchableOpacity
                 style={styles.heart}

@@ -1,7 +1,13 @@
-import { Image, StyleSheet, Text, View, ScrollView } from "react-native";
+import { Image, StyleSheet, Text, View, ScrollView, TouchableOpacity } from "react-native";
 import Support from "./Support";
+import AntIcons from "react-native-vector-icons/AntDesign"
+import { useState } from "react";
 
 export default function Dish(props) {
+
+    const [tempLike,setTempLike] = useState(true);
+    const [likeDataLoaded, setLikeDataLoaded] = useState(false);
+
     const info = props.data;
     const ingredients = Support.StringProccessSplit(info.ingredients);
     const nutrition = Support.StringProccessSplit(info.nutrition);
@@ -14,7 +20,19 @@ export default function Dish(props) {
                     style={styles.image}
                 />
                 <ScrollView style={styles.blurView}>
-                    <Text style={styles.dishName}>{info.name}</Text>
+                    <View style={styles.headerHolder}>
+                        <Text style={styles.dishName}>{info.name}</Text>
+                        <TouchableOpacity
+                            style={styles.heart}
+                            onPress={() => setTempLike(!tempLike)}
+                        >
+                            <AntIcons
+                                name={tempLike ? "heart" : "hearto"}
+                                size={30}
+                                color={tempLike ? "#F781BC" : "#F857B5"}
+                            ></AntIcons>
+                        </TouchableOpacity>
+                    </View>
                     <View style={styles.nutritionAndIngredentContainer}>
                         <View style={styles.nutrition}>
                             <Text style={styles.label}>Giá trị dinh dưỡng</Text>
@@ -40,6 +58,18 @@ export default function Dish(props) {
 }
 
 const styles = StyleSheet.create({
+    headerHolder : {
+        flexDirection : "row",
+        alignItems : "center",
+        justifyContent : "space-between",
+        width : "100%",
+    },
+    heart : {
+        width : 30,
+        height : 30,
+        alignItems : "center",
+        justifyContent : "center"
+    },
     container: {
         justifyContent: "center",
         alignItems: "center",
@@ -61,18 +91,19 @@ const styles = StyleSheet.create({
     },
     dishName: {
         textAlign: "center",
-        fontSize: 15,
+        fontSize: 16,
         fontStyle: "italic",
         color: "#860A35",
         fontWeight: "bold",
         paddingVertical: 10,
-        overflow : "visible",
+        overflow: "visible",
+        width :  "90%"
     },
     nutritionAndIngredentContainer: {
         flexDirection: "row",
         justifyContent: "space-around",
         alignItems: "center",
-        paddingBottom : 30,
+        paddingBottom: 30,
     },
     nutrition: {
         width: "45%",
@@ -86,11 +117,11 @@ const styles = StyleSheet.create({
         color: "#AF2655",
         fontWeight: "bold",
         paddingBottom: 10,
-        fontSize: 13,
+        fontSize: 14,
         textAlign: "center",
     },
     item: {
         paddingBottom: 5,
-        fontSize: 10,
+        fontSize: 12,
     },
 });

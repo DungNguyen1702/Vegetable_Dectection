@@ -43,11 +43,9 @@ const HomePage = ({ user }) => {
     const [search, setSearch] = useState("");
     const [likeDataLoaded, setLikeDataLoaded] = useState(false);
 
-
     useEffect(()=>{
         if(!likeDataLoaded)
         {
-            console.log(1)
             const api = async()=>{
                 setLikeFruit(await likeAPI.getLikeFruit(user.id))
                 setLikeDataLoaded(true);
@@ -57,7 +55,6 @@ const HomePage = ({ user }) => {
     },[loading])
 
     useEffect(() => {
-        console.log(2)
         if (!likeDataLoaded) {
             return; // Chưa có dữ liệu từ cả hai nguồn
         }
@@ -118,7 +115,7 @@ const HomePage = ({ user }) => {
                         contentContainerStyle={styles.flatListContainer}
                         data={dataFruit}
                         renderItem={({ item }) => (
-                            <Component data={item} userId={user.id} keyProp={item.id} />
+                            <Component data={item} user={user} keyProp={item.id} />
                         )}
                         keyExtractor={(eachEvent) => eachEvent.id.toString()}
                         scrollEnabled={true}
