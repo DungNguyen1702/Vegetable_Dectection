@@ -5,6 +5,7 @@ import Swiper from "react-native-swiper";
 export default function DishView(props)
 {
     const dishes = props.data
+    const {fruit_id ,user_id} = props
 
     return (
         <View style = {styles.container}>
@@ -16,7 +17,7 @@ export default function DishView(props)
             {
             dishes.map((item, index) => {
                 return (
-                    <Dish data = {item} dishKey = {`dish_${index}`} />
+                    <Dish data = {item} dishKey = {`dish_${index}`}/>
                 )
             })}
         </Swiper>

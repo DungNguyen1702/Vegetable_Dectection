@@ -1,8 +1,34 @@
 const models = require(process.cwd() + "/models");
 
-async function getLikeDish(id) {
+const include = [
+    {
+        model : models.Dish,
+        attributes : ['id', 'fruit_id'],
+        include : [
+            {
+                model : models.Fruit,
+                attributes : ['id','name']        
+            }
+        ]
+    }
+]
+
+async function getLikeDish(fruit_id, user_id) {
     return models.LikeDish.findAll({
-        where: { user_id: id },
+        include : include,
+        where: { 
+            user_id: user_id,
+            "$Dish.Fruit.id$" : fruit_id,
+        },
+    });
+}
+
+async function getLikeDishByUserID(user_id) {
+    return models.LikeDish.findAll({
+        include : include,
+        where: { 
+            user_id: user_id,
+        },
     });
 }
 
@@ -22,5 +48,6 @@ async function destroy(userId, dishId) {
 module.exports = {
     createLikeDish : create,
     destroyLikeDish : destroy,
-    getLikeDish : getLikeDish
+    getLikeDish : getLikeDish,
+    getLikeDishByUserID : getLikeDishByUserID
 };

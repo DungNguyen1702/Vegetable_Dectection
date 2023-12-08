@@ -1,14 +1,30 @@
 require('dotenv').config();
 
-const { getLikeDish, createLikeDish, destroyLikeDish} = require('../CRUD/like.dish');
+const { getLikeDish, createLikeDish, destroyLikeDish, getLikeDishByUserID} = require('../CRUD/like.dish');
 const { getLikeFruit, createLikeFruit, destroyLikeFruit} = require('../CRUD/like.fruit');
 
 async function showLikeDish(request,response)
 {
     try {
-        const id = request.params.id
+        const {fruit_id, user_id} = request.query;
 
-        const queryResult = await getLikeDish(id);
+        const queryResult = await getLikeDish(fruit_id, user_id);
+
+        return response.status(200).json(queryResult);
+    } catch (error) {
+        return response.status(500).json({
+            message: "Something went wrong!",
+            error: error,
+        });
+    }
+}
+
+async function showLikeDishByUserID(request,response)
+{
+    try {
+        const id = request.params.id;
+
+        const queryResult = await getLikeDishByUserID(id);
 
         return response.status(200).json(queryResult);
     } catch (error) {
@@ -115,6 +131,7 @@ async function removeLikeDish(request,response)
 module.exports = {
     showLikeDish : showLikeDish,
     showLikeFruit : showLikeFruit,
+    showLikeDishByUserID : showLikeDishByUserID,
     addLikeDish : addLikeDish,
     addLikeFruit : addLikeFruit,
     removeLikeDish : removeLikeDish,

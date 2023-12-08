@@ -96,7 +96,7 @@ export default function DetailFruit() {
             <ScrollView>
                 <ImageSlider images={imageArray} />
                 <InfoView data = {props}/>
-                <DishView data = {props.Dishes}/>
+                <DishView data = {props.Dishes} fruit_id ={id} user_id = {user.id}/>
             </ScrollView>
         </View>
     );
