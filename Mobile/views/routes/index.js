@@ -8,6 +8,7 @@ import Camera from "../pages/Camera"
 import DetailFruit from "../pages/DetailFruit"
 import UpdateInfo from "../pages/UpdatePage/updateInfo"
 import UpdatePassword from "../pages/UpdatePage/uploadPassword"
+import LikeFruits from "../pages/LikePage/LikeFruits"
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,8 @@ export default function AllRouter(){
                     <Stack.Screen name="DetailFruit" component={DetailFruit} options={{headerShown : false}} ></Stack.Screen>
                     <Stack.Screen name="UpdateInfo" component={UpdateInfo} options={{headerShown : false}} ></Stack.Screen>
                     <Stack.Screen name="UpdatePassword" component={UpdatePassword} options={{headerShown : false}} ></Stack.Screen>
+                    <Stack.Screen name="LikeFruit" component={LikeFruits} options={{headerShown : false}} ></Stack.Screen>
+                    {/* <Stack.Screen name="LikeDish" component={UpdatePassword} options={{headerShown : false}} ></Stack.Screen> */}
                 </Stack.Navigator>
             </NavigationContainer> 
         </View>

@@ -14,6 +14,9 @@ export default function ButtonComponent({user}) {
         },
         updatePassword : ()=>{
             navigation.navigate("UpdatePassword", {user : user})
+        },
+        likeFruit : ()=>{
+            navigation.navigate("LikeFruit", {user : user})
         }
     }
 
@@ -45,7 +48,10 @@ export default function ButtonComponent({user}) {
             </TouchableOpacity>
             
             {/* LikeFruit */}
-            <TouchableOpacity style={styles.buttonHolder}>
+            <TouchableOpacity 
+                style={styles.buttonHolder}
+                onPress={proccesButton.likeFruit}    
+            >
                 <Image source={Icons.fruitIcon} style={styles.icon}></Image>
                 <Text>Những trái cây đã thích</Text>
             </TouchableOpacity>

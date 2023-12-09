@@ -12,7 +12,6 @@ import FeatherIcon from "react-native-vector-icons/Feather";
 import { useEffect, useState } from "react";
 import Component from "./Component";
 import fruitAPI from "../../../api/fruitAPI";
-import { useRoute } from "@react-navigation/native";
 import { connect } from "react-redux";
 import likeAPI from "../../../api/likeAPI";
 import Images from "../../../constants/Image"

@@ -18,20 +18,49 @@ import Spinner from 'react-native-loading-spinner-overlay';
 
 import Support from "./Component/Support"
 import Icons from "../../../constants/Icons";
+import likeAPI from "../../../api/likeAPI";
 
+const filterLikeDishes = (dataDishes, likeDishes) => {
+    return dataDishes.map((dish) => {
+        dish.statusLike = false;
+
+        likeDishes && likeDishes.forEach((like) => {
+            if (dish.id === like.dish_id) { // Assuming the ID property of fruit is 'id'
+                dish.statusLike = true;
+            }
+        });
+
+        return dish;
+    });
+};
 
 export default function DetailFruit() {
     const route = useRoute();
     const { id, data, user, change } = route.params;
-    const [loading, setLoading] = useState(true);
-    const navigation = useNavigation();
+    const [ loading, setLoading] = useState(true);
+    const [ likeDataLoaded, setLikeDataLoaded] = useState(false);
+    const [ likeDish, setLikeDish] = useState([]);
+    const [ dishes, setDishes ] = useState([]);
 
+    const navigation = useNavigation();
     const [props, setProps] = useState([]);
+
+    useEffect(()=>{
+        if(!likeDataLoaded)
+        {
+            const api = async()=>{
+                setLikeDish(await likeAPI.getLikeDish(id, user.id))
+                setLikeDataLoaded(true);
+            }
+            api();
+        }
+    },[loading])
 
     const fetchDataById = async (id) => {
         try {
             var fruitById = await fruitAPI.getFruitById(id);
             setProps(fruitById.data);
+            setDishes(filterLikeDishes(fruitById.data.Dishes, likeDish))
         } catch (e) {
             console.log(e);
         } finally {
@@ -40,13 +69,17 @@ export default function DetailFruit() {
     };
 
     useEffect(() => {
+        if (!likeDataLoaded) {
+            return; // Chưa có dữ liệu từ cả hai nguồn
+        }
+
         if (id) {
             fetchDataById(id);
         } else {
             setProps(data);
             setLoading(false);
         }
-    }, [id, data]);
+    }, [likeDataLoaded ,id, data]);
 
     if(loading)
     {
@@ -96,7 +129,7 @@ export default function DetailFruit() {
             <ScrollView>
                 <ImageSlider images={imageArray} />
                 <InfoView data = {props}/>
-                <DishView data = {props.Dishes} fruit_id ={id} user_id = {user.id}/>
+                <DishView data = {dishes} user_id = {user.id}/>
             </ScrollView>
         </View>
     );

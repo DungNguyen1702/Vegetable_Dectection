@@ -11,5 +11,7 @@ export default Icons = {
     changeAvaIcon : require("../assets/Icons/pencil.png"),
     back : require("../assets/Icons/back.png"),
     backSecurity : require("../assets/Icons/back_security.png"),
-    security : require("../assets/Icons/cyber-security.png")
+    security : require("../assets/Icons/cyber-security.png"),
+    likeFruitIcon : require("../assets/Icons/fruit.png"),
+    backLikeFruit : require("../assets/Icons/back_likeFruit.png")
 }

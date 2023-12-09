@@ -16,18 +16,18 @@ const likeAPI = {
         return await axiosClient.application.put(url);
     },
 
-    getLikeDish: async (id) => {
-        const url = "/api/like/like_dish/" + id;
+    getLikeDish: async (fruit_id, user_id) => {
+        const url = "/api/like/like_dish/?fruit_id=" + fruit_id + "&user_id=" + user_id;
         return (await axiosClient.application.get(url)).data;
     },
 
-    deleteLikeDish: async (fruit_id, user_id) => {
-        const url = `api/like/delete_like_dish/?dish_id=${fruit_id}&user_id=${user_id}`;
+    deleteLikeDish: async (dish_id, user_id) => {
+        const url = `api/like/delete_like_dish/?dish_id=${dish_id}&user_id=${user_id}`;
         return await axiosClient.application.delete(url);
     },
 
-    createLikeDish: async (fruit_id, user_id) => {
-        const url = `api/like/create_like_dish/?dish_id=${fruit_id}&user_id=${user_id}`;
+    createLikeDish: async (dish_id, user_id) => {
+        const url = `api/like/create_like_dish/?dish_id=${dish_id}&user_id=${user_id}`;
         return await axiosClient.application.put(url);
     },
 };
