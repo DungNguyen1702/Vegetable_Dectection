@@ -17,6 +17,12 @@ export default function ButtonComponent({user}) {
         },
         likeFruit : ()=>{
             navigation.navigate("LikeFruit", {user : user})
+        },
+        likeDish : ()=>{
+            navigation.navigate("LikeDish", {user : user})
+        },
+        history : ()=>{
+            navigation.navigate("History", {user : user})
         }
     }
 
@@ -42,7 +48,10 @@ export default function ButtonComponent({user}) {
             </TouchableOpacity>
             
             {/* LikeDish */}
-            <TouchableOpacity style={styles.buttonHolder}>
+            <TouchableOpacity 
+                style={styles.buttonHolder}
+                onPress={proccesButton.likeDish}
+            >
                 <Image source={Icons.dishIcon} style={styles.icon}></Image>
                 <Text>Những món ăn đã thích</Text>
             </TouchableOpacity>
@@ -57,7 +66,10 @@ export default function ButtonComponent({user}) {
             </TouchableOpacity>
             
             {/* History */}
-            <TouchableOpacity style={styles.buttonHolder}>
+            <TouchableOpacity 
+                style={styles.buttonHolder}
+                onPress={proccesButton.history}
+            >
                 <Image source={Icons.historyIcon} style={styles.icon}></Image>
                 <Text>Lịch sử tìm kiếm</Text>
             </TouchableOpacity>

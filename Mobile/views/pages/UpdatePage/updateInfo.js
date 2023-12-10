@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
     TextInput,
     ScrollView,
+    KeyboardAvoidingView,
 } from "react-native";
 const background = require("../../../assets/background_info.png");
 import Icons from "../../../constants/Icons";
@@ -90,7 +91,11 @@ export default function UpdateInfo() {
     }, [loading]);
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+            style={styles.container}
+            behavior="padding"
+            keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 10}
+        >
             <StatusBar backgroundColor="#5AA162"></StatusBar>
             <View style={styles.imageContainer}>
                 <View style={styles.header}>
@@ -248,14 +253,14 @@ export default function UpdateInfo() {
                     </View>
                 )}
             </ScrollView>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         width: "100%",
-        height: "100%",
+        // height: "100%",
     },
     header: {
         zIndex: 1000,

@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
         alignItems : 'center',
         justifyContent : 'center',
         backgroundColor : '#5AA162',
-        // backgroundColor : 'red',
         paddingTop : 50
     },
     logo : {

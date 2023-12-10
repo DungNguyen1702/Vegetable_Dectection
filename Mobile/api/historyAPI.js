@@ -18,7 +18,7 @@ const historyAPI = {
     },
     getHistory : async(id)=>{
         const url = "api/history/" + id;
-        return await axiosClient.application.get(url);
+        return (await axiosClient.application.get(url)).data.result.rows;
     }
 };
 

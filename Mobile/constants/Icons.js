@@ -13,5 +13,9 @@ export default Icons = {
     backSecurity : require("../assets/Icons/back_security.png"),
     security : require("../assets/Icons/cyber-security.png"),
     likeFruitIcon : require("../assets/Icons/fruit.png"),
-    backLikeFruit : require("../assets/Icons/back_likeFruit.png")
+    backLikeFruit : require("../assets/Icons/back_likeFruit.png"),
+    likeDishIcon : require("../assets/Icons/LikeDish.png"),
+    backLikeDish : require("../assets/Icons/backLikeDish.png"),
+    historyIconInside : require("../assets/Icons/history_icon.png"),
+    backHistory : require("../assets/Icons/back_history.png")
 }

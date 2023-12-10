@@ -1,6 +1,7 @@
 import {
     ActivityIndicator,
     Image,
+    KeyboardAvoidingView,
     ScrollView,
     StatusBar,
     StyleSheet,
@@ -95,7 +96,11 @@ export default function UpdatePassword() {
     
 
     return (
-        <View style={styles.container}>
+        <KeyboardAvoidingView
+            style={styles.container}
+            behavior="padding"
+            keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 10}
+        >
             <StatusBar backgroundColor="#002233" barStyle="white"></StatusBar>
             <View style={styles.headerContainer}>
                 <View style={styles.header}>
@@ -139,6 +144,7 @@ export default function UpdatePassword() {
                             onChange={(event) =>
                                 setOldPassword(event.nativeEvent.text)
                             }
+                            secureTextEntry={true}
                         />
                         {checkOldPassword && (
                             <Text style={styles.error}>Sai mật khẩu</Text>
@@ -156,6 +162,7 @@ export default function UpdatePassword() {
                             onChange={(event) =>
                                 setNewPassword1(event.nativeEvent.text)
                             }
+                            secureTextEntry={true}
                         />
                         {checkNewPassword1 && (
                             <Text style={styles.error}>Vui lòng nhập mật khẩu mới</Text>
@@ -173,6 +180,7 @@ export default function UpdatePassword() {
                             onChange={(event) =>
                                 setNewPassword2(event.nativeEvent.text)
                             }
+                            secureTextEntry={true}
                         />
                         {checkNewPassword2 && (
                             <Text style={styles.error}>
@@ -207,13 +215,12 @@ export default function UpdatePassword() {
                     </View>
                 )}
             </ScrollView>
-        </View>
+        </KeyboardAvoidingView>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        height: "100%",
         width: "100%",
     },
     headerContainer: {

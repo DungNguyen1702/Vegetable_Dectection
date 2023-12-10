@@ -41,7 +41,11 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
         callAPI()
     }
 
-    const Register = ()=> alert('Đăng kí')
+    const FindAccount = ()=> alert('Đừng tìm nữa bạn ơi bạn tạo account mới đi :((')
+
+    const Register =()=>{
+        navigation.navigate("Register");
+    }
 
     return (
         <View style = {styles.container}>
@@ -61,12 +65,12 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
             </TouchableOpacity>
 
             <TouchableOpacity 
-                onPress={Register} 
+                onPress={FindAccount} 
                 style = {{alignItems : 'center'}}
                 disabled={loading}
             >
-                <Text style = {styles.text}>Tạo tài</Text>
-                <Text style = {styles.text}>khoản mới</Text>
+                <Text style = {styles.text}>Tìm lại</Text>
+                <Text style = {styles.text}>tài khoản</Text>
             </TouchableOpacity>
         </View>
     )

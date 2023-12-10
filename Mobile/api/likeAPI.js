@@ -30,6 +30,11 @@ const likeAPI = {
         const url = `api/like/create_like_dish/?dish_id=${dish_id}&user_id=${user_id}`;
         return await axiosClient.application.put(url);
     },
+
+    getLikeDishByUserID: async (user_id) => {
+        const url = "/api/like/like_dishes_by_user_id/" + user_id;
+        return (await axiosClient.application.get(url)).data;
+    },
 };
 
 export default likeAPI;

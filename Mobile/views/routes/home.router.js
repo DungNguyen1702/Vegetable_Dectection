@@ -35,6 +35,7 @@ export default function HomePageRouter() {
     const rootReducer = (state = initialState, action) => {
         return state;
     };
+    
     const store = createStore(rootReducer);
 
     const Tab = createBottomTabNavigator();

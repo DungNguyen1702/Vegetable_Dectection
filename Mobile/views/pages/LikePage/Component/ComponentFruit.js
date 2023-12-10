@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-    Alert,
     Image,
     StyleSheet,
     Text,
@@ -9,8 +8,6 @@ import {
 } from "react-native";
 import Stars from "../../../../components/star/stars";
 import { useNavigation } from "@react-navigation/native";
-import AntIcons from "react-native-vector-icons/AntDesign"
-import likeAPI from "../../../../api/likeAPI";
 
 export default function ComponentFruit(props) {
     const navigation = useNavigation();
