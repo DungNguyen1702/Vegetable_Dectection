@@ -3,7 +3,7 @@ const models = require(process.cwd() + "/models");
 const include = [
     {
         model : models.Fruit,
-        attributes : ['name', 'id', 'englishName', 'origin', 'taste', 'season']
+        required : true
     }
 ]
 
