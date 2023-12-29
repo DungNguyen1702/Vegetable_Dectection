@@ -77,6 +77,7 @@ export default function DetailFruit() {
             fetchDataById(id);
         } else {
             setProps(data);
+            setDishes(filterLikeDishes(data.Dishes, likeDish))
             setLoading(false);
         }
     }, [likeDataLoaded ,id, data]);
