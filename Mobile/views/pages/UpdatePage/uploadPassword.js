@@ -131,12 +131,12 @@ export default function UpdatePassword() {
                         resizeMode="contain"
                     />
                 </View>
-                <Text style={styles.headerTitle}>Đổi mật khẩu</Text>
+                <Text style={styles.headerTitle}>Change password</Text>
             </View>
             <ScrollView style={styles.infoContainer}>
                 {/* Old password */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Mật khẩu cũ</Text>
+                    <Text style={styles.label}>Old password</Text>
                     <View style={styles.inputHolder}>
                         <TextInput
                             editable={!loading}
@@ -147,14 +147,14 @@ export default function UpdatePassword() {
                             secureTextEntry={true}
                         />
                         {checkOldPassword && (
-                            <Text style={styles.error}>Sai mật khẩu</Text>
+                            <Text style={styles.error}>Wrong password</Text>
                         )}
                     </View>
                 </View>
 
                 {/* New password 1 */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Mật khẩu mới</Text>
+                    <Text style={styles.label}>New password</Text>
                     <View style={styles.inputHolder}>
                         <TextInput
                             editable={!loading}
@@ -165,14 +165,14 @@ export default function UpdatePassword() {
                             secureTextEntry={true}
                         />
                         {checkNewPassword1 && (
-                            <Text style={styles.error}>Vui lòng nhập mật khẩu mới</Text>
+                            <Text style={styles.error}>Please input new password</Text>
                         )}
                     </View>
                 </View>
 
                 {/* New password 2 */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Nhập lại</Text>
+                    <Text style={styles.label}>Confirm</Text>
                     <View style={styles.inputHolder}>
                         <TextInput
                             editable={!loading}
@@ -184,7 +184,7 @@ export default function UpdatePassword() {
                         />
                         {checkNewPassword2 && (
                             <Text style={styles.error}>
-                                Khác với mật khẩu mới
+                                Passwords don't match
                             </Text>
                         )}
                     </View>
@@ -204,14 +204,14 @@ export default function UpdatePassword() {
                                 fontWeight: "bold",
                             }}
                         >
-                            Thay Đổi
+                            Change
                         </Text>
                     </TouchableOpacity>
                 </View>
                 {loading && (
                     <View style={styles.loadingModal}>
                         <ActivityIndicator size="large" color="#fff" />
-                        <Text style={styles.loadingText}>Đang cập nhập...</Text>
+                        <Text style={styles.loadingText}>Changing...</Text>
                     </View>
                 )}
             </ScrollView>
@@ -271,6 +271,7 @@ const styles = StyleSheet.create({
         color: "#0766AD",
         fontSize: 30,
         fontWeight: "bold",
+        marginBottom : 10,
     },
 
     infoContainer: {
@@ -287,13 +288,13 @@ const styles = StyleSheet.create({
         marginVertical: 10,
     },
     label: {
-        width: "25%",
+        width: "30%",
         fontSize: 14,
         paddingLeft: 10,
     },
 
     inputHolder: {
-        width: "65%",
+        width: "60%",
     },
     inputText: {
         fontSize: 14,

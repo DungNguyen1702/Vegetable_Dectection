@@ -12,34 +12,34 @@ export default function Component(props) {
             />
             <View style={styles.infoContainer}>
                 <Text style={styles.time}>{info.createdAt}</Text>
-                <Text style={styles.title}>Kết quả nhận diện</Text>
+                <Text style={styles.title}>Recognition result</Text>
                 {/* name */}
                 <View style={styles.itemContainer}>
-                    <Text style={styles.label}>Tên</Text>
-                    <Text style={styles.value}>{info.Fruit.name}<Text style={{fontWeight : "bold"}}> ( {info.Fruit.englishName} ) </Text></Text>
+                    <Text style={styles.label}>Name</Text>
+                    <Text style={styles.value}>{info.Fruit.name}</Text>
                 </View>
 
                 {/* origin */}
                 <View style={styles.itemContainer}>
-                    <Text style={styles.label}>Xuất xứ</Text>
+                    <Text style={styles.label}>Origin</Text>
                     <Text style={styles.value}>{info.Fruit.origin}</Text>
                 </View>
 
                 {/* season */}
                 <View style={styles.itemContainer}>
-                    <Text style={styles.label}>Mùa</Text>
+                    <Text style={styles.label}>Season</Text>
                     <Text style={styles.value}>{info.Fruit.season}</Text>
                 </View>
 
                 {/* taste */}
                 <View style={styles.itemContainer}>
-                    <Text style={styles.label}>Vị</Text>
+                    <Text style={styles.label}>Taste</Text>
                     <Text style={styles.value}>{info.Fruit.taste}</Text>
                 </View>
 
                 {/* color */}
                 <View style={styles.itemContainer}>
-                    <Text style={styles.label}>Mùa sắc</Text>
+                    <Text style={styles.label}>Color</Text>
                     <Text style={styles.value}>{info.Fruit.color}</Text>
                 </View>
             </View>

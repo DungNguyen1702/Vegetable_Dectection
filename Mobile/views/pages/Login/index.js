@@ -36,7 +36,7 @@ export default function Login() {
             {loading && (
                 <View style={styles.loadingModal}>
                     <ActivityIndicator size="large" color="#fff" />
-                    <Text style={styles.loadingText}>Đang kiểm tra...</Text>
+                    <Text style={styles.loadingText}>Checking...</Text>
                 </View>
             )}
         </View>

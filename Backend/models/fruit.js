@@ -5,7 +5,6 @@ module.exports = (sequelize, DataTypes) => {
     class Fruit extends Model {
         static associate(models) {
             Fruit.hasMany(models.FruitImage, {foreignKey : 'fruit_id'})
-            Fruit.hasMany(models.FeedBack, {foreignKey : 'fruit_id'})
             Fruit.hasMany(models.Dish, {foreignKey : 'fruit_id'})
             Fruit.hasMany(models.LikeFruit, {foreignKey : 'fruit_id'})
             Fruit.hasMany(models.History, {foreignKey : "fruit_id"} )
@@ -14,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
     Fruit.init(
         {
             name: DataTypes.STRING,
-            englishName : DataTypes.STRING,
             origin : DataTypes.STRING,
             taste : DataTypes.STRING,
             nutrition: DataTypes.STRING,

@@ -14,39 +14,36 @@ export default function InfoView(props) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Thông tin</Text>
+            <Text style={styles.title}>Information</Text>
             <View style={styles.infoContainer}>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Tên</Text>
+                    <Text style={styles.label}>Name</Text>
                     <Text style={styles.info}>
-                        {name}{" "}
-                        <Text style={{ fontWeight: "bold" }}>
-                            ( {englishName} )
-                        </Text>
+                        {name}
                     </Text>
                 </View>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Màu sắc</Text>
+                    <Text style={styles.label}>Color</Text>
                     <Text style={styles.info}>{color}</Text>
                 </View>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Nơi trồng</Text>
+                    <Text style={styles.label}>Origin</Text>
                     <Text style={styles.info}>{origin}</Text>
                 </View>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Mùa thu hoạch</Text>
+                    <Text style={styles.label}>Season</Text>
                     <Text style={styles.info}>{season}</Text>
                 </View>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Vị</Text>
+                    <Text style={styles.label}>Taste</Text>
                     <Text style={styles.info}>{taste}</Text>
                 </View>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Giá trị y tế</Text>
+                    <Text style={styles.label}>Medicine</Text>
                     <Text style={styles.info}>{medical}</Text>
                 </View>
                 <View style={styles.holderView}>
-                    <Text style={styles.label}>Giá trị dinh dưỡng</Text>
+                    <Text style={styles.label}>Nutrition</Text>
                     <Text style={styles.info}>{nutrition}</Text>
                 </View>
             </View>

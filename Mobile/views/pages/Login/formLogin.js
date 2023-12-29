@@ -24,28 +24,28 @@ export default function FormLogin({
             behavior="padding"
             keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
         >
-            <Text style={styles.title}>Đăng nhập</Text>
+            <Text style={styles.title}>Welcome</Text>
             <View style={styles.formInputStyle}>
-                <Text style={styles.label}> Tài khoản </Text>
+                <Text style={styles.label}> Account </Text>
                 <TextInput
                     style={styles.inputStyle}
-                    placeholder="Tài khoản"
+                    placeholder="Account"
                     onChangeText={(value) => {
                         setAccount(value);
                     }}
                 ></TextInput>
                 {errAccount && (
-                    <Text style={styles.error}>Không tìm thấy tài khoản</Text>
+                    <Text style={styles.error}>can't find account</Text>
                 )}
             </View>
             <View style={styles.formInputStyle}>
-                <Text style={styles.label}> Mật khẩu </Text>
+                <Text style={styles.label}> Password </Text>
                 <View style = {{paddingBottom : 30}}>
                     <View style={{ justifyContent: "center" }}>
                         <TextInput
                             style={styles.inputStyle}
                             secureTextEntry={!showPassword}
-                            placeholder="Mật khẩu"
+                            placeholder="Password"
                             onFocus={() => {
                                 setShowIcon(true);
                             }}
@@ -79,7 +79,7 @@ export default function FormLogin({
                         )}
                     </View>
                     {errPassword && (
-                        <Text style={styles.error}>Sai mật khẩu</Text>
+                        <Text style={styles.error}>Wrong password</Text>
                     )}
                 </View>
             </View>

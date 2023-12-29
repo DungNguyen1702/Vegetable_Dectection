@@ -47,7 +47,7 @@ export default function UpdateInfo() {
     const user = route.params.user
 
     const [name, setName] = useState(user.name);
-    const [gender, setGender] = useState(user.gender=='Nam' ? true : false);
+    const [gender, setGender] = useState(user.gender=='Male' ? true : false);
     const [birthday, setBirthday] = useState(proccesDate(user.birthday));
     const [telephone, setTelephone] = useState(user.telephone);
     const [account, setAccount] = useState(user.account);
@@ -117,13 +117,13 @@ export default function UpdateInfo() {
                 <Image />
                 <Image source={background} style={styles.background} />
                 <Image source={{ uri: user.avatar }} style={styles.avatar} />
-                <Text style={styles.headerTitle}>Thông tin cá nhân</Text>
+                <Text style={styles.headerTitle}>Personal information</Text>
             </View>
             <ScrollView style={styles.infoContainer}>
 
                 {/* name */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Họ tên</Text>
+                    <Text style={styles.label}>Name</Text>
                     <TextInput 
                         defaultValue={name}
                         style={styles.input}
@@ -134,7 +134,7 @@ export default function UpdateInfo() {
 
                 {/* gender */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Giới tính</Text>
+                    <Text style={styles.label}>Gender</Text>
                     <View style={styles.radioButton}>
                         <View
                             style={{
@@ -142,10 +142,10 @@ export default function UpdateInfo() {
                                 alignItems: "center",
                             }}
                         >
-                            <Text style={{ fontSize: 14 }}>Nam</Text>
+                            <Text style={{ fontSize: 14 }}>Male</Text>
                             <View style = {{borderRadius : 80, borderWidth : 1, padding : -20, marginLeft : 10}}>
                                 <RadioButton
-                                    value="Nam"
+                                    value="Male"
                                     status={gender ? "checked" : null}
                                     onPress={() => {
                                         setGender(!gender)
@@ -160,10 +160,10 @@ export default function UpdateInfo() {
                                 alignItems: "center",
                             }}
                         >
-                            <Text style={{ fontSize: 14 }}>Nữ</Text>
+                            <Text style={{ fontSize: 14 }}>Female</Text>
                             <View style = {{borderRadius : 80, borderWidth : 1, padding : -20, marginLeft : 10}}>
                                 <RadioButton
-                                    value="Nữ"
+                                    value="Female"
                                     status={!gender ? "checked" : null}
                                     onPress={() => {
                                         setGender(!gender)
@@ -177,7 +177,7 @@ export default function UpdateInfo() {
 
                 {/* birthday */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Ngày sinh</Text>
+                    <Text style={styles.label}>Birthday</Text>
                     <TouchableOpacity 
                         style={{width : "65%"}}
                         onPress={() => setShowCalendar(!showCalendar)}
@@ -200,7 +200,7 @@ export default function UpdateInfo() {
 
                 {/* Telephone */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Số điện thoại</Text>
+                    <Text style={styles.label}>Telephone</Text>
                     <TextInput 
                         defaultValue={telephone} 
                         style={styles.input} 
@@ -211,7 +211,7 @@ export default function UpdateInfo() {
 
                 {/* address */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Địa chỉ</Text>
+                    <Text style={styles.label}>Address</Text>
                     <TextInput 
                         defaultValue={address} 
                         style={styles.input} 
@@ -222,7 +222,7 @@ export default function UpdateInfo() {
 
                 {/* account */}
                 <View style={styles.holder}>
-                    <Text style={styles.label}>Tài khoản</Text>
+                    <Text style={styles.label}>Account</Text>
                     <TextInput
                         value={account}
                         style={styles.input}
@@ -242,14 +242,14 @@ export default function UpdateInfo() {
                                 fontWeight: "bold",
                             }}
                         >
-                            Thay Đổi
+                            Update
                         </Text>
                     </TouchableOpacity>
                 </View>
                 {loading && (
                     <View style={styles.loadingModal}>
                         <ActivityIndicator size="large" color="#fff" />
-                        <Text style={styles.loadingText}>Đang cập nhập...</Text>
+                        <Text style={styles.loadingText}>Updating...</Text>
                     </View>
                 )}
             </ScrollView>
@@ -274,6 +274,7 @@ const styles = StyleSheet.create({
         color: "#5AA162",
         fontSize: 30,
         fontWeight: "bold",
+        marginTop : 10,
     },
 
     iconBack: {

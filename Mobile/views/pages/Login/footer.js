@@ -49,29 +49,26 @@ export default function Footer ({account, password, setErrAccount, setErrPasswor
 
     return (
         <View style = {styles.container}>
-            <TouchableOpacity 
-                onPress={Register} 
-                disabled={loading}
-            >
-                <Text style = {styles.text}>Đăng kí</Text>
-            </TouchableOpacity>
-            
+
             <TouchableOpacity 
                 onPress={Login} 
                 style = {styles.buttonLogin}
                 disabled={loading}
             >
-                <Text style = {styles.textLogin}>Đăng nhập</Text>
+                <Text style = {styles.textLogin}>Log in</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity 
-                onPress={FindAccount} 
-                style = {{alignItems : 'center'}}
-                disabled={loading}
-            >
-                <Text style = {styles.text}>Tìm lại</Text>
-                <Text style = {styles.text}>tài khoản</Text>
-            </TouchableOpacity>
+            <View style={styles.containerRegister}> 
+                <Text style={styles.text}>
+                    Don't have an account ? 
+                </Text>
+                <TouchableOpacity 
+                    onPress={Register} 
+                    disabled={loading}
+                >
+                    <Text style = {{...styles.text, textDecorationLine: 'underline', color : "#A5EE9F"}}> Sign up?</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -80,14 +77,17 @@ const styles = StyleSheet.create({
     container : {
         height : 100,
         width : '100%',
-        flexDirection : 'row',
         justifyContent : 'space-around',
-        alignItems : 'center'
+        alignItems : 'center',
+        marginTop : 10,
     },
     buttonLogin : {
         backgroundColor : "#00FFD1",
         borderRadius : 10,
         padding : 10,
+        width : 200,
+        justifyContent : "center",
+        alignContent : "center"
     },
 
     text : {
@@ -99,5 +99,10 @@ const styles = StyleSheet.create({
         fontWeight : 'bold',
         fontSize :14,
         color : 'black',
+        textAlign : "center",
+    },
+    containerRegister : {
+        alignItems : "center",
+        flexDirection : "row",
     }
 })

@@ -66,7 +66,7 @@ export default function LikeFruits() {
                     <Image source={Icons.likeFruitIcon} style={styles.logo} />
                 </View>
                 <Text style={styles.headerTitle}>
-                    Danh sách trái cây đã thích
+                    Favorite fruits
                 </Text>
             </View>
             <View style={styles.infoHolder}>
@@ -76,7 +76,7 @@ export default function LikeFruits() {
                             source={Images.loading}
                             style={styles.iconNotFound}
                         />
-                        <Text style={styles.textNotFound}>Đang tải dữ liệu</Text>
+                        <Text style={styles.textNotFound}>Loading data ...</Text>
                     </View>
                 ) : 
                 (

@@ -21,7 +21,7 @@ export default function ComponentDish(props) {
             <Text style={styles.dishName}>{info.Dish.name}</Text>
             <View style={styles.nutritionAndIngredentContainer}>
                 <View style={styles.nutrition}>
-                    <Text style={styles.label}>Giá trị dinh dưỡng</Text>
+                    <Text style={styles.label}>Nutritions</Text>
                     <View style = {{paddingRight : 5}}>
                         {nutrition.map((item) => (
                             <Text style={styles.item}>{item}</Text>
@@ -29,7 +29,7 @@ export default function ComponentDish(props) {
                     </View>
                 </View>
                 <View style={styles.ingredient}>
-                    <Text style={styles.label}>Thành phần</Text>
+                    <Text style={styles.label}>Ingredients</Text>
                     <View>
                         {ingredients.map((item) => (
                             <Text style={styles.item}>{item}</Text>
@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
         marginVertical : 10,
         marginHorizontal : 20,
         borderRadius : 30,
+        paddingBottom : 4,
     },
     image: {
         width: "90%",
@@ -73,6 +74,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         overflow: "visible",
         width: "90%",
+        marginVertical : 7,
     },
     nutritionAndIngredentContainer: {
         flexDirection: "row",

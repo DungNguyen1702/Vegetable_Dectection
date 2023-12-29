@@ -8,7 +8,7 @@ export default function DishView(props) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Món ăn</Text>
+            <Text style={styles.title}>Dishes</Text>
             <Swiper showsButtons={false} style={styles.wrapper}>
                 {dishes.map((item, index) => {
                     return (

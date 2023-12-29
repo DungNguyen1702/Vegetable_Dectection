@@ -25,10 +25,6 @@ const include2 = [
             }
         ]
     },
-    {
-        model : models.FeedBack,
-        require : false,
-    }
 ];
 
 async function index(txt_search) {

@@ -64,7 +64,7 @@ export default function LikeDishes() {
                         style={styles.logo}
                     />
                 </View>
-                <Text style={styles.headerTitle}>Danh sách món ăn đã thích</Text>
+                <Text style={styles.headerTitle}>Favorite dishes</Text>
             </View>
             <View style={styles.infoContainer}>
             {loading ? (
@@ -73,7 +73,7 @@ export default function LikeDishes() {
                             source={Images.loading}
                             style={styles.iconNotFound}
                         />
-                        <Text style={styles.textNotFound}>Đang tải dữ liệu</Text>
+                        <Text style={styles.textNotFound}>Loading data</Text>
                     </View>
                 ) : 
                 (

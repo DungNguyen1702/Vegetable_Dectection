@@ -84,7 +84,7 @@ export default function CamreraComponent(params) {
     if (hasPermission === null) {
         return (
             <View>
-                <Text>Yêu cầu quyền truy cập</Text>
+                <Text>Permission request</Text>
             </View>
         );
     }
@@ -92,7 +92,7 @@ export default function CamreraComponent(params) {
     if (hasPermission === false) {
         return (
             <View>
-                <Text>Quyền truy cập không được chấp nhận</Text>
+                <Text>Access denied</Text>
             </View>
         );
     }
@@ -150,7 +150,7 @@ export default function CamreraComponent(params) {
             {loading && (
                 <View style={styles.loadingModal}>
                     <ActivityIndicator size="large" color="#fff" />
-                    <Text style={styles.loadingText}>Đang nhận diện...</Text>
+                    <Text style={styles.loadingText}>Recognizing...</Text>
                 </View>
             )}
         </View>

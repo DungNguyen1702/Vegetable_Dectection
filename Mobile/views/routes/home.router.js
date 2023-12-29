@@ -55,7 +55,7 @@ export default function HomePageRouter() {
                                     color={color}
                                 />
                             );
-                        } else if (route.name === "CameraIcon") {
+                        } else if (route.name === "Camera") {
                             iconName = focused ? "camera" : "camerao";
                             return (
                                 <AntDesignicons name={iconName} size={size} />
@@ -87,7 +87,7 @@ export default function HomePageRouter() {
                     }}
                 />
                 <Tab.Screen
-                    name="CameraIcon"
+                    name="Camera"
                     options={{
                         headerShown: false,
                         tabBarStyle: styles.NormalTab,

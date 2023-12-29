@@ -104,7 +104,7 @@ export default function Register() {
                     name : name,
                     telephone : telephone,
                     address : address,
-                    gender : gender ? "Nam" : "Nữ",
+                    gender : gender ? "Male" : "Female",
                     birthday : reverseDate(birthday)
                 }
 
@@ -146,38 +146,38 @@ export default function Register() {
             <ScrollView style={{width : "100%"}}>
                 <StatusBar></StatusBar>
                 <Header></Header>
-                <Text style={styles.title}>Đăng kí</Text>
+                <Text style={styles.title}>Register</Text>
                 <View style={styles.infoContainer}>
                     {/* account */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Tài khoản </Text>
+                        <Text style={styles.label}> Account </Text>
                         <TextInput
                             style={styles.inputStyle}
-                            placeholder="Tài khoản"
+                            placeholder="Account"
                             onChangeText={(value) => {
                                 setAccount(value);
                             }}
                         ></TextInput>
                         {errAccount && (
                             <Text style={styles.error}>
-                                Tài khoản không hợp lệ
+                                This account is Invalid
                             </Text>
                         )}
                     </View>
 
                     {/* name */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Họ tên </Text>
+                        <Text style={styles.label}> Full Name </Text>
                         <TextInput
                             style={styles.inputStyle}
-                            placeholder="Họ và tên"
+                            placeholder="Full Name"
                             onChangeText={(value) => {
                                 setName(value);
                             }}
                         ></TextInput>
                         {errName && (
                             <Text style={styles.error}>
-                                Vui lòng nhập họ tên
+                                Please input your full name
                             </Text>
                         )}
                     </View>
@@ -198,7 +198,7 @@ export default function Register() {
                             }}
                         >
                             {" "}
-                            Giới tính{" "}
+                            Gender{" "}
                         </Text>
                         <View style={{ ...styles.radioButton }}>
                             <View
@@ -207,7 +207,7 @@ export default function Register() {
                                     alignItems: "center",
                                 }}
                             >
-                                <Text style={{ fontSize: 14 }}>Nam</Text>
+                                <Text style={{ fontSize: 14 }}>Male</Text>
                                 <View
                                     style={{
                                         borderRadius: 80,
@@ -217,7 +217,7 @@ export default function Register() {
                                     }}
                                 >
                                     <RadioButton
-                                        value="Nam"
+                                        value="Male"
                                         status={gender ? "checked" : null}
                                         onPress={() => {
                                             setGender(!gender);
@@ -231,7 +231,7 @@ export default function Register() {
                                     alignItems: "center",
                                 }}
                             >
-                                <Text style={{ fontSize: 14 }}>Nữ</Text>
+                                <Text style={{ fontSize: 14 }}>Female</Text>
                                 <View
                                     style={{
                                         borderRadius: 80,
@@ -241,7 +241,7 @@ export default function Register() {
                                     }}
                                 >
                                     <RadioButton
-                                        value="Nữ"
+                                        value="Female"
                                         status={!gender ? "checked" : null}
                                         onPress={() => {
                                             setGender(!gender);
@@ -254,10 +254,10 @@ export default function Register() {
 
                     {/* Ngày sinh */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Ngày sinh </Text>
+                        <Text style={styles.label}> Birthday </Text>
                         <TextInput
                             style={styles.inputStyle}
-                            placeholder="Ngày sinh"
+                            placeholder="Birthday"
                             onFocus={() => {
                                 setShowCalendar(true);
                             }}
@@ -278,27 +278,27 @@ export default function Register() {
 
                     {/* telephone */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Số điện thoại </Text>
+                        <Text style={styles.label}> Telephone </Text>
                         <TextInput
                             style={styles.inputStyle}
-                            placeholder="Số điện thoại"
+                            placeholder="Telephone"
                             onChangeText={(value) => {
                                 setTelephone(value);
                             }}
                         ></TextInput>
                         {errTelephone && (
                             <Text style={styles.error}>
-                                Số điện thoại không đúng định dạng
+                                This telephone is Invalid
                             </Text>
                         )}
                     </View>
 
                     {/* address */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Địa chỉ </Text>
+                        <Text style={styles.label}> Address </Text>
                         <TextInput
                             style={styles.inputStyle}
-                            placeholder="Địa chỉ nhà"
+                            placeholder="Address"
                             onChangeText={(value) => {
                                 setAddress(value);
                             }}
@@ -307,13 +307,13 @@ export default function Register() {
 
                     {/* password 1 */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Mật khẩu </Text>
+                        <Text style={styles.label}> Password </Text>
                         <View>
                             <View style={{ justifyContent: "center" }}>
                                 <TextInput
                                     style={styles.inputStyle}
                                     secureTextEntry={!showPassword1}
-                                    placeholder="Mật khẩu"
+                                    placeholder="Password"
                                     onBlur={() => {
                                         setShowPassword1(false);
                                     }}
@@ -341,7 +341,7 @@ export default function Register() {
                             </View>
                             {errPassword1 && (
                                 <Text style={styles.error}>
-                                    Vui lòng nhập mật khẩu
+                                    Please input your password
                                 </Text>
                             )}
                         </View>
@@ -349,13 +349,13 @@ export default function Register() {
 
                     {/* password2 */}
                     <View style={styles.formInputStyle}>
-                        <Text style={styles.label}> Nhập lại </Text>
+                        <Text style={styles.label}> Confirm Pasword </Text>
                         <View>
                             <View style={{ justifyContent: "center" }}>
                                 <TextInput
                                     style={styles.inputStyle}
                                     secureTextEntry={!showPassword2}
-                                    placeholder="Nhập lại mật khẩu"
+                                    placeholder="Confirm"
                                     onBlur={() => {
                                         setShowPassword2(false);
                                     }}
@@ -383,7 +383,7 @@ export default function Register() {
                             </View>
                             {errPassword2 && (
                                 <Text style={styles.error}>
-                                    Mật khẩu không trùng khớp
+                                    Passwords don't match
                                 </Text>
                             )}
                         </View>
@@ -394,15 +394,16 @@ export default function Register() {
                         style={styles.registerButton}
                         onPress={registerHandler}
                     >
-                        <Text style={styles.registerText}>Đăng kí</Text>
+                        <Text style={styles.registerText}>Sign up</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.footerContainer}>
+                <View style={styles.footerContainer} >
+                    <Text style={styles.footerText}>Have an account ? </Text>
                     <TouchableOpacity
                         onPress={havedAccount}
                     >
-                        <Text style={styles.footerText}>
-                            Bạn đã có tài khoản ?
+                        <Text style={{...styles.footerText, fontWeight : "bold", textDecorationLine: 'underline', color : "#A5EE9F"}}>
+                            Log in ?
                         </Text>
                     </TouchableOpacity>
                 </View>
@@ -410,7 +411,7 @@ export default function Register() {
             {loading && (
                 <View style={styles.loadingModal}>
                     <ActivityIndicator size="large" color="#fff" />
-                    <Text style={styles.loadingText}>Đang kiểm tra...</Text>
+                    <Text style={styles.loadingText}>Checking...</Text>
                 </View>
             )}
         </KeyboardAvoidingView>
@@ -491,15 +492,15 @@ const styles = StyleSheet.create({
         textAlign: "center",
     },
     footerContainer: {
-        justifyContent: "center",
-        alignItems: "center",
+        flexDirection : "row",
+        alignItems : "center",
+        justifyContent : "center",
         marginVertical: 10,
-        marginBottom : 20,
+        marginBottom : 50,
     },
     footerText: {
         color: "white",
         fontSize: 15,
-        textAlign: "center",
     },
 
     loadingModal: {

@@ -51,7 +51,7 @@ async function updateAva(request, response) {
         const fileBuffer = request.file.buffer;
 
         await cloudinary.uploader.upload_stream(
-            { resource_type: 'auto', folder: "pbl4" },
+            { resource_type: 'auto', folder: "Vegetable_Detection" },
             async (error, result) => {
                 if (error) {
                     return response.status(500).json({ error: 'Error uploading image to Cloudinary' });

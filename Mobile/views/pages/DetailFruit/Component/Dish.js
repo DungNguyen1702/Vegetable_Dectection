@@ -54,7 +54,7 @@ export default function Dish(props) {
                     </View>
                     <View style={styles.nutritionAndIngredentContainer}>
                         <View style={styles.nutrition}>
-                            <Text style={styles.label}>Giá trị dinh dưỡng</Text>
+                            <Text style={styles.label}>Nutritions</Text>
                             <View>
                                 {nutrition.map((item) => (
                                     <Text style={styles.item}>{item}</Text>
@@ -62,7 +62,7 @@ export default function Dish(props) {
                             </View>
                         </View>
                         <View style={styles.ingredient}>
-                            <Text style={styles.label}>Thành phần</Text>
+                            <Text style={styles.label}>Ingredients</Text>
                             <View>
                                 {ingredients.map((item) => (
                                     <Text style={styles.item}>{item}</Text>
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
         alignItems : "center",
         justifyContent : "space-between",
         width : "100%",
+        marginVertical : 7,
     },
     heart : {
         width : 30,
@@ -116,7 +117,7 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         paddingVertical: 10,
         overflow: "visible",
-        width :  "90%"
+        width :  "90%",
     },
     nutritionAndIngredentContainer: {
         flexDirection: "row",

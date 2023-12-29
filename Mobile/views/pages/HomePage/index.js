@@ -60,7 +60,9 @@ const HomePage = ({ user }) => {
     
         const fetchData = async () => {
             try {
-                var allFruit = await fruitAPI.allFruit(search);
+                var allFruit = await fruitAPI.allFruit(search).then(result =>{
+                    console.log(result)
+                });
                 setDataFruit(filterLikeFruit(allFruit.data.rows, likeFruit));
             } catch (e) {
                 console.log(e);
@@ -92,7 +94,7 @@ const HomePage = ({ user }) => {
                 ></FeatherIcon>
                 <TextInput
                     style={styles.searchInput}
-                    placeholder="Nhập tên loại trái cây"
+                    placeholder="Input fruit's name"
                     onChange={(event) => setSearch(event.nativeEvent.text)}
                 />
             </View>
@@ -105,7 +107,7 @@ const HomePage = ({ user }) => {
                             source = {Images.loading}
                             style ={styles.iconNotFound}
                         />
-                        <Text style={styles.textNotFound}>Đang tải dữ liệu</Text>
+                        <Text style={styles.textNotFound}>Loading data</Text>
                     </View>
                 ) :
                 (

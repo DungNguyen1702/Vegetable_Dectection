@@ -13,9 +13,6 @@ module.exports = {
             name: {
                 type: Sequelize.STRING,
             },
-            englishName: {
-                type: Sequelize.STRING,
-            },
             origin: {
                 type: Sequelize.STRING,
             },

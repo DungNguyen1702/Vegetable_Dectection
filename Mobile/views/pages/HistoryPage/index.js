@@ -65,7 +65,7 @@ export default function HistoryPage() {
                         style={styles.logo}
                     />
                 </View>
-                <Text style={styles.headerTitle}>Lịch sử nhận diện</Text>
+                <Text style={styles.headerTitle}>Recognition history</Text>
             </View>
             <View style={styles.infoHolder}>
             {loading ? (
@@ -74,7 +74,7 @@ export default function HistoryPage() {
                             source={Images.loading}
                             style={styles.iconNotFound}
                         />
-                        <Text style={styles.textNotFound}>Đang tải dữ liệu</Text>
+                        <Text style={styles.textNotFound}>Loading data ...</Text>
                     </View>
                 ) : 
                 (

@@ -6,1931 +6,1803 @@ module.exports = {
     await queryInterface.bulkInsert(
       "Dishes",
       [
-         //1- 3 Apple
+          // 1-3 Apple
           {
-            name: "Salad Táo với Hạt Giống Bí Ngô và Dầu Giấm Táo",
-            ingredients: 
-            `
-              - Táo cắt lát
-              - Hạt giống bí ngô
-              - Rau sống (lá xà lách, rau củ khác)
-              - Dầu giấm táo
+            name: "Apple Salad with Pumpkin Seeds and Apple Cider Vinegar Dressing",
+            ingredients: `
+              - Sliced apples
+              - Pumpkin seeds
+              - Fresh greens (lettuce, other vegetables)
+              - Apple cider vinegar
             `,
-            nutrition: 
-            `
-              - Cung cấp vitamin C, chất xơ, khoáng chất từ rau củ
-              - Dầu giấm táo giàu axit acetic có thể hỗ trợ quá trình tiêu hóa
+            nutrition: `
+              - Provides vitamin C, fiber, and minerals from vegetables
+              - Apple cider vinegar, rich in acetic acid, may support digestion
             `,
             fruit_id: 1
           },
           {
-            name: "Bánh Táo Nướng với Mật Ong và Quế",
-            ingredients: 
-            `
-              - Táo cắt lát
-              - Bánh táo
-              - Mật ong
-              - Bột quế
+            name: "Baked Apple Pie with Honey and Cinnamon",
+            ingredients: `
+              - Sliced apples
+              - Apple pie crust
+              - Honey
+              - Cinnamon powder
             `,
-            nutrition: 
-            `
-              - Táo cung cấp vitamin C và chất xơ
-              - Mật ong chứa nhiều khoáng chất và có tác dụng chống vi khuẩn
+            nutrition: `
+              - Apples provide vitamin C and fiber
+              - Honey contains various minerals and has antibacterial properties
             `,
             fruit_id: 1
           },
           {
-            name: "Nước Ép Táo với Gừng",
-            ingredients: 
-            `
-              - Táo cắt lát
-              - Gừng tươi
-              - Đường hoặc mật ong (tùy chọn)
+            name: "Apple Juice with Ginger",
+            ingredients: `
+              - Sliced apples
+              - Fresh ginger
+              - Sugar or honey (optional)
             `,
-            nutrition: 
-            `
-              - Nước ép táo là nguồn vitamin và khoáng chất
-              - Gừng có tác dụng chống viêm và hỗ trợ tiêu hóa
+            nutrition: `
+              - Apple juice is a source of vitamins and minerals
+              - Ginger has anti-inflammatory properties and supports digestion
             `,
             fruit_id: 1
           },
           // 4- 6 Banana
           {
-            name: "Chuối Hấp Nước Cốt Dừa",
-            ingredients: 
-            `
-              - Chuối chín
-              - Nước cốt dừa
-            `,
-            nutrition: 
-            `
-              - Cung cấp potassium, vitamin C từ chuối
-              - Dầu cốt dừa chứa axit béo lành mạnh
-            `,
+            name: "Coconut Steamed Banana",
+            ingredients:
+              `
+              - Ripe bananas
+              - Coconut milk
+              `,
+            nutrition:
+              `
+              - Provides potassium, vitamin C from bananas
+              - Coconut milk contains healthy fatty acids
+              `,
             fruit_id: 2
           },
           {
-            name: "Bánh Chuối Chiên Giòn",
-            ingredients: 
-            `
-              - Chuối chín
-              - Bột chiên giòn
-              - Đường
-            `,
-            nutrition: 
-            `
-              - Chuối là nguồn kali và vitamin B6
-              - Bột chiên giòn cung cấp năng lượng
-            `,
+            name: "Crispy Fried Banana Cake",
+            ingredients:
+              `
+              - Ripe bananas
+              - Crispy frying flour
+              - Sugar
+              `,
+            nutrition:
+              `
+              - Bananas are a source of potassium and vitamin B6
+              - Crispy frying flour provides energy
+              `,
             fruit_id: 2
           },
           {
-            name: "Chuối Xào Dừa",
-            ingredients: 
-            `
-              - Chuối chín
-              - Bột năng
-              - Nước cốt dừa
-            `,
-            nutrition: 
-            `
-              - Cốt dừa chứa axit béo lành mạnh
-              - Chuối cung cấp vitamin và khoáng chất
-            `,
+            name: "Stir-Fried Banana with Coconut",
+            ingredients:
+              `
+              - Ripe bananas
+              - Cornstarch
+              - Coconut milk
+              `,
+            nutrition:
+              `
+              - Coconut milk contains healthy fatty acids
+              - Bananas provide vitamins and minerals
+              `,
             fruit_id: 2
           },
-          //7- 9 Bean
+          // 7-9 Bean
           {
-            name: "Mì Xào Rau Củ với Đậu Hủ Non",
-            ingredients: 
-            `
-              - Mì
-              - Đậu hủ non
-              - Rau củ (cà rốt, bắp cải, ớt...)
+            name: "Stir-Fried Noodles with Tofu and Vegetables",
+            ingredients: `
+              - Noodles
+              - Tofu
+              - Vegetables (carrots, cabbage, bell peppers...)
             `,
-            nutrition: 
-            `
-              - Protein từ đậu hủ non
-              - Vitamin và khoáng chất từ rau củ
+            nutrition: `
+              - Protein from tofu
+              - Vitamins and minerals from vegetables
             `,
             fruit_id: 3
           },
           {
-            name: "Salad Đậu Mè (Đậu Ngũ Vị)",
-            ingredients: 
-            `
-              - Đậu mè (đậu ngũ vị)
-              - Mè trắng
-              - Rau sống (lá xà lách, cà rốt)
+            name: "Sesame Seed Salad (Five-Spice Tofu)",
+            ingredients: `
+              - Sesame seeds (five-spice tofu)
+              - White sesame seeds
+              - Fresh greens (lettuce, carrots)
             `,
-            nutrition: 
-            `
-              - Đậu mè chứa nhiều protein và khoáng chất
-              - Mè trắng cung cấp chất béo lành mạnh
+            nutrition: `
+              - Sesame seeds provide ample protein and minerals
+              - White sesame seeds offer healthy fats
             `,
             fruit_id: 3
           },
           {
-            name: "Canh Đậu Hủ Non Nấu Nước Dừa",
-            ingredients: 
-            `
-              - Đậu hủ non
-              - Nước dừa
-              - Cà rốt, nấm, hành tây
+            name: "Coconut Soup with Tofu",
+            ingredients: `
+              - Tofu
+              - Coconut water
+              - Carrots, mushrooms, onions
             `,
-            nutrition: 
-            `
-              - Đậu hủ non cung cấp protein và canxi
-              - Nước dừa chứa acid béo lành mạnh
+            nutrition: `
+              - Tofu provides protein and calcium
+              - Coconut water contains healthy fatty acids
             `,
             fruit_id: 3
           },
-          // 10- 12 Bitter Gourd
+          // 10-12 Bitter Gourd
           {
-            name: "Canh Mướp Đắng với Tôm",
-            ingredients: 
-            `
-              - Mướp đắng
-              - Tôm
-              - Cà chua, hành, tỏi
+            name: "Bitter Gourd Soup with Shrimp",
+            ingredients: `
+              - Bitter gourd
+              - Shrimp
+              - Tomatoes, onions, garlic
             `,
-            nutrition: 
-            `
-              - Mướp đắng chứa nhiều vitamin và khoáng chất
-              - Tôm là nguồn protein tốt và các chất khoáng
+            nutrition: `
+              - Bitter gourd is rich in vitamins and minerals
+              - Shrimp is a good source of protein and various minerals
             `,
             fruit_id: 4
           },
           {
-            name: "Mướp Đắng Xào Thịt Gà",
-            ingredients: 
-            `
-              - Mướp đắng
-              - Thịt gà
-              - Ớt, hành, tỏi
+            name: "Stir-Fried Bitter Gourd with Chicken",
+            ingredients: `
+              - Bitter gourd
+              - Chicken
+              - Chili, onions, garlic
             `,
-            nutrition: 
-            `
-              - Mướp đắng giúp kiểm soát đường huyết và tăng cường hệ tiêu hóa
-              - Thịt gà là nguồn protein thấp chất béo
+            nutrition: `
+              - Bitter gourd helps control blood sugar and enhances digestion
+              - Chicken is a lean source of protein
             `,
             fruit_id: 4
           },
           {
-            name: "Mướp Đắng xào trứng",
-            ingredients: 
-            `
-              - Mướp đắng
-              - Trứng
-              - Dầu olive
+            name: "Stir-Fried Bitter Gourd with Eggs",
+            ingredients: `
+              - Bitter gourd
+              - Eggs
+              - Olive oil
             `,
-            nutrition: 
-            `
-              - Mướp đắng có tính chất chống oxi hóa
-              - Trứng đem lại lượng protein dồi dàu
+            nutrition: `
+              - Bitter gourd has antioxidant properties
+              - Eggs provide a rich source of protein
             `,
             fruit_id: 4
           },
           // 13- 15 Bottle Gourd
           {
-            name: "Canh Bầu Nấu Tôm",
-            ingredients: 
-            `
-              - Bầu cắt lát
-              - Tôm tươi
-              - Rau mùi, hành tây
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Bầu là nguồn khoáng chất và chất xơ tốt cho đường huyết
-              - Tôm cung cấp protein, vitamin B12, và khoáng chất như sắt
-            `,
+            name: "Bottle Gourd Soup with Shrimp",
+            ingredients:
+              `
+              - Sliced bottle gourd
+              - Fresh shrimp
+              - Cilantro, green onions
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Bottle gourd is a source of minerals and good for blood sugar
+              - Shrimp provides protein, vitamin B12, and minerals such as iron
+              `,
             fruit_id: 5
           },
           {
-            name: "Bầu Xào Tỏi",
-            ingredients: 
-            `
-              - Bầu cắt sợi
-              - Tỏi băm
-              - Dầu ăn
-              - Gia vị: Muối, tiêu
-            `,
-            nutrition: 
-            `
-              - Bầu có thể hỗ trợ giảm cân và cung cấp nước
-              - Tỏi có tác dụng kháng khuẩn và giảm cholesterol
-            `,
+            name: "Stir-Fried Bottle Gourd with Garlic",
+            ingredients:
+              `
+              - Julienned bottle gourd
+              - Minced garlic
+              - Cooking oil
+              - Seasonings: Salt, pepper
+              `,
+            nutrition:
+              `
+              - Bottle gourd may aid in weight loss and provide hydration
+              - Garlic has antibacterial properties and helps reduce cholesterol
+              `,
             fruit_id: 5
           },
           {
-            name: "Bầu nấu trứng vịt lộn",
-            ingredients: 
-            `
-              - Bầu xanh nấu chín
-              - Trứng vịt lộn đã luộc
-            `,
-            nutrition: 
-            `
-              - Bầu chứa nước nhiều và giúp cung cấp khoáng chất
-              - Trứng vịt lộn đem lại đầy đủ dinh dưỡng 
-            `,
+            name: "Bottle Gourd Soup with Soft-Boiled Quail Eggs",
+            ingredients:
+              `
+              - Cooked green bottle gourd
+              - Soft-boiled quail eggs
+              `,
+            nutrition:
+              `
+              - Bottle gourd is hydrating and provides essential minerals
+              - Soft-boiled quail eggs offer a range of nutrients
+              `,
             fruit_id: 5
           },
-          // 16- 18 Brinjal(CaTim)
+          // 16-18 Brinjal
           {
-            name: "Cà Tím Xào Thịt Bò",
-            ingredients: 
-            `
-              - Cà tím cắt dài
-              - Thịt bò xào
-              - Ớt, tỏi, tiêu
-              - Gia vị: Nước tương, dầu ăn
+            name: "Eggplant Stir-Fry with Beef",
+            ingredients: `
+              - Long-cut eggplant
+              - Stir-fried beef
+              - Chili, garlic, black pepper
+              - Seasonings: Soy sauce, cooking oil
             `,
-            nutrition: 
-            `
-              - Cà tím chứa nhiều chất chống ô nhiễm và vitamin C
-              - Thịt bò cung cấp protein, sắt, zinc
+            nutrition: `
+              - Eggplant contains anti-pollution compounds and vitamin C
+              - Beef provides protein, iron, and zinc
             `,
             fruit_id: 6
           },
           {
-            name: "Cà tím cắt lát",
-            ingredients: 
-            `
-              - Mỡ hành
-              - Gia vị: Muối, tiêu
+            name: "Thinly Sliced Eggplant",
+            ingredients: `
+              - Spring onion oil
+              - Seasonings: Salt, black pepper
             `,
-            nutrition: 
-            `
-              - Cà tím giàu chất chống ô nhiễm và vitamin A
-              - Mỡ hành có thể giúp tăng hương vị và chất dinh dưỡng
+            nutrition: `
+              - Eggplant is rich in anti-pollution compounds and vitamin A
+              - Spring onion oil enhances flavor and nutrition
             `,
             fruit_id: 6
           },
           {
-            name: "Cà Tím Xào Tỏi Giòn",
-            ingredients: 
-            `
-              - Cà tím cắt vuông
-              - Tỏi phi thơm
-              - Dầu ăn
-              - Gia vị: Muối, tiêu
+            name: "Crispy Garlic Eggplant",
+            ingredients: `
+              - Square-cut eggplant
+              - Fragrant fried garlic
+              - Cooking oil
+              - Seasonings: Salt, black pepper
             `,
-            nutrition: 
-            `
-              - Cà tím chứa chất chống ô nhiễm và vitamin C
-              - Tỏi có tác dụng chống vi khuẩn và hỗ trợ hệ tiêu hóa
+            nutrition: `
+              - Eggplant contains anti-pollution compounds and vitamin C
+              - Garlic has antibacterial properties and supports digestion
             `,
             fruit_id: 6
           },
-          // 19- 21 Broccoli
+          // 19-21 Broccoli
           {
-            name: "Súp Lơ Cà Rốt Nấu Gà",
-            ingredients: 
-            `
-              - Súp lơ cắt nhỏ
-              - Cà rốt cắt sợi
-              - Gà luộc
-              - Gia vị: Muối, tiêu, hạt nêm
+            name: "Chicken Broccoli Carrot Soup",
+            ingredients: `
+              - Small-cut broccoli
+              - Julienned carrots
+              - Boiled chicken
+              - Seasonings: Salt, black pepper, bouillon cubes
             `,
-            nutrition: 
-            `
-              - Súp lơ cung cấp nhiều vitamin C, K, chất xơ
-              - Gà là nguồn protein chất lượng
+            nutrition: `
+              - Broccoli provides plenty of vitamin C, K, and fiber
+              - Chicken is a high-quality protein source
             `,
             fruit_id: 7
           },
           {
-            name: "Salad Súp Lơ với Dầu Giấm Balsamic",
-            ingredients: 
-            `
-              - Súp lơ cắt nhỏ
-              - Rau sống (lá xà lách, rút xanh)
-              - Dầu giấm balsamic
-              - Hạt giống hướng dương
+            name: "Broccoli Salad with Balsamic Vinegar Dressing",
+            ingredients: `
+              - Small-cut broccoli
+              - Fresh greens (lettuce, arugula)
+              - Balsamic vinegar
+              - Sunflower seeds
             `,
-            nutrition: 
-            `
-              - Súp lơ là nguồn chất xơ và vitamin C
-              - Dầu giấm balsamic có tác dụng chống oxy hóa
+            nutrition: `
+              - Broccoli is a source of fiber and vitamin C
+              - Balsamic vinegar has antioxidant properties
             `,
             fruit_id: 7
           },
           {
-            name: "Xào Súp Lơ với thịt bò",
-            ingredients: 
-            `
-              - Súp lơ cắt nhỏ
-              - Thịt bò nạm
+            name: "Stir-Fried Broccoli with Beef",
+            ingredients: `
+              - Small-cut broccoli
+              - Beef sirloin
             `,
-            nutrition: 
-            `
-              - Súp lơ là nguồn chất xơ và vitamin C
-              - Thịt bò bổ sung chất đạm, protein
+            nutrition: `
+              - Broccoli is a source of fiber and vitamin C
+              - Beef adds protein and amino acids
             `,
             fruit_id: 7
           },
           // 22- 24 Cabbage
           {
-            name: "Bắp Cải Luộc với Nước Mắm Trứng Pha và Ớt",
-            ingredients: 
-            `
-              - Bắp cải luộc mềm
-              - Nước mắm pha và ớt
-              - Trứng luộc
-            `,
-            nutrition: 
-            `
-              - Bắp cải là nguồn chất xơ và vitamin K
-              - Nước mắm pha và ớt là gia vị tạo hương vị đặc trưng
-              - Trứng đem lại nguồn protein dồi dàu
-            `,
+            name: "Boiled Cabbage with Mixed Fish Sauce and Eggs",
+            ingredients:
+              `
+              - Soft-boiled cabbage
+              - Mixed fish sauce and chili
+              - Boiled eggs
+              `,
+            nutrition:
+              `
+              - Cabbage is a source of fiber and vitamin K
+              - Mixed fish sauce and chili provide a distinctive flavor
+              - Eggs offer abundant protein
+              `,
             fruit_id: 8
           },
           {
-            name: "Bắp Cải Xào Thịt Bò",
-            ingredients: 
-            `
-              - Bắp cải xanh cắt sợi
-              - Thịt bò xào
-              - Ớt, tỏi, tiêu
-              - Gia vị: Nước tương, dầu ăn
-            `,
-            nutrition: 
-            `
-              - Bắp cải chứa nhiều chất chống ô nhiễm và vitamin C
-              - Thịt bò cung cấp protein, sắt, zinc
-            `,
+            name: "Stir-Fried Green Cabbage with Beef",
+            ingredients:
+              `
+              - Julienned green cabbage
+              - Stir-fried beef
+              - Chili, garlic, pepper
+              - Seasonings: Soy sauce, cooking oil
+              `,
+            nutrition:
+              `
+              - Green cabbage contains many antioxidants and vitamin C
+              - Beef provides protein, iron, and zinc
+              `,
             fruit_id: 8
           },
           {
-            name: "Gỏi Bắp Cải Xanh với Gia Vị Đặc Biệt",
-            ingredients: 
-            `
-              - Bắp cải xanh cắt sợi
-              - Rau sống (cà rốt, rau sống khác)
-              - Gia vị: Muối, tiêu, dầu giấm
-            `,
-            nutrition: 
-            `
-              - Bắp cải xanh cung cấp nhiều vitamin và chất xơ
-              - Dầu giấm có thể hỗ trợ quá trình tiêu hóa và tăng hương vị
-            `,
+            name: "Green Cabbage Salad with Special Seasonings",
+            ingredients:
+              `
+              - Julienned green cabbage
+              - Raw vegetables (carrots, other raw greens)
+              - Seasonings: Salt, pepper, olive oil
+              `,
+            nutrition:
+              `
+              - Green cabbage provides many vitamins and fiber
+              - Olive oil may support digestion and enhance flavor
+              `,
             fruit_id: 8
           },
-          //25- 27 Caspicum
+          //25- 27 Capsicum
           {
-            name: "Salad Ớt Chuông với Feta và Dầu Ôliu",
-            ingredients: 
-            `
-              - Ớt chuông đỏ và vàng cắt sợi
-              - Phô mai Feta
-              - Cà chua cắt lát
-              - Dầu ôliu
-            `,
-            nutrition: 
-            `
-              - Ớt chuông giàu vitamin C và A
-              - Feta cung cấp canxi và protein
-            `,
+            name: "Bell Pepper Salad with Feta and Olive Oil",
+            ingredients:
+              `
+              - Sliced red and yellow bell peppers
+              - Feta cheese
+              - Sliced tomatoes
+              - Olive oil
+              `,
+            nutrition:
+              `
+              - Bell peppers are rich in vitamin C and A
+              - Feta provides calcium and protein
+              `,
             fruit_id: 9
           },
           {
-            name: "Ớt Chuông Nhồi Thịt Heo và Rau Củ",
-            ingredients: 
-            `
-              - Ớt chuông màu đỏ
-              - Thịt heo băm nhuyễn
-              - Rau củ như cà rốt, cần tây
-              - Gia vị: Tiêu, hành tỏi
-            `,
-            nutrition: 
-            `
-              - Ớt chuông chứa nhiều chất chống ô nhiễm và vitamin C
-              - Thịt heo cung cấp protein và các khoáng chất
-            `,
+            name: "Stuffed Bell Peppers with Minced Pork and Vegetables",
+            ingredients:
+              `
+              - Red bell peppers
+              - Minced pork
+              - Vegetables such as carrots, celery
+              - Seasonings: Pepper, garlic
+              `,
+            nutrition:
+              `
+              - Bell peppers contain many antioxidants and vitamin C
+              - Pork provides protein and essential minerals
+              `,
             fruit_id: 9
           },
           {
-            name: "Ớt Chuông Xào Bò và dứa",
-            ingredients: 
-            `
-              - Ớt chuông màu xanh đỏ
-              - Thịt bò nạm
-            `,
-            nutrition: 
-            `
-              - Ớt chuông là nguồn chất xơ và vitamin A
-              - Thịt bò cung cấp protein
-              - Dứa đem lại vitamin B6, C
-            `,
+            name: "Stir-Fried Beef and Pineapple with Bell Peppers",
+            ingredients:
+              `
+              - Green and red bell peppers
+              - Lean beef
+              - Pineapple chunks
+              `,
+            nutrition:
+              `
+              - Bell peppers are a source of fiber and vitamin A
+              - Beef provides protein
+              - Pineapple offers vitamins B6 and C
+              `,
             fruit_id: 9
           },
-          //28- 30 Carrot
+          // 28-30 Carrot
           {
-            name: "Cà Rốt Xào Trứng",
-            ingredients: 
-            `
-              - Cà rốt cắt sợi
-              - Tỏi xào thơm
-              - Trứng xào
+            name: "Stir-Fried Carrots with Eggs",
+            ingredients: `
+              - Julienned carrots
+              - Fragrant sautéed garlic
+              - Scrambled eggs
             `,
-            nutrition: 
-            `
-              - Cà rốt chứa nhiều beta- carotene, giúp duy trì tình trạng sức khỏe của mắt
-              - Tỏi có tác dụng chống vi khuẩn và giảm cholesterol
-              - Trứng đem lại nguồn protein dồi dàu
+            nutrition: `
+              - Carrots contain a high level of beta-carotene, promoting eye health
+              - Garlic has antibacterial properties and helps reduce cholesterol
+              - Eggs provide a rich source of protein
             `,
             fruit_id: 10
           },
           {
-            name: "Salad Cà Rốt với Hạt Giống Lanh và Dầu Mè",
-            ingredients: 
-            `
-              - Cà rốt gọt sợi
-              - Hạt giống lanh
-              - Rau sống như rau xanh, cà chua
-              - Dầu mè
+            name: "Carrot Salad with Flax Seeds and Sesame Oil",
+            ingredients: `
+              - Shredded carrots
+              - Flax seeds
+              - Raw vegetables such as greens, tomatoes
+              - Sesame oil
             `,
-            nutrition: 
-            `
-              - Cà rốt là nguồn vitamin A và chất xơ
-              - Hạt giống lanh cung cấp axit béo omega- 3 và chất xơ
+            nutrition: `
+              - Carrots are a source of vitamin A and fiber
+              - Flax seeds supply omega-3 fatty acids and fiber
             `,
             fruit_id: 10
           },
           {
-            name: "Xôi Bắp Cải và Cà Rốt",
-            ingredients: 
-            `
-              - Cà rốt và bắp cải xanh nấu chín
-              - Gạo nếp
-              - Dầu dừa
-              - Gia vị: Muối, tiêu
+            name: "Sticky Rice with Carrots and Chinese Cabbage",
+            ingredients: `
+              - Cooked carrots and Chinese cabbage
+              - Glutinous rice
+              - Coconut oil
+              - Seasonings: Salt, black pepper
             `,
-            nutrition: 
-            `
-              - Cà rốt và bắp cải cung cấp nhiều vitamin và chất xơ
-              - Gạo nếp là nguồn tốt của carbohydrate và năng lượng
+            nutrition: `
+              - Carrots and Chinese cabbage provide essential vitamins and fiber
+              - Glutinous rice is a good source of carbohydrates and energy
             `,
             fruit_id: 10
           },
-          //31- 33 Cauliflower
+          // 31-33 Cauliflower
           {
-            name: "Bông Cải Xào Tỏi và Ớt Hiểm",
-            ingredients: 
-            `
-              - Bông cải tách thành những bông nhỏ
-              - Tỏi xào thơm
-              - Ớt hiểm cắt lát
-              - Gia vị: Muối, tiêu, dầu ăn
+            name: "Garlic and Spicy Chili Cauliflower Stir-Fry",
+            ingredients: `
+              - Separated cauliflower florets
+              - Fragrant sautéed garlic
+              - Sliced hot chili peppers
+              - Seasonings: Salt, black pepper, cooking oil
             `,
-            nutrition: 
-            `
-              - Bông cải là nguồn vitamin C và chất xơ
-              - Tỏi có tác dụng chống vi khuẩn và giảm cholesterol
+            nutrition: `
+              - Cauliflower is a source of vitamin C and fiber
+              - Garlic has antibacterial properties and helps reduce cholesterol
             `,
             fruit_id: 11
           },
           {
-            name: "Bông Cải Nước Canh Dầu Hào",
-            ingredients: 
-            `
-              - Bông cải cắt bông nhỏ
-              - Gia vị: Dầu hào, tiêu, nước mắm
-              - Hành lá và rau mùi
+            name: "Cauliflower Soup with Oyster Sauce",
+            ingredients: `
+              - Small cauliflower florets
+              - Seasonings: Oyster sauce, black pepper, fish sauce
+              - Spring onions and cilantro
             `,
-            nutrition: 
-            `
-              - Bông cải cung cấp nhiều vitamin và khoáng chất
-              - Dầu hào tăng hương vị và cung cấp chất béo lành mạnh
+            nutrition: `
+              - Cauliflower provides various vitamins and minerals
+              - Oyster sauce enhances flavor and provides healthy fats
             `,
             fruit_id: 11
           },
           {
-            name: "Cơm Chiên Bông Cải và Hành Tây",
-            ingredients: 
-            `
-              - Bông cải cắt nhỏ
-              - Cơm nấu chín
-              - Hành tây xào
-              - Gia vị: Muối, tiêu, dầu ăn
+            name: "Fried Rice with Cauliflower and Onions",
+            ingredients: `
+              - Small cauliflower florets
+              - Cooked rice
+              - Sautéed onions
+              - Seasonings: Salt, black pepper, cooking oil
             `,
-            nutrition: 
-            `
-              - Bông cải cung cấp nhiều chất xơ và vitamin
-              - Hành tây là nguồn vitamin C và chất chống ô nhiễm
+            nutrition: `
+              - Cauliflower offers plenty of fiber and vitamins
+              - Onions are a source of vitamin C and anti-pollution compounds
             `,
             fruit_id: 11
           },
-          //34- 36 Chilli
+          // 34-36 Chili
           {
-            name: "Mực Xào Ớt Cay",
-            ingredients: 
-            `
-              - Mực tươi
-              - Ớt đỏ cay
-              - Hành tây, tỏi
-              - Gia vị: Muối, tiêu, nước mắm
+            name: "Spicy Squid Stir-Fry",
+            ingredients: `
+              - Fresh squid
+              - Red chili peppers
+              - Onions, garlic
+              - Seasonings: Salt, black pepper, fish sauce
             `,
-            nutrition: 
-            `
-              - Ớt cay chứa capsaicin có tác dụng kích thích tiêu hóa
-              - Mực là nguồn protein chất lượng và các khoáng chất
+            nutrition: `
+              - Spicy chili contains capsaicin, stimulating digestion
+              - Squid is a high-quality protein source with essential minerals
             `,
             fruit_id: 12
           },
           {
-            name: "Súp Ớt Cà Chua với Hành Tây và Đậu Hủ",
-            ingredients: 
-            `
-              - Ớt xanh và đỏ cắt sợi
-              - Cà chua đỏ cắt lát
-              - Hành tây xào
-              - Đậu hủ cắt sợi
+            name: "Tomato and Chili Soup with Onions and Tofu",
+            ingredients: `
+              - Red and green chili peppers, julienned
+              - Sliced red tomatoes
+              - Sautéed onions
+              - Julienned tofu
             `,
-            nutrition: 
-            `
-              - Ớt cung cấp vitamin C và có tác dụng kích thích tiêu hóa
-              - Đậu hủ là nguồn protein thực vật và chất xơ
+            nutrition: `
+              - Chili peppers provide vitamin C and aid digestion
+              - Tofu is a plant-based protein source with fiber
             `,
             fruit_id: 12
           },
           {
-            name: "Gỏi Gà và Rau sống với Sốt Ớt Cay",
-            ingredients: 
-            `
-              - Gà luộc, cắt sợi
-              - Rau sống như dưa leo, cà rốt
-              - Sốt ớt cay
-              - Gia vị: Muối, tiêu, dầu giấm
+            name: "Chicken and Raw Vegetables Salad with Spicy Chili Sauce",
+            ingredients: `
+              - Boiled chicken, shredded
+              - Raw vegetables such as cucumber, carrots
+              - Spicy chili sauce
+              - Seasonings: Salt, black pepper, vinegar
             `,
-            nutrition: 
-            `
-              - Ớt cay có thể tăng cường sự kích thích và chống vi khuẩn
-              - Gà là nguồn protein chất lượng và các khoáng chất
+            nutrition: `
+              - Spicy chili may enhance stimulation and have antibacterial properties
+              - Chicken is a high-quality protein source with essential minerals
             `,
             fruit_id: 12
           },
           //37- 39 Coconut
           {
-            name: "Nước Dừa Mát Lạnh",
-            ingredients: 
-            `
-              - Nước dừa tươi
-              - Đá viên
-              - Dầu ăn
-              - Đường (tùy chọn)
-            `,
-            nutrition: 
-            `
-              - Nước dừa là nguồn nước tự nhiên giàu khoáng chất
-              - Có thể cung cấp năng lượng và điện giải
-            `,
+            name: "Refreshing Chilled Coconut Water",
+            ingredients:
+              `
+              - Fresh coconut water
+              - Ice cubes
+              - Cooking oil
+              - Sugar (optional)
+              `,
+            nutrition:
+              `
+              - Coconut water is a natural source of minerals
+              - Can provide energy and electrolytes
+              `,
             fruit_id: 13
           },
           {
-            name: "Bánh Đúc lá dứa Nước Cốt Dừa",
-            ingredients: 
-            `
-              - Dừa nước bào nhuyễn
-              - Bột nở
-              - Đường
-              - Bánh đúc lá dứa
-            `,
-            nutrition: 
-            `
-              - Dừa nước chứa axit lauric có tác dụng kháng khuẩn
-              - Bánh đúc cung cấp năng lượng từ carbohydrate
-            `,
+            name: "Banana Leaf Steamed Coconut Jelly Cake",
+            ingredients:
+              `
+              - Grated coconut
+              - Baking powder
+              - Sugar
+              - Banana leaf-wrapped jelly cake
+              `,
+            nutrition:
+              `
+              - Coconut contains lauric acid with antibacterial properties
+              - Jelly cake supplies energy from carbohydrates
+              `,
             fruit_id: 13
           },
           {
-            name: "Mứt dứa",
-            ingredients: 
-            `
-              - Cơm dừa
-              - Vani
-              - Sữa tươi không đường
-            `,
-            nutrition: 
-            `
-              - Nước dừa có thể thay thế nước lươn trong súp, cung cấp hương vị đặc trưng
-              - Cơm dừa và vani đem lại chất đạm, chất béo và chiếm 60% lượng mangan hàng ngày
-            `,
+            name: "Coconut Jam",
+            ingredients:
+              `
+              - Coconut meat
+              - Vanilla
+              - Unsweetened condensed milk
+              `,
+            nutrition:
+              `
+              - Coconut water can be a substitute for broth, providing a distinctive flavor
+              - Coconut meat and vanilla add richness and contribute to 60% of daily manganese intake
+              `,
             fruit_id: 13
           },
           //40- 42 Cucumber
           {
-            name: "Salad Dưa Leo với Nước Mắm Pha và Hạt Đậu Nành",
-            ingredients: 
-            `
-              - Dưa leo cắt lát
-              - Hạt đậu nành nước
-              - Rau sống như cà rốt, rau xanh
-              - Gia vị: Muối, tiêu
-              - Nước mắm pha
-            `,
-            nutrition: 
-            `
-              - Dưa leo là nguồn nước và vitamin K
-              - Hạt đậu nành cung cấp protein và chất xơ
-            `,
+            name: "Cucumber Salad with Mixed Fish Sauce and Soybean Seeds",
+            ingredients:
+              `
+              - Sliced cucumber
+              - Soybean seeds
+              - Raw vegetables such as carrots, greens
+              - Seasonings: Salt, pepper
+              - Mixed fish sauce
+              `,
+            nutrition:
+              `
+              - Cucumber is a source of water and vitamin K
+              - Soybean seeds provide protein and fiber
+              `,
             fruit_id: 14
           },
           {
-            name: "Dưa Leo Xào Tôm",
-            ingredients: 
-            `
-              - Dưa leo cắt sợi
-              - Tôm tươi
-              - Ớt đỏ cắt nhỏ
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Dưa leo cung cấp nhiều nước và chất xơ
-              - Tôm là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Stir-Fried Cucumber with Shrimp",
+            ingredients:
+              `
+              - Julienned cucumber
+              - Fresh shrimp
+              - Small red chilies, finely chopped
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Cucumber provides plenty of water and fiber
+              - Shrimp is a high-quality protein source and supplies essential minerals
+              `,
             fruit_id: 14
           },
           {
-            name: "Dưa Leo Kim Chi",
-            ingredients: 
-            `
-              - Dưa leo cắt sợi
-              - Gia vị: Ớt bột, tỏi băm, muối, đường
-              - Nước mắm pha
-            `,
-            nutrition: 
-            `
-              - Dưa leo là nguồn khoáng chất và vitamin C
-              - Kim chi có thể giúp cân bằng vi khuẩn đường ruột
-            `,
+            name: "Cucumber Kimchi",
+            ingredients:
+              `
+              - Julienned cucumber
+              - Seasonings: Chili powder, minced garlic, salt, sugar
+              - Mixed fish sauce
+              `,
+            nutrition:
+              `
+              - Cucumber is a source of minerals and vitamin C
+              - Kimchi may help balance gut bacteria
+              `,
             fruit_id: 14
           },
           //43- 45 Custard apple
           {
-            name: "Sinh Tố Mãng Cầu và Sữa Dừa",
-            ingredients: 
-            `
-              - Mãng cầu bóc hạt
-              - Sữa dừa tươi
-              - Đường (tùy chọn)
-              - Mãng cầu cung cấp nhiều vitamin C và chất xơ
-            `,
-            nutrition: 
-            `
-              - Sữa dừa là nguồn chất béo lành và nước
-              - Mãng cầu cung cấp nhiều vitamin C và chất xơ
-            `,
+            name: "Custard Apple and Coconut Milk Smoothie",
+            ingredients:
+              `
+              - Peeled custard apple
+              - Fresh coconut milk
+              - Sugar (optional)
+              - Custard apple provides abundant vitamin C and fiber
+              `,
+            nutrition:
+              `
+              - Coconut milk is a source of healthy fats and water
+              - Custard apple offers plenty of vitamin C and fiber
+              `,
             fruit_id: 15
           },
           {
-            name: "Mứt mãng cầu",
-            ingredients: 
-            `
-              - 1 quả mãng cầu xiêm chín
-              - Giấy bóng gói mứt
-              - Đường
-            `,
-            nutrition: 
-            `
-              - Mãng cầu cung cấp nhiều chất xơ và vitamin
-              - Bổ sung vitamin B, C
-            `,
+            name: "Custard Apple Jam",
+            ingredients:
+              `
+              - 1 ripe custard apple
+              - Jam-wrapping paper
+              - Sugar
+              `,
+            nutrition:
+              `
+              - Custard apple provides plenty of fiber and vitamins
+              - Supplements vitamin B and C
+              `,
             fruit_id: 15
           },
           {
-            name: "Chè Mãng Cầu Sương Sa",
-            ingredients: 
-            `
-              - Mãng cầu bóc hạt
-              - Đường cát trắng
-              - Nước cốt dừa
-              - Đậu phộng rang
-            `,
-            nutrition: 
-            `
-              - Mãng cầu chứa nhiều chất xơ và vitamin
-              - Nước cốt dừa là nguồn chất béo lành và có hương vị thơm ngon
-            `,
+            name: "Custard Apple Sago Sweet Soup",
+            ingredients:
+              `
+              - Peeled custard apple
+              - White rock sugar
+              - Coconut milk
+              - Roasted peanuts
+              `,
+            nutrition:
+              `
+              - Custard apple contains a lot of fiber and vitamins
+              - Coconut milk is a source of healthy fats and has a delightful flavor
+              `,
             fruit_id: 15
           },
-          //46- 48 Dates
+          // 46-48 Dates (Chà Là)
           {
-            name: "Bánh Chà Là với Nhân Hạt Điều và Mật Ong",
-            ingredients: 
-            `
-              - Chà là hạt
-              - Nhân hạt điều
-              - Mật ong
-              - Gia vị: Muối, tiêu
+            name: "Cashew Date Bars with Honey",
+            ingredients: `
+              - Date paste
+              - Cashews
+              - Honey
+              - Seasonings: Salt, black pepper
             `,
-            nutrition: 
-            `
-              - Chà là chứa nhiều chất xơ và khoáng chất như kali
-              - Hạt điều cung cấp chất béo lành và protein
+            nutrition: `
+              - Dates are rich in fiber and minerals like potassium
+              - Cashews provide healthy fats and protein
             `,
             fruit_id: 16
           },
           {
-            name: "Smoothie Chà Là với Dưa Hấu và Chuối",
-            ingredients: 
-            `
-              - Chà là hạt
-              - Dưa hấu cắt lát
-              - Chuối chín
-              - Nước dừa
+            name: "Date Smoothie with Watermelon and Banana",
+            ingredients: `
+              - Date paste
+              - Sliced watermelon
+              - Ripe banana
+              - Coconut water
             `,
-            nutrition: 
-            `
-              - Chà là cung cấp năng lượng từ đường tự nhiên
-              - Dưa hấu và chuối là nguồn nước và chất xơ
+            nutrition: `
+              - Dates offer natural energy from sugars
+              - Watermelon and banana provide hydration and fiber
             `,
             fruit_id: 16
           },
           {
-            name: "Salad Rau Mầm với Chà Là và Gà",
-            ingredients: 
-            `
-              - Rau mầm như giá đỗ, cần tây
-              - Chà là hạt
-              - Thịt gà luộc, cắt sợi
-              - Gia vị: Muối, tiêu, nước mắm pha
+            name: "Sprout Salad with Dates and Chicken",
+            ingredients: `
+              - Sprouts like mung beans, celery
+              - Date paste
+              - Boiled chicken, shredded
+              - Seasonings: Salt, black pepper, diluted fish sauce
             `,
-            nutrition: 
-            `
-              - Chà là cung cấp nhiều khoáng chất và năng lượng
-              - Gà là nguồn protein chất lượng và các khoáng chất
+            nutrition: `
+              - Dates provide minerals and energy
+              - Chicken is a high-quality protein source with essential minerals
             `,
             fruit_id: 16
           },
-          //49- 51 Dragon fruit
+          // 49-51 Dragon Fruit (Thanh Long)
           {
-            name: "Salad Thanh Long với Tôm và Rau sống",
-            ingredients: 
-            `
-              - Thanh long cắt lát
-              - 300 gam cồi sò điệp
+            name: "Dragon Fruit Salad with Shrimp and Raw Vegetables",
+            ingredients: `
+              - Sliced dragon fruit
+              - 300g scallops
             `,
-            nutrition: 
-            `
-              - Thanh long là nguồn vitamin C và chất xơ
-              - Sò điệp cung cấp protein và các khoáng chất
+            nutrition: `
+              - Dragon fruit is a source of vitamin C and fiber
+              - Scallops provide protein and essential minerals
             `,
             fruit_id: 17
           },
           {
-            name: "Sinh Tố Thanh Long và Chuối",
-            ingredients: 
-            `
-              - Thanh long bỏ hạt
-              - Chuối chín
-              - Sữa tươi
-              - Đường (tùy chọn)
+            name: "Dragon Fruit and Banana Smoothie",
+            ingredients: `
+              - Seedless dragon fruit
+              - Ripe banana
+              - Fresh milk
+              - Sugar (optional)
             `,
-            nutrition: 
-            `
-              - Thanh long chứa nhiều chất chống ô nhiễm và vitamin C
-              - Chuối là nguồn năng lượng và chất xơ
+            nutrition: `
+              - Dragon fruit contains anti-pollution compounds and vitamin C
+              - Banana is a source of energy and fiber
             `,
             fruit_id: 17
           },
           {
-            name: "Chè Thanh Long Nước Cốt Dừa",
-            ingredients: 
-            `
-              - Thanh long bỏ hạt
-              - Nước cốt dừa
-              - Đường cát trắng
-              - Hạt é
+            name: "Dragon Fruit and Coconut Water Sweet Soup",
+            ingredients: `
+              - Seedless dragon fruit
+              - Coconut water
+              - White sugar
+              - Basil seeds
             `,
-            nutrition: 
-            `
-              - Thanh long cung cấp nước và vitamin C
-              - Nước cốt dừa là nguồn chất béo lành và có hương vị thơm ngon
+            nutrition: `
+              - Dragon fruit provides water and vitamin C
+              - Coconut water is a source of healthy fats and has a pleasant flavor
             `,
             fruit_id: 17
           },
-          //52- 54 Egg
+          // 52-54 Egg (Trứng)
           {
-            name: "Trứng Chiên Mắm",
-            ingredients: 
-            `
-              - Trứng gà
-              - Mắm tôm
-              - Dầu ăn
+            name: "Fried Eggs with Fermented Shrimp Paste",
+            ingredients: `
+              - Chicken eggs
+              - Fermented shrimp paste
+              - Cooking oil
             `,
-            nutrition: 
-            `
-              - Trứng là nguồn protein chất lượng và cholin tốt cho não
-              - Mắm tôm cung cấp khoáng chất và hương vị đặc trưng
+            nutrition: `
+              - Eggs are a high-quality protein source and contain choline for brain health
+              - Fermented shrimp paste provides minerals and a distinctive flavor
             `,
             fruit_id: 18
           },
           {
-            name: "Bánh Mì Trứng ốp với Rau sống",
-            ingredients: 
-            `
-              - Trứng gà ốp
-              - Bánh mì nướng
-              - Rau sống như cà rốt, rau xanh
+            name: "Egg Sandwich with Fresh Vegetables",
+            ingredients: `
+              - Fried chicken eggs
+              - Toasted bread
+              - Raw vegetables like carrots, greens
               - Mayonnaise
             `,
-            nutrition: 
-            `
-              - Trứng cung cấp protein và các vitamin như B12
-              - Rau sống là nguồn chất xơ và khoáng chất
+            nutrition: `
+              - Eggs supply protein and vitamins like B12
+              - Raw vegetables are a source of fiber and minerals
             `,
             fruit_id: 18
           },
           {
-            name: "Canh Trứng cà chua",
-            ingredients: 
-            `
-              - Trứng gà luộc
-              - cà chua cắt lát
-              - Hành lá, rau mầm
+            name: "Tomato and Egg Soup",
+            ingredients: `
+              - Hard-boiled chicken eggs
+              - Sliced tomatoes
+              - Spring onions, bean sprouts
             `,
-            nutrition: 
-            `
-              - Trứng là nguồn protein chất lượng và nhiều vitamin
-              - Cà chua cung cấp nước và vitamin C
+            nutrition: `
+              - Eggs are a high-quality protein source with various vitamins
+              - Tomatoes provide water and vitamin C
             `,
             fruit_id: 18
           },
           //55- 57 Garlic
           {
-            name: "Gà Xào Ớt và Tỏi",
-            ingredients: 
-            `
-              - Gà luộc, cắt sợi
-              - Ớt đỏ cắt nhỏ
-              - Tỏi băm
-              - Gia vị: Muối, tiêu, dầu ăn
-            `,
-            nutrition: 
-            `
-              - Tỏi có tác dụng chống vi khuẩn và giảm cholesterol
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Stir-Fried Chicken with Chili and Garlic",
+            ingredients:
+              `
+              - Shredded boiled chicken
+              - Finely chopped red chili
+              - Minced garlic
+              - Seasonings: Salt, pepper, cooking oil
+              `,
+            nutrition:
+              `
+              - Garlic has antibacterial properties and can reduce cholesterol
+              - Chicken is a high-quality protein source and provides essential minerals
+              `,
             fruit_id: 19
           },
           {
-            name: "Cơm Chiên Tỏi và Rau Củ",
-            ingredients: 
-            `
-              - Cơm nấu chín
-              - Rau củ như cà rốt, bắp cải
-              - Tỏi xào thơm
-              - Gia vị: Muối, tiêu, dầu ăn
-            `,
-            nutrition: 
-            `
-              - Tỏi có tác dụng chống viêm và giảm áp lực máu
-              - Rau củ cung cấp nhiều chất xơ và vitamin
-            `,
+            name: "Garlic Fried Rice with Vegetables",
+            ingredients:
+              `
+              - Cooked rice
+              - Vegetables such as carrots, cabbage
+              - Fragrant sautéed garlic
+              - Seasonings: Salt, pepper, cooking oil
+              `,
+            nutrition:
+              `
+              - Garlic has anti-inflammatory effects and can lower blood pressure
+              - Vegetables provide plenty of fiber and vitamins
+              `,
             fruit_id: 19
           },
           {
-            name: "Mì Quảng Gà Tỏi",
-            ingredients: 
-            `
-              - Gà nước luộc, cắt sợi
-              - Bánh mì quảng
-              - Tỏi xào thơm
-              - Rau sống như rau xanh, rau mầm
-            `,
-            nutrition: 
-            `
-              - Tỏi là nguồn chất chống ô nhiễm và có tác dụng kích thích tiêu hóa
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Garlic Chicken Quang Noodle",
+            ingredients:
+              `
+              - Shredded boiled chicken
+              - Quang noodle
+              - Fragrant sautéed garlic
+              - Raw vegetables such as greens, bean sprouts
+              `,
+            nutrition:
+              `
+              - Garlic is a source of pollution-resistant compounds and aids digestion
+              - Chicken is a high-quality protein source and provides essential minerals
+              `,
             fruit_id: 19
           },
           //58- 60 Grape
           {
-            name: "Salad Nho với Phô Mai và Hạt Giống Dẻo",
-            ingredients: 
-            `
-              - Nho cắt đôi
-              - Phô mai Gouda
-              - Hạt giống dẻo
-              - Dầu giấm balsamic
-            `,
-            nutrition: 
-            `
-              - Nho chứa nhiều chất chống ô nhiễm và vitamin C
-              - Phô mai Gouda cung cấp canxi và protein
-            `,
+            name: "Grape Salad with Gouda Cheese and Soft Seeds",
+            ingredients:
+              `
+              - Halved grapes
+              - Gouda cheese
+              - Soft seeds
+              - Balsamic vinegar
+              `,
+            nutrition:
+              `
+              - Grapes contain many pollution-resistant compounds and vitamin C
+              - Gouda cheese provides calcium and protein
+              `,
             fruit_id: 20
           },
           {
-            name: "Rượu nho",
-            ingredients: 
-            `
-              - Nho tím hoặc đỏ hoặc nho xanh
-              - Đường cát
-              - Túi vải để lược
-            `,
-            nutrition: 
-            `
-              - Nho là nguồn vitamin và chất xơ
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Grape Wine",
+            ingredients:
+              `
+              - Purple or red or green grapes
+              - Granulated sugar
+              - Filter bag
+              `,
+            nutrition:
+              `
+              - Grapes are a source of vitamins and fiber
+              - Chicken is a high-quality protein source and provides essential minerals
+              `,
             fruit_id: 20
           },
           {
-            name: "Bánh Nho và Kem Vanilla",
-            ingredients: 
-            `
-              - Nho cắt đôi
-              - Bánh ngọt như bánh muffin
-              - Kem vanilla
-              - Hạt giống dẻo (tùy chọn)
-            `,
-            nutrition: 
-            `
-              - Nho cung cấp nhiều chất chống ô nhiễm và chất xơ
-              - Chống oxi hóa và tăng cường hệ miễn dịch
-              - Giảm đột quỵ
-            `,
+            name: "Grape Muffins with Vanilla Ice Cream",
+            ingredients:
+              `
+              - Halved grapes
+              - Sweet muffins such as muffins
+              - Vanilla ice cream
+              - Soft seeds (optional)
+              `,
+            nutrition:
+              `
+              - Grapes provide plenty of pollution-resistant compounds and fiber
+              - Antioxidant and immune-boosting properties, reduces stroke risk
+              `,
             fruit_id: 20
           },
           //61- 63 Green lemon
           {
-            name: "Nước Chanh Xanh Lọc Dừa",
-            ingredients: 
-            `
-              - Nước chanh xanh
-              - Nước dừa tươi
-              - Đá viên
-              - Đường (tùy chọn)
-            `,
-            nutrition: 
-            `
-              - Nước chanh xanh cung cấp vitamin C và chất chống ô nhiễm
-              - Nước dừa là nguồn nước tự nhiên và khoáng chất
-            `,
+            name: "Refreshing Green Lemon Coconut Water",
+            ingredients:
+              `
+              - Green lemon juice
+              - Fresh coconut water
+              - Ice cubes
+              - Sugar (optional)
+              `,
+            nutrition:
+              `
+              - Green lemon juice provides vitamin C and pollution-resistant compounds
+              - Coconut water is a natural source of water and minerals
+              `,
             fruit_id: 21
           },
           {
-            name: "Muối ớt chanh xanh",
-            ingredients: 
-            `
-              - Chanh xanh cắt lát
-              - Sữa đặc
-              - Muối, ớt
-            `,
-            nutrition: 
-            `
-              - Chanh xanh là nguồn vitamin C và chất xơ
-              - Đem lại nguồn dinh dưỡng gồm chất béo, vitamin A và C
-            `,
+            name: "Spicy Green Lemon Condensed Milk",
+            ingredients:
+              `
+              - Sliced green lemons
+              - Condensed milk
+              - Salt, chili
+              `,
+            nutrition:
+              `
+              - Green lemons are a source of vitamin C and fiber
+              - Provides nutrients such as fat, vitamin A, and C
+              `,
             fruit_id: 21
           },
           {
-            name: "Gà Kho Gừng và Chanh Xanh",
-            ingredients: 
-            `
-              - Gà nước cắt miếng
-              - Gừng tươi băm nhuyễn
-              - Chanh xanh cắt lát
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Chanh xanh cung cấp vitamin C và chất chống ô nhiễm
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Ginger Chicken with Green Lemon",
+            ingredients:
+              `
+              - Shredded boiled chicken
+              - Finely chopped fresh ginger
+              - Sliced green lemon
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Green lemon provides vitamin C and pollution-resistant compounds
+              - Chicken is a high-quality protein source and provides essential minerals
+              `,
             fruit_id: 21
           },
-          //64- 66
+          // 64-66 Jackfruit (Mít)
           {
-            name: "Bánh Mít Nướng với Dầu Dừa",
-            ingredients: 
-            `
-              - Mít bổ hạt
-              - Dầu dừa
-              - Đường (tùy chọn)
-              - Bột mỳ
+            name: "Baked Jackfruit Cake with Coconut Oil",
+            ingredients: `
+              - Seedless jackfruit
+              - Coconut oil
+              - Sugar (optional)
+              - Wheat flour
             `,
-            nutrition: 
-            `
-              - Mít là nguồn vitamin và khoáng chất như kali
-              - Dầu dừa cung cấp chất béo lành và hương vị thơm ngon
+            nutrition: `
+              - Jackfruit is a source of vitamins and minerals like potassium
+              - Coconut oil provides healthy fats and a delightful aroma
             `,
             fruit_id: 22
           },
           {
-            name: "Canh Mít Nấu Nước Cốt Dừa",
-            ingredients: 
-            `
-              - Mít bổ hạt
-              - Nước cốt dừa
-              - Gạo nấu chín
-              - Gia vị: Muối, tiêu, nước mắm
+            name: "Jackfruit Soup with Coconut Milk",
+            ingredients: `
+              - Seedless jackfruit
+              - Coconut milk
+              - Cooked rice
+              - Seasonings: Salt, black pepper, fish sauce
             `,
-            nutrition: 
-            `
-              - Mít cung cấp nhiều chất xơ và vitamin
-              - Nước cốt dừa là nguồn chất béo lành và hương vị đặc trưng
+            nutrition: `
+              - Jackfruit offers fiber and vitamins
+              - Coconut milk is a source of healthy fats and a distinctive flavor
             `,
             fruit_id: 22
           },
           {
-            name: "Salad Mít và Dưa Lưới",
-            ingredients: 
-            `
-              - Mít bổ hạt
-              - Dưa lưới cắt sợi
-              - Rau sống như rau xanh, cà chua
-              - Nước mắm pha
+            name: "Jackfruit and Cucumber Salad",
+            ingredients: `
+              - Seedless jackfruit
+              - Julienned cucumber
+              - Raw vegetables like greens, tomatoes
+              - Diluted fish sauce
             `,
-            nutrition: 
-            `
-              - Mít là nguồn vitamin và chất xơ
-              - Dưa lưới cung cấp nước và chất xơ
+            nutrition: `
+              - Jackfruit is a source of vitamins and fiber
+              - Cucumber provides water and fiber
             `,
             fruit_id: 22
           },
-          //67- 69 Kiwi
+          // 67-69 Kiwi
           {
-            name: "Sinh Tố Kiwi với Dưa Hấu",
-            ingredients: 
-            `
-              - Kiwi bỏ vỏ, cắt lát
-              - Dưa hấu cắt lát
-              - Sữa tươi
-              - Đường (tùy chọn)
+            name: "Kiwi Smoothie with Watermelon",
+            ingredients: `
+              - Peeled and sliced kiwi
+              - Sliced watermelon
+              - Fresh milk
+              - Sugar (optional)
             `,
-            nutrition: 
-            `
-              - Kiwi là nguồn vitamin C và chất xơ
-              - Dưa hấu cung cấp nước và vitamin A
+            nutrition: `
+              - Kiwi is a source of vitamin C and fiber
+              - Watermelon provides hydration and vitamin A
             `,
             fruit_id: 23
           },
           {
-            name: "Salad Rau Mầm với Kiwi và Hạt Giống Bí Ngô",
-            ingredients: 
-            `
-              - Kiwi bỏ vỏ, cắt sợi
-              - Rau mầm như giá đỗ, cần tây
-              - Hạt giống bí ngô
-              - Dầu giấm mâm xôi
+            name: "Sprout Salad with Kiwi and Pumpkin Seeds",
+            ingredients: `
+              - Peeled and julienned kiwi
+              - Sprouts like mung beans, celery
+              - Pumpkin seeds
+              - Balsamic vinegar
             `,
-            nutrition: 
-            `
-              - Kiwi chứa nhiều chất chống ô nhiễm và chất xơ
-              - Rau mầm cung cấp nhiều vitamin và khoáng chất
+            nutrition: `
+              - Kiwi contains anti-pollution compounds and fiber
+              - Sprouts offer various vitamins and minerals
             `,
             fruit_id: 23
           },
           {
-            name: "Kem Kiwi và Mật Ong",
-            ingredients: 
-            `
-              - Kiwi bỏ vỏ, cắt lát
-              - Kem vani
-              - Mật ong
-              - Hạt giống dẻo (tùy chọn)
+            name: "Kiwi and Honey Ice Cream",
+            ingredients: `
+              - Peeled and sliced kiwi
+              - Vanilla ice cream
+              - Honey
+              - Tapioca pearls (optional)
             `,
-            nutrition: 
-            `
-              - Kiwi là nguồn vitamin C và chất xơ
-              - Kem vani cung cấp canxi và chất béo lành
+            nutrition: `
+              - Kiwi is a source of vitamin C and fiber
+              - Vanilla ice cream provides calcium and healthy fats
             `,
             fruit_id: 23
           },
-          //70- 72 Mango
+          // 70-72 Mango
           {
-            name: "Sinh Tố Xoài và Nước Cốt Dừa",
-            ingredients: 
-            `
-              - Xoài bỏ vỏ, cắt lát
-              - Nước cốt dừa tươi
-              - Đường (tùy chọn)
-              - Đá viên
+            name: "Mango and Coconut Water Smoothie",
+            ingredients: `
+              - Peeled and sliced mango
+              - Fresh coconut water
+              - Sugar (optional)
+              - Ice cubes
             `,
-            nutrition: 
-            `
-              - Xoài là nguồn vitamin A và C, cung cấp năng lượng từ đường tự nhiên
-              - Nước cốt dừa là nguồn chất béo lành và hương vị thơm ngon
+            nutrition: `
+              - Mango is a source of vitamins A and C, offering natural sugar energy
+              - Coconut water is a source of healthy fats and a delightful flavor
             `,
             fruit_id: 24
           },
           {
-            name: "Salad Xoài và Tôm",
-            ingredients: 
-            `
-              - Xoài bỏ vỏ, cắt sợi
-              - Tôm tươi
-              - Nước mắm pha
-              - Rau sống như cà rốt, rau xanh
+            name: "Mango and Shrimp Salad",
+            ingredients: `
+              - Peeled and julienned mango
+              - Fresh shrimp
+              - Diluted fish sauce
+              - Raw vegetables like carrots, greens
             `,
-            nutrition: 
-            `
-              - Xoài cung cấp nhiều chất xơ và vitamin
-              - Tôm là nguồn protein chất lượng và các khoáng chất
+            nutrition: `
+              - Mango provides fiber and vitamins
+              - Shrimp is a high-quality protein source with essential minerals
             `,
             fruit_id: 24
           },
           {
-            name: "Xôi Xoài",
-            ingredients: 
-            `
-              - Xoài bỏ vỏ, cắt nhỏ
-              - Xôi nếp luộc
-              - Hạt giống dẻo
-              - Đường cát trắng
+            name: "Mango Sticky Rice",
+            ingredients: `
+              - Peeled and diced mango
+              - Sticky rice, steamed
+              - Sesame seeds
+              - White sugar
             `,
-            nutrition: 
-            `
-              - Xoài là nguồn vitamin C và chất xơ
-              - Xôi nếp cung cấp năng lượng từ tinh bột
+            nutrition: `
+              - Mango is a source of vitamin C and fiber
+              - Sticky rice supplies energy from starch
             `,
             fruit_id: 24
           },
           //73- 75 Okra
           {
-            name: "Đậu Bắp Xào Tôm",
-            ingredients: 
-            `
-              - Đậu bắp xanh
-              - Tôm tươi
-              - Cà chua cắt lát
-              - Hành tây băm
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Đậu bắp là nguồn chất xơ và vitamin C
-              - Tôm cung cấp protein và các khoáng chất
-            `,
+            name: "Okra and Shrimp Stir-Fry",
+            ingredients:
+              `
+              - Green okra
+              - Fresh shrimp
+              - Sliced tomatoes
+              - Chopped onions
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Okra is a source of fiber and vitamin C
+              - Shrimp provides protein and essential minerals
+              `,
             fruit_id: 25
           },
           {
-            name: "Xào Đậu Bắp với Tỏi và Ớt",
-            ingredients: 
-            `
-              - Đậu bắp xanh
-              - Tôm tươi
-              - Cà chua cắt lát
-              - Hành tây băm
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Đậu bắp là nguồn chất xơ và vitamin C
-              - Tôm cung cấp protein và các khoáng chất
-            `,
+            name: "Stir-Fried Okra with Garlic and Chili",
+            ingredients:
+              `
+              - Green okra
+              - Fresh shrimp
+              - Sliced tomatoes
+              - Chopped onions
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Okra is a source of fiber and vitamin C
+              - Shrimp provides protein and essential minerals
+              `,
             fruit_id: 25
           },
           {
-            name: "Salad Đậu Bắp",
-            ingredients: 
-            `
-              - Đậu bắp xanh luộc chín
-              - Ớt chuônt
-              - Trứng luộc
-            `,
-            nutrition: 
-            `
-              - Đậu bắp cung cấp chất xơ và vitamin C
-              - Ớt chuông là nguồn beta- carotene và vitamin A  
-              - Trứng cung cấp protein dồi dàu            
-            `,
+            name: "Okra Salad",
+            ingredients:
+              `
+              - Boiled ripe okra
+              - Red bell pepper
+              - Boiled eggs
+              `,
+            nutrition:
+              `
+              - Okra provides fiber and vitamin C
+              - Bell pepper is a source of beta-carotene and vitamin A
+              - Eggs provide rich protein
+              `,
             fruit_id: 25
           },
           //76- 78 Onion
           {
-            name: "Xào Gà và Hành Tây",
-            ingredients: 
-            `
-              - Gà nước cắt miếng
-              - Hành tây cắt sợi
-              - Ớt đỏ cắt nhỏ
-              - Dầu ăn
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Hành tây chứa nhiều chất chống ô nhiễm và có tác dụng chống viêm
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Chicken Stir-Fry with Onions",
+            ingredients:
+              `
+              - Sliced boiled chicken
+              - Julienned onions
+              - Finely chopped red chili
+              - Cooking oil
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Onions contain many pollution-resistant compounds and have anti-inflammatory effects
+              - Chicken is a high-quality protein source and provides essential minerals
+              `,
             fruit_id: 26
           },
           {
-            name: "Bánh Mì Hamburger với Hành Tây Caramel",
-            ingredients: 
-            `
-              - Bánh mì hamburger
-              - Bò băm thành viên
-              - Hành tây caramel
+            name: "Hamburger with Caramelized Onions",
+            ingredients:
+              `
+              - Hamburger buns
+              - Ground beef
+              - Caramelized onions
               - Mayonnaise
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Hành tây cung cấp vitamin C và chất xơ
-              - Bò băm là nguồn protein chất lượng và chất béo lành
-            `,
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Onions provide vitamin C and fiber
+              - Ground beef is a source of high-quality protein and healthy fats
+              `,
             fruit_id: 26
           },
           {
-            name: "Cà Ri Gà với Hành Tây và Cà Rốt",
-            ingredients: 
-            `
-              - Gà nước cắt miếng
-              - Hành tây cắt sợi
-              - Cà rốt xanh cắt lát
-              - Nước cốt dừa
-            `,
-            nutrition: 
-            `
-              - Hành tây cung cấp chất xơ và các khoáng chất
-              - Gà là nguồn protein chất lượng và chất béo lành
-            `,
+            name: "Chicken Curry with Onions and Carrots",
+            ingredients:
+              `
+              - Sliced boiled chicken
+              - Julienned onions
+              - Sliced green carrots
+              - Coconut milk
+              `,
+            nutrition:
+              `
+              - Onions provide fiber and essential minerals
+              - Chicken is a high-quality protein source and healthy fats
+              `,
             fruit_id: 26
           },
           //79- 81 Orange
           {
-            name: "Sinh Tố Cam và Dâu",
-            ingredients: 
-            `
-              - Cam ép nước
-              - Dâu tươi
-              - Sữa tươi
-              - Đường (tùy chọn)
-            `,
-            nutrition: 
-            `
-              - Cam là nguồn vitamin C và chất chống ô nhiễm
-              - Dâu cung cấp nhiều chất xơ và vitamin
-            `,
+            name: "Orange and Strawberry Smoothie",
+            ingredients:
+              `
+              - Freshly squeezed orange juice
+              - Fresh strawberries
+              - Fresh milk
+              - Sugar (optional)
+              `,
+            nutrition:
+              `
+              - Oranges are a source of vitamin C and pollution-resistant compounds
+              - Strawberries provide fiber and vitamins
+              `,
             fruit_id: 27
           },
           {
-            name: "Salad Cam và Rau sống",
-            ingredients: 
-            `
-              - Cam cắt lát
-              - Rau sống như rau xanh, cà chua
-              - Hạt giống bí ngô
-              - Nước mắm pha
-            `,
-            nutrition: 
-            `
-              - Cam cung cấp vitamin C và chất xơ
-              - Rau sống là nguồn chất xơ và vitamin
-            `,
+            name: "Orange and Raw Vegetable Salad",
+            ingredients:
+              `
+              - Orange slices
+              - Raw vegetables like greens, tomatoes
+              - Pumpkin seeds
+              - Fish sauce dressing
+              `,
+            nutrition:
+              `
+              - Oranges provide vitamin C and fiber
+              - Raw vegetables are a source of fiber and vitamins
+              `,
             fruit_id: 27
           },
           {
-            name: "Gà Kho Cam và Mật Ong",
-            ingredients: 
-            `
-              - Gà nước cắt miếng
-              - Cam cắt lát
-              - Mật ong
-              - Hành tây băm
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Cam là nguồn vitamin C và chất chống ô nhiễm
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Chicken Braised with Orange and Honey",
+            ingredients:
+              `
+              - Sliced boiled chicken
+              - Orange slices
+              - Honey
+              - Chopped onions
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Oranges are a source of vitamin C and pollution-resistant compounds
+              - Chicken is a high-quality protein source and provides essential minerals
+              `,
             fruit_id: 27
           },
-          //82- 84 Papaya
+          // 82-84 Papaya
           {
-            name: "Salad Dưa Lưới và Cá Ngừ",
-            ingredients: 
-            `
-              - Dưa lưới cắt sợi
-              - Cá ngừ tươi
-              - Rau sống như rau xanh, cà chua
-              - Nước mắm pha
-              - Gia vị: Muối, tiêu, nước mắm
+            name: "Papaya and Tuna Salad",
+            ingredients: `
+              - Julienned papaya
+              - Fresh tuna
+              - Raw vegetables like greens, tomatoes
+              - Diluted fish sauce
+              - Seasonings: Salt, black pepper, fish sauce
             `,
-            nutrition: 
-            `
-              - Dưa lưới là nguồn chất xơ và vitamin A
-              - Cá ngừ cung cấp protein và axit béo omega- 3
+            nutrition: `
+              - Papaya is a source of fiber and vitamin A
+              - Tuna provides protein and omega-3 fatty acids
             `,
             fruit_id: 28
           },
           {
-            name: "Sinh Tố Dưa Lưới và Chuối",
-            ingredients: 
-            `
-              - Dưa lưới bỏ hạt
-              - Chuối chín
-              - Sữa tươi
-              - Đường (tùy chọn)
+            name: "Papaya and Banana Smoothie",
+            ingredients: `
+              - Seedless papaya
+              - Ripe banana
+              - Fresh milk
+              - Sugar (optional)
             `,
-            nutrition: 
-            `
-              - Dưa lưới cung cấp vitamin C và chất xơ
-              - Chuối là nguồn năng lượng và chất xơ
+            nutrition: `
+              - Papaya provides vitamin C and fiber
+              - Banana is a source of energy and fiber
             `,
             fruit_id: 28
           },
           {
-            name: "Chè Dưa Lưới và Thạch Dừa",
-            ingredients: 
-            `
-              - Dưa lưới cắt sợi
-              - Thạch dừa
-              - Đường cát trắng
-              - Hạt é
+            name: "Papaya and Coconut Jelly Dessert",
+            ingredients: `
+              - Julienned papaya
+              - Coconut jelly
+              - White sugar
+              - Tapioca pearls (optional)
             `,
-            nutrition: 
-            `
-              - Dưa lưới là nguồn chất xơ và vitamin C
-              - Thạch dừa cung cấp nước và chất béo lành
+            nutrition: `
+              - Papaya is a source of fiber and vitamin C
+              - Coconut jelly provides water and healthy fats
             `,
             fruit_id: 28
           },
-          //85- 87 Peanut
+          // 85-87 Peanut
           {
-            name: "Bơ Lạc (Bơ Đậu Phộng)",
-            ingredients: 
-            `
-              - Lạc rang
-              - Dầu olive
-              - Muối và tiêu
-              - Hành tây băm
+            name: "Roasted Peanuts with Olive Oil",
+            ingredients: `
+              - Roasted peanuts
+              - Olive oil
+              - Salt and pepper
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Lạc là nguồn chất béo tốt cho tim mạch
-              - Dầu olive giàu axit béo không no
+            nutrition: `
+              - Peanuts are a source of heart-healthy fats
+              - Olive oil is rich in monounsaturated fatty acids
             `,
             fruit_id: 29
           },
           {
-            name: "Đậu phộng rim tỏi ớt",
-            ingredients: 
-            `
-              - Nước mắm
-              - Đậu rang
-              - Tỏi ớt
-              - Đường
+            name: "Garlic Chili Roasted Peanuts",
+            ingredients: `
+              - Fish sauce
+              - Roasted peanuts
+              - Garlic and chili
+              - Sugar
             `,
-            nutrition: 
-            `
-              - Lạc cung cấp protein và chất béo
+            nutrition: `
+              - Peanuts provide protein and healthy fats
             `,
             fruit_id: 29
           },
           {
-            name: "Salad Gà với Sốt Lạc",
-            ingredients: 
-            `
-              - Gà nướng
-              - Rau sống (xà lách, cà rốt)
-              - Sốt lạc
-              - Hành tây băm
+            name: "Chicken Salad with Peanut Sauce",
+            ingredients: `
+              - Grilled chicken
+              - Raw vegetables (lettuce, carrots)
+              - Peanut sauce
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Lạc là nguồn protein và chất xơ
-              - Salad giúp bổ sung nhiều vitamin và khoáng chất
+            nutrition: `
+              - Peanuts are a source of protein and fiber
+              - Salad provides various vitamins and minerals
             `,
             fruit_id: 29
           },
-          //88- 90 Pineapple
+          // 88-90 Pineapple
           {
-            name: "Sinh Tố Dứa với Nước Dừa",
-            ingredients: 
-            `
-              - Dứa tươi
-              - Nước dừa
-              - Đá xay nhuyễn
+            name: "Pineapple and Coconut Water Smoothie",
+            ingredients: `
+              - Fresh pineapple
+              - Fresh coconut water
+              - Crushed ice
             `,
-            nutrition: 
-            `
-              - Dứa cung cấp vitamin C và manganese
-              - Nước dừa giúp cung cấp nước và khoáng chất
+            nutrition: `
+              - Pineapple provides vitamin C and manganese
+              - Coconut water helps hydrate and provides minerals
             `,
             fruit_id: 30
           },
           {
-            name: "Dứa Xào Tôm",
-            ingredients: 
-            `
-              - Dứa chín
-              - Tôm tươi
-              - Rau sống (ớt, hành tây)
-              - Hành tây băm
+            name: "Stir-Fried Pineapple with Shrimp",
+            ingredients: `
+              - Ripe pineapple
+              - Fresh shrimp
+              - Raw vegetables (chili, onions)
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Dứa giàu chất chống oxy hóa
-              - Tôm cung cấp protein và các khoáng chất
+            nutrition: `
+              - Pineapple is rich in antioxidants
+              - Shrimp provides protein and essential minerals
             `,
             fruit_id: 30
           },
           {
-            name: "Salad Dứa và Gà",
-            ingredients: 
-            `
-              - Dứa chín
-              - Gà nướng
-              - Cà chua cắt lát
-              - Rau sống (xà lách, cà rốt)
+            name: "Pineapple and Chicken Salad",
+            ingredients: `
+              - Ripe pineapple
+              - Grilled chicken
+              - Sliced tomatoes
+              - Raw vegetables (lettuce, carrots)
             `,
-            nutrition: 
-            `
-              - Dứa cung cấp vitamin và enzym giúp tiêu hóa
-              - Gà là nguồn protein chất lượng
+            nutrition: `
+              - Pineapple provides vitamins and digestive enzymes
+              - Chicken is a source of high-quality protein
             `,
             fruit_id: 30
           },
           //91- 93 Pomegranate
           {
-            name: "Sinh Tố Lựu với Dâu",
-            ingredients: 
-            `
-              - Hạt lựu
-              - Dâu tươi
-              - Nước
-              - Hành tây băm
-            `,
-            nutrition: 
-            `
-              - Lựu chứa nhiều chất chống oxi hóa
-              - Dâu giàu vitamin C và chất xơ
-            `,
+            name: "Pomegranate and Strawberry Smoothie",
+            ingredients:
+              `
+              - Pomegranate seeds
+              - Fresh strawberries
+              - Water
+              - Chopped onions
+              `,
+            nutrition:
+              `
+              - Pomegranate contains many antioxidants
+              - Strawberries are rich in vitamin C and fiber
+              `,
             fruit_id: 31
           },
           {
-            name: "Salad Rau Mầm với Hạt Lựu",
-            ingredients: 
-            `
-              - Rau mầm (cải xanh, đậu nành)
-              - Hạt lựu
-              - Sốt dầu giấm
-            `,
-            nutrition: 
-            `
-              - Lựu giúp cải thiện sức khỏe tim mạch
-              - Rau mầm là nguồn chất xơ và vitamin
-            `,
+            name: "Sprout Salad with Pomegranate Seeds",
+            ingredients:
+              `
+              - Sprouts (kale, soybean)
+              - Pomegranate seeds
+              - Balsamic vinaigrette
+              `,
+            nutrition:
+              `
+              - Pomegranate helps improve cardiovascular health
+              - Sprouts are a source of fiber and vitamins
+              `,
             fruit_id: 31
           },
           {
-            name: "Chè Lựu",
-            ingredients: 
-            `
-              - Hạt lựu
-              - Đường đen
-              - Nước cốt dừa
-            `,
-            nutrition: 
-            `
-              - Chè lựu cung cấp năng lượng và chất chống oxi hóa
-            `,
+            name: "Pomegranate Dessert Soup",
+            ingredients:
+              `
+              - Pomegranate seeds
+              - Black sugar
+              - Coconut milk
+              `,
+            nutrition:
+              `
+              - Pomegranate dessert soup provides energy and antioxidants
+              `,
             fruit_id: 31
           },
           //94- 96 Potato
           {
-            name: "Khoai Tây Nướng với Phô Mai",
-            ingredients: 
-            `
-              - Khoai tây
-              - Phô mai
-              - Dầu olive
-            `,
-            nutrition: 
-            `
-              - Khoai tây cung cấp carbohydrate và vitamin C
-              - Phô mai là nguồn canxi
-            `,
+            name: "Baked Potatoes with Cheese",
+            ingredients:
+              `
+              - Potatoes
+              - Cheese
+              - Olive oil
+              `,
+            nutrition:
+              `
+              - Potatoes provide carbohydrates and vitamin C
+              - Cheese is a source of calcium
+              `,
             fruit_id: 32
           },
           {
-            name: "Canh Khoai Tây nấu Gà",
-            ingredients: 
-            `
-              - Khoai tây
-              - Thịt gà
-              - Rau sống (cà rốt, cần tây)
-              - Gia vị: Muối, tiêu, nước mắm
-            `,
-            nutrition: 
-            `
-              - Khoai tây giàu kali và vitamin B6
-              - Thịt gà cung cấp protein và chất béo
-            `,
+            name: "Potato Soup with Chicken",
+            ingredients:
+              `
+              - Potatoes
+              - Chicken meat
+              - Raw vegetables (carrots, celery)
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Potatoes are rich in potassium and vitamin B6
+              - Chicken provides protein and healthy fats
+              `,
             fruit_id: 32
           },
           {
-            name: "Khoai Tây Xào Ớt Chuông và Hành Tây",
-            ingredients: 
-            `
-              - Khoai tây
-              - Ớt chuông
-              - Hành tây
-              - Hành tây băm
-            `,
-            nutrition: 
-            `
-              - Khoai tây cung cấp năng lượng và chất xơ
-              - Rau sống giàu vitamin và khoáng chất
-            `,
+            name: "Stir-Fried Potatoes with Bell Peppers and Onions",
+            ingredients:
+              `
+              - Potatoes
+              - Bell peppers
+              - Onions
+              - Chopped onions
+              `,
+            nutrition:
+              `
+              - Potatoes provide energy and fiber
+              - Raw vegetables are rich in vitamins and minerals
+              `,
             fruit_id: 32
           },
           //97- 99 Pumpkin
           {
-            name: "Bí Ngô Nướng Mật Ong",
-            ingredients: 
-            `
-              - Bí ngô
-              - Mật ong
-              - Hạt lanh
-            `,
-            nutrition: 
-            `
-              - Bí ngô là nguồn beta- carotene tốt cho thị lực
-              - Mật ong chứa nhiều khoáng chất và có tác dụng chống vi khuẩn
-            `,
+            name: "Honey-Roasted Pumpkin",
+            ingredients:
+              `
+              - Pumpkin
+              - Honey
+              - Flaxseeds
+              `,
+            nutrition:
+              `
+              - Pumpkin is a good source of beta-carotene for vision health
+              - Honey contains various minerals and has antibacterial properties
+              `,
             fruit_id: 33
           },
           {
-            name: "Canh Bí Ngô với Tôm",
-            ingredients: 
-            `
-              - Bí ngô
-              - Tôm
-              - Hành, tỏi, nấm
-            `,
-            nutrition: 
-            `
-              - Bí ngô cung cấp vitamin C và kali
-              - Tôm cung cấp protein và các khoáng chất
-            `,
+            name: "Pumpkin Soup with Shrimp",
+            ingredients:
+              `
+              - Pumpkin
+              - Shrimp
+              - Onions, garlic, mushrooms
+              `,
+            nutrition:
+              `
+              - Pumpkin provides vitamin C and potassium
+              - Shrimp provides protein and essential minerals
+              `,
             fruit_id: 33
           },
           {
-            name: "Gà hầm bí đỏ",
-            ingredients: 
-            `
-              - Bí ngô
-              - Thịt gà
-              - Hành, tiêu
-            `,
-            nutrition: 
-            `
-              - Bí ngô giàu chất chống oxi hóa
-              - Thịt gà đem lại nhiều protein nhưng ít chất béo
-            `,
+            name: "Braised Chicken with Red Pumpkin",
+            ingredients:
+              `
+              - Pumpkin
+              - Chicken meat
+              - Onions, pepper
+              `,
+            nutrition:
+              `
+              - Pumpkin is rich in antioxidants
+              - Chicken provides protein with low fat content
+              `,
             fruit_id: 33
           },
-          //100- 102 Radish
+          // 100-102 Radish
           {
-            name: "Salad Củ Cải với Dầu Giấm và Hạt Bí Ngô",
-            ingredients: 
-            `
-              - Củ cải trắng và củ cải đỏ
-              - Hạt bí ngô
-              - Dầu giấm
-              - Hành tây băm
+            name: "Radish Salad with Vinegar and Pumpkin Seeds",
+            ingredients: `
+              - White and red radish
+              - Pumpkin seeds
+              - Vinegar
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Củ cải chứa nhiều vitamin C và chất xơ
-              - Hạt bí ngô cung cấp dầu béo không no
+            nutrition: `
+              - Radish is rich in vitamin C and fiber
+              - Pumpkin seeds provide healthy non-oil fats
             `,
             fruit_id: 34
           },
           {
-            name: "Canh Củ Cải nấu Nước Dừa",
-            ingredients: 
-            `
-              - Củ cải trắng
-              - Nước dừa
-              - Hành tây băm
+            name: "Coconut Water Radish Soup",
+            ingredients: `
+              - White radish
+              - Coconut water
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Củ cải giàu kali và canxi
-              - Nước dừa là nguồn nước và khoáng chất
+            nutrition: `
+              - Radish is rich in potassium and calcium
+              - Coconut water is a source of water and minerals
             `,
             fruit_id: 34
           },
           {
-            name: "Củ Cải Xào Thịt Bò",
-            ingredients: 
-            `
-              - Củ cải trắng
-              - Thịt bò
-              - Hành, tỏi, ớt
+            name: "Stir-Fried Radish with Beef",
+            ingredients: `
+              - White radish
+              - Beef
+              - Onions, garlic, chili
             `,
-            nutrition: 
-            `
-              - Củ cải cung cấp nhiều vitamin và khoáng chất
-              - Thịt bò là nguồn protein chất lượng
+            nutrition: `
+              - Radish provides various vitamins and minerals
+              - Beef is a source of high-quality protein
             `,
             fruit_id: 34
           },
-          //103- 105 Star Fruit
+          // 103-105 Star Fruit
           {
-            name: "Sinh Tố Khế với Dưa Hấu",
-            ingredients: 
-            `
-              - Khế
-              - Dưa hấu
-              - Nước đậu nành
+            name: "Star Fruit and Watermelon Smoothie",
+            ingredients: `
+              - Star fruit
+              - Watermelon
+              - Soy milk
             `,
-            nutrition: 
-            `
-              - Khế là nguồn vitamin C và chất chống oxi hóa
-              - Dưa hấu giúp cung cấp nước và các khoáng chất
+            nutrition: `
+              - Star fruit is a source of vitamin C and antioxidants
+              - Watermelon helps hydrate and provides minerals
             `,
             fruit_id: 35
           },
           {
-            name: "Gỏi khế bao tử ngọt",
-            ingredients: 
-            `
-              - Bao tử heo
-              - Rau sống (xà lách, cà rốt)
-              - Rượu trắng, gừng, giấm
-              - Khế
+            name: "Sweet Pork Intestine Salad with Star Fruit",
+            ingredients: `
+              - Pork intestines
+              - Raw vegetables (lettuce, carrots)
+              - White wine, ginger, vinegar
+              - Star fruit
             `,
-            nutrition: 
-            `
-              - Khế giúp hỗ trợ hệ tiêu hóa
-              - Chống oxy hóa, cung cấp protein và cung cấp năng lượng cho cơ thể
+            nutrition: `
+              - Star fruit supports the digestive system
+              - Provides antioxidants, protein, and energy for the body
             `,
             fruit_id: 35
           },
           {
-            name: "Khế Xào thịt trâu",
-            ingredients: 
-            `
-              - Khế
-              - Thịt trâu
-              - Hành, tỏi, ớt
+            name: "Stir-Fried Star Fruit with Buffalo Meat",
+            ingredients: `
+              - Star fruit
+              - Buffalo meat
+              - Onions, garlic, chili
             `,
-            nutrition: 
-            `
-              - Khế giúp làm giảm cảm giác đau và viêm nhiễm
-              - Thịt trâu là nguồn protein và canxi
+            nutrition: `
+              - Star fruit helps reduce pain sensation and inflammation
+              - Buffalo meat is a source of protein and calcium
             `,
             fruit_id: 35
           },
-          //106- 108 Strawberry
+          // 106-108 Strawberry
           {
-            name: "Dâu với Kem Sữa Tươi",
-            ingredients: 
-            `
-              - Dâu tươi
-              - Kem sữa tươi
-              - Đường trắng
+            name: "Fresh Strawberries with Whipped Cream",
+            ingredients: `
+              - Fresh strawberries
+              - Whipped cream
+              - White sugar
             `,
-            nutrition: 
-            `
-              - Dâu là nguồn vitamin C và chất chống oxi hóa
-              - Kem sữa tươi cung cấp canxi và protein
+            nutrition: `
+              - Strawberries are a source of vitamin C and antioxidants
+              - Whipped cream provides calcium and protein
             `,
             fruit_id: 36
           },
           {
-            name: "Smoothie dâu với hạt chia",
-            ingredients: 
-            `
-              - Dâu tươi
-              - Sữa hạ đường
-              - Hạt chia
+            name: "Strawberry Chia Seed Smoothie",
+            ingredients: `
+              - Fresh strawberries
+              - Low-sugar milk
+              - Chia seeds
             `,
-            nutrition: 
-            `
-              - Dâu giúp cải thiện chức năng não
-              - Chia seed chứa nhiều chất xơ và omega- 3
+            nutrition: `
+              - Strawberries help improve brain function
+              - Chia seeds are rich in fiber and omega-3 fatty acids
             `,
             fruit_id: 36
           },
           {
-            name: "Dâu Xào Sốt Chocolate Đen",
-            ingredients: 
-            `
-              - Dâu tươi
-              - Chocolate đen
-              - Đường đen
+            name: "Stir-Fried Strawberries with Dark Chocolate Sauce",
+            ingredients: `
+              - Fresh strawberries
+              - Dark chocolate
+              - Dark sugar
             `,
-            nutrition: 
-            `
-              - Dâu giúp tăng cường hệ miễn dịch
-              - Chocolate đen chứa chất chống oxy hóa
+            nutrition: `
+              - Strawberries boost the immune system
+              - Dark chocolate contains antioxidants
             `,
             fruit_id: 36
           },
           //109- 111 Sweet potato
           {
-            name: "Khoai Lang Nướng Mật Ong",
-            ingredients: 
-            `
-              - Khoai lang nước cắt lát
-              - Mật ong
-              - Dầu ô liu
-              - Gia vị: Muối, tiêu, hạt tiêu
-            `,
-            nutrition: 
-            `
-              - Khoai lang cung cấp vitamin A, chất xơ và năng lượng từ tinh bột
-              - Mật ong chứa nhiều khoáng chất và có tác dụng chống vi khuẩn
-            `,
+            name: "Honey-Roasted Sweet Potatoes",
+            ingredients:
+              `
+              - Sweet potatoes, sliced
+              - Honey
+              - Olive oil
+              - Seasonings: Salt, pepper, black pepper
+              `,
+            nutrition:
+              `
+              - Sweet potatoes provide vitamin A, fiber, and energy from starch
+              - Honey contains various minerals and has antibacterial properties
+              `,
             fruit_id: 37
           },
           {
-            name: "Canh Khoai Lang và Gà",
-            ingredients: 
-            `
-              - Khoai lang nước cắt sợi
-              - Gà nước cắt miếng
-              - Hành tây băm
-              - Nước mắm pha
-            `,
-            nutrition: 
-            `
-              - Khoai lang là nguồn chất xơ và vitamin A
-              - Gà là nguồn protein chất lượng và các khoáng chất
-            `,
+            name: "Sweet Potato and Chicken Soup",
+            ingredients:
+              `
+              - Sweet potatoes, julienned
+              - Chicken meat, sliced
+              - Chopped onions
+              - Fish sauce dressing
+              `,
+            nutrition:
+              `
+              - Sweet potatoes are a source of fiber and vitamin A
+              - Chicken is a high-quality protein source with essential minerals
+              `,
             fruit_id: 37
           },
           {
-            name: "Khoai Lang tẩm gừng",
-            ingredients: 
-            `
-              - Khoai lang nước nấu chín
-              - Gừng tươi băm nhuyễn
-              - Đường cát trắng
-              - Hạt giống dẻo
-            `,
-            nutrition: 
-            `
-              - Khoai lang cung cấp vitamin A và chất xơ
-              - Gừng có tác dụng kích thích tiêu hóa và giảm viêm
-            `,
+            name: "Ginger-Glazed Sweet Potatoes",
+            ingredients:
+              `
+              - Sweet potatoes, boiled until tender
+              - Fresh ginger, finely chopped
+              - White sugar
+              - Sesame seeds
+              `,
+            nutrition:
+              `
+              - Sweet potatoes provide vitamin A and fiber
+              - Ginger stimulates digestion and has anti-inflammatory effects
+              `,
             fruit_id: 37
           },
           //112- 114 Tomato
           {
-            name: "Salad Cà Chua và Dưa Leo",
-            ingredients: 
-            `
-              - Cà chua cắt lát
-              - Dưa leo cắt sợi
-              - Hành tây băm
-              - Nước mắm pha
-            `,
-            nutrition: 
-            `
-              - Cà chua là nguồn vitamin C và chất chống ô nhiễm
-              - Dưa leo cung cấp nước và chất xơ
-            `,
+            name: "Tomato and Cucumber Salad",
+            ingredients:
+              `
+              - Tomato slices
+              - Cucumber strips
+              - Chopped onions
+              - Fish sauce dressing
+              `,
+            nutrition:
+              `
+              - Tomatoes are a source of vitamin C and pollution-fighting agents
+              - Cucumber provides water and fiber
+              `,
             fruit_id: 38
           },
           {
-            name: "Súp Cà Chua và Hành Tây",
-            ingredients: 
-            `
-              - Cà chua cắt lát
-              - Hành tây cắt sợi
-              - Thịt gà luộc, cắt nhỏ
-              - Gia vị: Muối, tiêu, nước mắmGia vị: Muối, tiêu, thì là, hạt tiêu
-            `,
-            nutrition: 
-            `
-              - Cà chua cung cấp vitamin C và chất xơ
-              - Hành tây là nguồn chất xơ và vitamin
-            `,
+            name: "Chicken and Tomato Soup",
+            ingredients:
+              `
+              - Tomato slices
+              - Onion strips
+              - Boiled chicken, diced
+              - Seasonings: Salt, pepper, fish sauce
+              `,
+            nutrition:
+              `
+              - Tomatoes provide vitamin C and fiber
+              - Onions are a source of fiber and vitamins
+              `,
             fruit_id: 38
           },
           {
-            name: "Mì Ý với Sốt Cà Chua và Thịt Bò Băm",
-            ingredients: 
-            `
-              - Mì Ý nấu chín
-              - Sốt cà chua
-              - Thịt bò băm
-              - Hành tây băm
-            `,
-            nutrition: 
-            `
-              - Cà chua cung cấp vitamin C và chất chống ô nhiễm
-              - Thịt bò là nguồn protein chất lượng và chất béo lành
-            `,
+            name: "Spaghetti with Tomato Sauce and Ground Beef",
+            ingredients:
+              `
+              - Cooked spaghetti
+              - Tomato sauce
+              - Ground beef
+              - Chopped onions
+              `,
+            nutrition:
+              `
+              - Tomatoes provide vitamin C and pollution-fighting agents
+              - Ground beef is a high-quality protein source with healthy fats
+              `,
             fruit_id: 38
           },
           //115- 117 Watermelon
           {
-            name: "Sinh Tố Dưa Hấu và Dưa Lưới",
-            ingredients: 
-            `
-              - Dưa hấu cắt sợi
-              - Dưa lưới cắt sợi
-              - Sữa tươi
-              - Đường (tùy chọn)
-            `,
-            nutrition: 
-            `
-              - Dưa hấu cung cấp nước và vitamin A, C
-              - Dưa lưới cung cấp nước và chất xơ
-            `,
+            name: "Watermelon and Cantaloupe Smoothie",
+            ingredients:
+              `
+              - Watermelon, sliced
+              - Cantaloupe, sliced
+              - Fresh milk
+              - Sugar (optional)
+              `,
+            nutrition:
+              `
+              - Watermelon provides water and vitamins A, C
+              - Cantaloupe provides water and fiber
+              `,
             fruit_id: 39
           },
           {
-            name: "Salad Dưa Hấu và Feta",
-            ingredients: 
-            `
-              - Dưa hấu cắt lát
-              - Phô mai Feta
-              - Rau sống như rau xanh, cà chua
-              - Nước mắm pha
-            `,
-            nutrition: 
-            `
-              - Dưa hấu cung cấp nước và vitamin A, C
-              - Phô mai Feta là nguồn canxi và protein
-            `,
+            name: "Watermelon and Feta Cheese Salad",
+            ingredients:
+              `
+              - Watermelon, sliced
+              - Feta cheese
+              - Raw vegetables like green leafy vegetables, tomatoes
+              - Fish sauce dressing
+              `,
+            nutrition:
+              `
+              - Watermelon provides water and vitamins A, C
+              - Feta cheese is a source of calcium and protein
+              `,
             fruit_id: 39
           },
           {
-            name: "Chè Dưa Hấu và Sâm Bổ Lượng",
-            ingredients: 
-            `
-              - Trân châu trắng nhỏ
-              - Dưa hấu cắt lát
-              - Đường cát trắng
-              - Hạt é
-            `,
-            nutrition: 
-            `
-              - Dưa hấu cung cấp nước và vitamin A, C
-              - Bao gồm nhiều khoáng chất thiết yếu cho cơ thể để duy trì nhu cầu hoạt động của cơ thể
-            `,
+            name: "Watermelon and Sago Dessert",
+            ingredients:
+              `
+              - Small white pearl sago
+              - Watermelon, sliced
+              - White sugar
+              - Ice cubes
+              `,
+            nutrition:
+              `
+              - Watermelon provides water and vitamins A, C
+              - Contains essential minerals to maintain body functions
+              `,
             fruit_id: 39
           },
-          //118- 120 White Musshroom
+          // 118-120 White Mushroom
           {
-            name: "Xào Nấm Trắng với Rau Mầm",
-            ingredients: 
-            `
-              - Nấm trắng cắt lát
-              - Rau mầm như giá đỗ, cần tây
-              - Nước mắm pha
-              - Hành tây băm
+            name: "Stir-Fried White Mushroom with Bean Sprouts",
+            ingredients: `
+              - White mushrooms, sliced
+              - Bean sprouts, such as mung bean sprouts, celery
+              - Fish sauce
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Nấm trắng là nguồn protein thực vật và nhiều khoáng chất như selen và đồng
-              - Rau mầm cung cấp nhiều vitamin và khoáng chất
+            nutrition: `
+              - White mushrooms are a plant-based protein source and rich in minerals like selenium and copper
+              - Bean sprouts provide various vitamins and minerals
             `,
             fruit_id: 40
           },
           {
-            name: "Bánh Mì Sandwich với Nấm Trắng Nướng và Rau sống",
-            ingredients: 
-            `
-              - Bánh mì sandwich
-              - Nấm trắng nướng
+            name: "Mushroom Grilled Sandwich with Fresh Vegetables",
+            ingredients: `
+              - Sandwich bread
+              - Grilled white mushrooms
               - Mayonnaise
-              - Rau sống như cà chua, rau xanh
+              - Fresh vegetables, such as tomatoes, lettuce
             `,
-            nutrition: 
-            `
-              - Nấm trắng là nguồn protein thực vật và nhiều khoáng chất
-              - Rau sống cung cấp chất xơ và nhiều vitamin
+            nutrition: `
+              - White mushrooms are a plant-based protein source and rich in minerals
+              - Fresh vegetables provide fiber and numerous vitamins
             `,
             fruit_id: 40
           },
           {
-            name: "Canh Nấm Trắng và Rau Củ",
-            ingredients: 
-            `
-              - Nấm trắng cắt lát
-              - Củ cải cắt sợi
-              - Nước dùng
-              - Hành tây băm
+            name: "White Mushroom and Root Vegetable Soup",
+            ingredients: `
+              - White mushrooms, sliced
+              - Root vegetables, such as sliced carrots
+              - Broth
+              - Chopped onions
             `,
-            nutrition: 
-            `
-              - Nấm trắng là nguồn protein thực vật và nhiều vitamin nhóm B
-              - Củ cải cung cấp chất xơ và khoáng chất
+            nutrition: `
+              - White mushrooms are a plant-based protein source and rich in B vitamins
+              - Root vegetables provide fiber and essential minerals
             `,
             fruit_id: 40
           },
-         
-          
       ],
       { batchSize: 120 }
   );

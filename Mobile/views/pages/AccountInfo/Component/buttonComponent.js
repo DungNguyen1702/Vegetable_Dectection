@@ -35,7 +35,7 @@ export default function ButtonComponent({user}) {
                 onPress={proccesButton.updateInfo}
             >
                 <Image source={Icons.userIcon} style={styles.icon}></Image>
-                <Text>Thông tin cá nhân</Text>
+                <Text>Personal information</Text>
             </TouchableOpacity>
             
             {/* Change password */}
@@ -44,7 +44,7 @@ export default function ButtonComponent({user}) {
                 onPress={proccesButton.updatePassword}
             >
                 <Image source={Icons.passwordIcon} style={styles.icon}></Image>
-                <Text>Thay đổi mật khẩu</Text>
+                <Text>Change Password</Text>
             </TouchableOpacity>
             
             {/* LikeDish */}
@@ -53,7 +53,7 @@ export default function ButtonComponent({user}) {
                 onPress={proccesButton.likeDish}
             >
                 <Image source={Icons.dishIcon} style={styles.icon}></Image>
-                <Text>Những món ăn đã thích</Text>
+                <Text>Favorite dishes</Text>
             </TouchableOpacity>
             
             {/* LikeFruit */}
@@ -62,7 +62,7 @@ export default function ButtonComponent({user}) {
                 onPress={proccesButton.likeFruit}    
             >
                 <Image source={Icons.fruitIcon} style={styles.icon}></Image>
-                <Text>Những trái cây đã thích</Text>
+                <Text>Favorite fruits</Text>
             </TouchableOpacity>
             
             {/* History */}
@@ -71,7 +71,7 @@ export default function ButtonComponent({user}) {
                 onPress={proccesButton.history}
             >
                 <Image source={Icons.historyIcon} style={styles.icon}></Image>
-                <Text>Lịch sử tìm kiếm</Text>
+                <Text>Recognition history</Text>
             </TouchableOpacity>
             
             {/* Logout */}
@@ -80,7 +80,7 @@ export default function ButtonComponent({user}) {
                 onPress={proccesButton.logout}
             >
                 <Image source={Icons.logoutIcon} style={styles.icon}></Image>
-                <Text>Đăng xuất</Text>
+                <Text>Log out</Text>
             </TouchableOpacity>
         </ScrollView>
     );

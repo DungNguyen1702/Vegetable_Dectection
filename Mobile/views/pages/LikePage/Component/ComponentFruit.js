@@ -34,19 +34,19 @@ export default function ComponentFruit(props) {
                 <Text style={styles.title}>{name}</Text>
                 <View style={styles.fruitInfo}>
                     <View style={styles.detail}>
-                        <Text style={styles.detailTitle}>Mùa</Text>
+                        <Text style={styles.detailTitle}>Season</Text>
                         <Text style={styles.detailData}>{season}</Text>
                     </View>
                     <View style={styles.detail}>
-                        <Text style={styles.detailTitle}>Màu sắc</Text>
+                        <Text style={styles.detailTitle}>Color</Text>
                         <Text style={styles.detailData}>{color}</Text>
                     </View>
                     <View style={styles.detail}>
-                        <Text style={styles.detailTitle}>Xuất xứ</Text>
+                        <Text style={styles.detailTitle}>Origin</Text>
                         <Text style={styles.detailData}>{origin}</Text>
                     </View>
                     <View style={styles.detail}>
-                        <Text style={styles.detailTitle}>Vị</Text>
+                        <Text style={styles.detailTitle}>Taste</Text>
                         <Text style={styles.detailData}>{taste}</Text>
                     </View>
                 </View>
