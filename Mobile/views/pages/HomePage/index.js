@@ -60,9 +60,7 @@ const HomePage = ({ user }) => {
     
         const fetchData = async () => {
             try {
-                var allFruit = await fruitAPI.allFruit(search).then(result =>{
-                    console.log(result)
-                });
+                var allFruit = await fruitAPI.allFruit(search)
                 setDataFruit(filterLikeFruit(allFruit.data.rows, likeFruit));
             } catch (e) {
                 console.log(e);
