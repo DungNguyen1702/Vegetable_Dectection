@@ -1,87 +1,39 @@
-Backend - side
+### Installation
 
-# Vegetable_Dectection_Mobile
-Vegetable dection mobile
+1. Clone the repository:
 
+```
+git clone https://github.com/DungNguyen1702/Vegetable_Detection.git
+```
 
-1. Tạo Node_modules
--> npm i
+2. Install dependencies:
 
-2. Tạo model với sequelize:
+```
+cd Backend
+npm install
+```
 
--> using npm
+3. Set up your environment variables:
 
-npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+-   Create a .env file in the backend directory.
+-   Create a database in [Console.clever-cloud](https://console.clever-cloud.com/)
+-   Change prediction model api link and database's info value in .env
+-   Add the required environment variables
 
--> using yarn
+4.  Use sequelize to create table for database
 
-yarn sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+```
+npx sequelize-cli db:migrate
+```
 
-=> Tạo 2 file: model và migration
+4.  Use sequelize to create table for database
 
-3. Migrations:
+```
+npx sequelize-cli db:migrate
+```
 
--   Tạo migrations:
+5.  Use sequelize to create table's data for database
 
--> using npm 
-
-npx sequelize-cli migration:generate --name demo-user
-
--> using yarn
-
-yarn sequelize-cli migration:generate --name demo-user
-
--   Chạy migrations:
-
--> using npm
-
-npx sequelize-cli db:migrate // auto chạy môi trường development
-
-npx sequelize db:migrate --env test --config config/config.json  // Chạy môi trường test
-
--> using yarn
-
-yarn sequelize-cli db:migrate
-
--   Gỡ migrations:
-
--> using npm
-
-npx sequelize-cli db:migrate:undo:all
-
--> using yarn
-
-yarn sequelize-cli db:migrate:undo:all
-
-4. Tạo seeders:
-
--   Tạo seeder:
-
--> using npm
-
-npx sequelize-cli seed:generate --name demo-user
-
--> using yarn
-
-yarn sequelize-cli seed:generate --name demo-user
-
--   Chạy seeder:
-
--> using npm
-
+```
 npx sequelize-cli db:seed:all
-npx sequelize-cli db:seed --seed 20211116123456-demo-seeder.js
-
--> using yarn
-
-yarn sequelize-cli db:seed:all
-
--   Undo seeder:
-
--> using npm
-
-npx sequelize-cli db:seed:undo:all
-
--> using yarn
-
-yarn sequelize-cli db:seed:undo:all
+```

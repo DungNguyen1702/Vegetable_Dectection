@@ -32,7 +32,6 @@ async function index(txt_search) {
     const conditions = txt_search ? {
         [Op.or]: [
             { name: { [Op.like]: `%${txt_search}%` } },
-            { englishName: { [Op.like]: `%${txt_search}%` } }
         ],
     } : null
 

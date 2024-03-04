@@ -104,6 +104,7 @@ export default function CamreraComponent(params) {
                 <Image
                     source={{uri : capturedImage}}
                     style ={styles.image}
+                    resizeMode = "contain"
                 ></Image>
                 : 
                 <Camera ref={cameraRef} style={styles.camera} type={cameraType}>

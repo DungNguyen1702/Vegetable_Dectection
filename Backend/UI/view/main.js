@@ -63,7 +63,6 @@ const uploadImage = async (file) => {
             <div class="vegetable__item vegetable__item-1">
                 <ul class = "vegetable__info vegetable">
                     <li>Name:<p>${vegetableInfo.name}</p></li>
-                    <li>English Name: <p>${vegetableInfo.englishName}</p></li>
                     <li>Origin: <p>${vegetableInfo.origin}</p></li>
                     <li>Taste: <p>${vegetableInfo.taste}</p></li>
                     <li>Nutrition: <p>${vegetableInfo.nutrition}</p></li>

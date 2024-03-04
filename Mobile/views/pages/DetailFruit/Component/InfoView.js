@@ -3,7 +3,6 @@ import { StyleSheet, Text, View } from "react-native";
 export default function InfoView(props) {
     const {
         name,
-        englishName,
         color,
         medical,
         nutrition,
