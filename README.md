@@ -90,15 +90,15 @@
 ## Demo UI
 
 <div>
-  <img src="./DemoUI/1.png" width="200" alt="Demo Image 1">
-  <img src="./DemoUI/2.png" width="200" alt="Demo Image 2">
-  <img src="./DemoUI/3.png" width="200" alt="Demo Image 3">
-   <img src="./DemoUI/4.png" width="200" alt="Demo Image 4">
-  <img src="./DemoUI/5.png" width="200" alt="Demo Image 5">
-  <img src="./DemoUI/6.png" width="200" alt="Demo Image 6">
-   <img src="./DemoUI/7.png" width="200" alt="Demo Image 7">
-  <img src="./DemoUI/8.png" width="200" alt="Demo Image 8">
-   <img src="./DemoUI/9.png" width="200" alt="Demo Image 9">
-  <img src="./DemoUI/10.png" width="200" alt="Demo Image 10">
-  <img src="./DemoUI/11.png" width="200" alt="Demo Image 11">
+  <img src="./DemoUI/Picture1.jpg" width="200" alt="Demo Image 1">
+  <img src="./DemoUI/Picture2.jpg" width="200" alt="Demo Image 2">
+  <img src="./DemoUI/Picture3.jpg" width="200" alt="Demo Image 3">
+   <img src="./DemoUI/Picture4.jpg" width="200" alt="Demo Image 4">
+  <img src="./DemoUI/Picture5.jpg" width="200" alt="Demo Image 5">
+  <img src="./DemoUI/Picture6.jpg" width="200" alt="Demo Image 6">
+   <img src="./DemoUI/Picture7.jpg" width="200" alt="Demo Image 7">
+  <img src="./DemoUI/Picture8.jpg" width="200" alt="Demo Image 8">
+   <img src="./DemoUI/Picture9.jpg" width="200" alt="Demo Image 9">
+  <img src="./DemoUI/Picture10.jpg" width="200" alt="Demo Image 10">
+  <img src="./DemoUI/Picture11.jpg" width="200" alt="Demo Image 11">
 </div>
